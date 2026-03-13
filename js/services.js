@@ -494,14 +494,38 @@ function renderServices(cat, searchTerm) {
         return;
     }
 
-    // Map id to detail page (已有页面)
+    // Map id to detail page
     const detailPages = {
         'polish-mechanical': 'services/polish-ops.html',
+        'polish-cp': 'services/polish-cp.html',
+        'polish-fib': 'services/polish-fib.html',
+        'polish-electro': 'services/polish-electro.html',
+        'polish-vibratory': 'services/polish-vibratory.html',
+        'polish-multi': 'services/polish-multi.html',
         'ebsd-standard': 'services/ebsd-standard.html',
+        'ebsd-largemap': 'services/ebsd-largemap.html',
+        'ebsd-texture': 'services/ebsd-texture.html',
+        'ebsd-insitu': 'services/ebsd-insitu.html',
+        'ebsd-tkd': 'services/ebsd-tkd.html',
+        'ebsd-hr': 'services/ebsd-hr.html',
         'ecci-standard': 'services/ecci-standard.html',
+        'ecci-controlled': 'services/ecci-controlled.html',
         'ecci-virtual': 'services/ecci-virtual.html',
+        'ecci-ebsd-combo': 'services/ecci-ebsd-combo.html',
+        'post-kam': 'services/post-kam.html',
+        'post-gnd': 'services/post-gnd.html',
+        'post-recrystallization': 'services/post-recrystallization.html',
+        'post-gb': 'services/post-gb.html',
+        'post-schmid': 'services/post-schmid.html',
+        'post-parent': 'services/post-parent.html',
         'adv-spherical': 'services/adv-spherical.html',
+        'adv-dictionary': 'services/adv-dictionary.html',
+        'adv-slip': 'services/adv-slip.html',
         'adv-mprime': 'services/adv-mprime.html',
+        'adv-taylor': 'services/adv-taylor.html',
+        'adv-or': 'services/adv-or.html',
+        'adv-strain': 'services/adv-strain.html',
+        'adv-custom': 'services/adv-custom.html',
     };
 
     grid.innerHTML = filtered.map(s => {

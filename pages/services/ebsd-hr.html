@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高分辨EBSD（HR-EBSD） | 菊池实验室</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="site-navbar"></div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../../index.html">首页</a><span>/</span>
+            <a href="../services.html">测试服务</a><span>/</span>
+            <a href="../services.html?cat=ebsd">EBSD测试分析</a><span>/</span>
+            <strong>高分辨EBSD（HR-EBSD）</strong>
+        </div>
+    </div>
+
+    <section class="detail-top">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-img-area">
+                    <div class="detail-img-main">
+                        <div class="detail-img-placeholder">
+                            <i class="fas fa-braille"></i>
+                            <span>后期配图：HR-EBSD弹性应变分量图与GND密度图</span>
+                        </div>
+                    </div>
+                    <div class="detail-img-gallery">
+                        <div class="thumb active"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                    </div>
+                </div>
+                <div class="detail-info">
+                    <span class="detail-cat cat-ebsd">EBSD测试分析</span>
+                    <h1 class="detail-title" id="detailServiceName">高分辨EBSD（HR-EBSD）</h1>
+                    <p class="detail-subtitle">基于交叉相关的高角分辨EBSD，测定弹性应变张量和GND密度，角分辨率达0.006°</p>
+
+                    <div class="detail-stats">
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">10-15天</span>
+                            <span class="detail-stat-label">平均周期</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">987</span>
+                            <span class="detail-stat-label">已预约</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">99.1%</span>
+                            <span class="detail-stat-label">满意度</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">0.006°</span>
+                            <span class="detail-stat-label">角分辨率</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-price-row">
+                        <div class="detail-price" id="detailUnitPrice" data-price="1800">¥1800<small>/样</small></div>
+                        <span class="detail-price-note">含数据采集与HR-EBSD后处理</span>
+                    </div>
+
+                    <div class="detail-actions">
+                        <a href="#detail-booking" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> 立即预约</a>
+                        <button class="btn btn-outline-primary btn-lg"><i class="fas fa-phone"></i> 咨询客服</button>
+                    </div>
+
+                    <div class="detail-guarantees">
+                        <span><i class="fas fa-check-circle"></i> 7天免费复测</span>
+                        <span><i class="fas fa-check-circle"></i> 数据原始文件交付</span>
+                        <span><i class="fas fa-check-circle"></i> 专业分析报告</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-content">
+        <div class="container">
+            <div class="detail-tabs">
+                <button class="detail-tab active" data-tab="desc">服务说明</button>
+                <button class="detail-tab" data-tab="params">技术参数</button>
+                <button class="detail-tab" data-tab="sample">送样要求</button>
+                <button class="detail-tab" data-tab="report">报告内容</button>
+            </div>
+
+            <div class="detail-tab-panel active" id="tab-desc">
+                <div class="detail-desc">
+                    <h3>服务介绍</h3>
+                    <p>高分辨EBSD（HR-EBSD）基于花样间的交叉相关（cross-correlation）技术，通过精确测量EBSD花样中各ROI区域的亚像素位移，反算晶格旋转和弹性应变张量。HR-EBSD的角分辨率可达~0.006°（比常规Hough标定提高两个数量级），应变灵敏度约为10⁻⁴。该技术可以定量测量晶内的弹性应变场分布，并精确计算GND（几何必需位错）密度。</p>
+
+                    <h3>可获得的数据</h3>
+                    <ul>
+                        <li><strong>弹性应变张量分量</strong> — ε₁₁, ε₂₂, ε₁₂, ε₁₃, ε₂₃（晶体坐标系）</li>
+                        <li><strong>晶格旋转分量</strong> — ω₁₂, ω₁₃, ω₂₃</li>
+                        <li><strong>残余应力分布</strong> — 通过弹性常数矩阵转换为应力张量</li>
+                        <li><strong>GND密度图</strong> — 基于Nye张量的高精度GND密度计算</li>
+                        <li><strong>花样质量评估</strong> — Cross-correlation peak height图</li>
+                    </ul>
+
+                    <h3>适用场景</h3>
+                    <p>裂纹尖端应力场表征、界面/晶界附近应变集中分析、变形材料的弹性应变分布、压痕周围应变场、疲劳裂纹萌生研究、位错塞积应力场等微观力学研究。</p>
+
+                    <h3>分析软件</h3>
+                    <p>采用BLG Vantage CrossCourt软件进行HR-EBSD交叉相关分析，配合MTEX进行后续数据处理。需保存完整的EBSD花样图像（.h5格式）。</p>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-params">
+                <table class="param-table">
+                    <tr><th>扫描电镜</th><td>ZEISS Sigma 300 FE-SEM</td></tr>
+                    <tr><th>EBSD探头</th><td>Oxford Symmetry S2（全花样保存）</td></tr>
+                    <tr><th>花样分辨率</th><td>1244 × 1024 像素</td></tr>
+                    <tr><th>角分辨率</th><td>~0.006°（交叉相关）</td></tr>
+                    <tr><th>应变灵敏度</th><td>~1 × 10⁻⁴</td></tr>
+                    <tr><th>步长</th><td>0.05 - 2 μm（建议 ≤ 0.5 μm）</td></tr>
+                    <tr><th>HR-EBSD软件</th><td>BLG Vantage CrossCourt 4</td></tr>
+                    <tr><th>ROI数量</th><td>20-40个区域（可调）</td></tr>
+                    <tr><th>数据格式</th><td>.h5（含花样）+ .ctf + HR-EBSD结果</td></tr>
+                </table>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-sample">
+                <div class="detail-desc">
+                    <h3>样品要求</h3>
+                    <p>HR-EBSD对样品表面质量要求极高，表面变形会影响花样质量，进而影响交叉相关结果的准确性。</p>
+
+                    <h3>表面要求</h3>
+                    <ul>
+                        <li>强烈建议长时振动抛光（8h+）或CP抛光</li>
+                        <li>表面不得有任何残余机械损伤</li>
+                        <li>抛光后应尽快测试，避免表面氧化/污染</li>
+                        <li>样品尺寸 ≤ 20mm × 20mm × 10mm</li>
+                    </ul>
+
+                    <h3>注意事项</h3>
+                    <ul>
+                        <li>HR-EBSD在晶粒内部计算，每个晶粒需选取参考点</li>
+                        <li>高度变形的材料可能不适合HR-EBSD（花样模糊）</li>
+                        <li>建议提前沟通研究目标以确定最优采集参数</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-report">
+                <div class="detail-desc">
+                    <h3>报告包含内容</h3>
+                    <ul>
+                        <li>常规EBSD结果（IPF图、相图、晶界图等）</li>
+                        <li>弹性应变张量各分量分布图</li>
+                        <li>晶格旋转各分量图</li>
+                        <li>GND密度分布图</li>
+                        <li>残余应力分量图（可选）</li>
+                        <li>交叉相关质量图（Peak Height Map）</li>
+                    </ul>
+                    <h3>交付格式</h3>
+                    <p>PDF分析报告 + 原始EBSD数据（含花样.h5）+ HR-EBSD结果数据 + 高清图片（TIFF 300dpi）。数据量较大，通过网盘传输。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-booking" id="detail-booking">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">在线预约</span>
+                <h2>预约测试机时</h2>
+                <p>选择时间，填写信息，即刻预约</p>
+            </div>
+            <div class="booking-grid">
+                <div class="booking-calendar-card">
+                    <h3><i class="fas fa-calendar-alt"></i> 选择预约日期</h3>
+                    <div id="detailCalendar"></div>
+                </div>
+                <div class="booking-form-card">
+                    <h3><i class="fas fa-edit"></i> 填写预约信息</h3>
+                    <form id="detailBookingForm">
+                        <div class="form-group">
+                            <label>姓名 *</label>
+                            <input type="text" name="bookName" required placeholder="您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <label>手机号 *</label>
+                            <input type="tel" name="bookPhone" required placeholder="手机号码">
+                        </div>
+                        <div class="form-group">
+                            <label>单位 *</label>
+                            <input type="text" name="bookOrg" required placeholder="学校/公司">
+                        </div>
+                        <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                            <div class="form-group">
+                                <label>预约日期</label>
+                                <input type="date" name="bookDate" id="bookDate">
+                            </div>
+                            <div class="form-group">
+                                <label>样品数量</label>
+                                <input type="number" name="bookQty" min="1" value="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>备注</label>
+                            <textarea name="bookNote" rows="2" placeholder="材料、研究目标、特殊要求等"></textarea>
+                        </div>
+                        <div class="form-total" id="formTotal">
+                            预估费用：<span id="detailTotal">¥1800</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            <i class="fas fa-paper-plane"></i> 提交预约
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-services">
+        <div class="container">
+            <div class="section-header">
+                <h2>相关推荐</h2>
+            </div>
+            <div class="related-grid">
+                <a href="post-gnd.html" class="related-card">
+                    <h4>GND几何必需位错密度</h4>
+                    <p>常规EBSD的GND计算</p>
+                    <span class="r-price">¥500<small>/样</small></span>
+                </a>
+                <a href="polish-vibratory.html" class="related-card">
+                    <h4>长时振动抛光（8h+）</h4>
+                    <p>HR-EBSD推荐制样</p>
+                    <span class="r-price">¥350<small>/样</small></span>
+                </a>
+                <a href="ebsd-standard.html" class="related-card">
+                    <h4>标准EBSD扫描</h4>
+                    <p>常规EBSD取向成像</p>
+                    <span class="r-price">¥500<small>/样</small></span>
+                </a>
+                <a href="adv-strain.html" class="related-card">
+                    <h4>应变分区与变形带分析</h4>
+                    <p>变形组织定量表征</p>
+                    <span class="r-price">¥500<small>/样</small></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <div id="site-extras"></div>
+
+    <script src="../../js/components.js"></script>
+    <script src="../../js/detail.js"></script>
+</body>
+</html>

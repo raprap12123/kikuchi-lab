@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>织构分析（极图+ODF） | 菊池实验室</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="site-navbar"></div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../../index.html">首页</a><span>/</span>
+            <a href="../services.html">测试服务</a><span>/</span>
+            <a href="../services.html?cat=ebsd">EBSD测试分析</a><span>/</span>
+            <strong>织构分析（极图+ODF）</strong>
+        </div>
+    </div>
+
+    <section class="detail-top">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-img-area">
+                    <div class="detail-img-main">
+                        <div class="detail-img-placeholder">
+                            <i class="fas fa-circle-notch"></i>
+                            <span>后期配图：ODF截面图与极图示例</span>
+                        </div>
+                    </div>
+                    <div class="detail-img-gallery">
+                        <div class="thumb active"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                    </div>
+                </div>
+                <div class="detail-info">
+                    <span class="detail-cat cat-ebsd">EBSD测试分析</span>
+                    <h1 class="detail-title" id="detailServiceName">织构分析（极图+ODF）</h1>
+                    <p class="detail-subtitle">EBSD数据提取极图、反极图、ODF截面，定量分析织构组分及其体积分数</p>
+
+                    <div class="detail-stats">
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">5-7天</span>
+                            <span class="detail-stat-label">平均周期</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">6,215</span>
+                            <span class="detail-stat-label">已预约</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">99.3%</span>
+                            <span class="detail-stat-label">满意度</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">定量</span>
+                            <span class="detail-stat-label">织构分析</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-price-row">
+                        <div class="detail-price" id="detailUnitPrice" data-price="600">¥600<small>/样</small></div>
+                        <span class="detail-price-note">批量 ≥10样 享9折</span>
+                    </div>
+
+                    <div class="detail-actions">
+                        <a href="#detail-booking" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> 立即预约</a>
+                        <button class="btn btn-outline-primary btn-lg"><i class="fas fa-phone"></i> 咨询客服</button>
+                    </div>
+
+                    <div class="detail-guarantees">
+                        <span><i class="fas fa-check-circle"></i> 7天免费复测</span>
+                        <span><i class="fas fa-check-circle"></i> 数据原始文件交付</span>
+                        <span><i class="fas fa-check-circle"></i> 专业分析报告</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-content">
+        <div class="container">
+            <div class="detail-tabs">
+                <button class="detail-tab active" data-tab="desc">服务说明</button>
+                <button class="detail-tab" data-tab="params">技术参数</button>
+                <button class="detail-tab" data-tab="sample">送样要求</button>
+                <button class="detail-tab" data-tab="report">报告内容</button>
+            </div>
+
+            <div class="detail-tab-panel active" id="tab-desc">
+                <div class="detail-desc">
+                    <h3>服务介绍</h3>
+                    <p>织构分析是利用EBSD数据对多晶材料中的择优取向（织构）进行定量表征。通过计算取向分布函数（ODF），可以精确识别材料中存在的织构组分（如Cube、Goss、Brass、Copper、S等），并定量计算各组分的体积分数。极图和反极图直观展示织构的空间分布特征。</p>
+
+                    <h3>分析内容</h3>
+                    <ul>
+                        <li><strong>极图（Pole Figure）</strong> — {100}、{110}、{111}等晶面族的极图投影</li>
+                        <li><strong>反极图（Inverse Pole Figure）</strong> — RD/TD/ND方向的反极图密度分布</li>
+                        <li><strong>ODF截面</strong> — φ2 = 0°/45°/65°等截面的取向分布函数</li>
+                        <li><strong>织构组分定量</strong> — 各典型织构组分的体积分数计算</li>
+                        <li><strong>织构强度</strong> — 最大ODF密度值、织构指数（TI）</li>
+                    </ul>
+
+                    <h3>适用材料</h3>
+                    <p>轧制/退火板材（铝合金、铜合金、钢铁）、拉拔线材/管材、锻造件、增材制造（3D打印）零件、薄膜材料等。适用于所有需要表征宏观织构的多晶材料。</p>
+
+                    <h3>分析软件</h3>
+                    <p>MTEX（MATLAB工具箱）进行ODF计算与织构组分定量分析，AZtecCrystal进行数据预处理，可根据需要提供MTEX脚本。</p>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-params">
+                <table class="param-table">
+                    <tr><th>EBSD数据采集</th><td>标准EBSD扫描（含在服务中）</td></tr>
+                    <tr><th>建议统计晶粒数</th><td>≥ 1000个晶粒（织构统计可靠性）</td></tr>
+                    <tr><th>ODF计算方法</th><td>球谐函数法（L=22）/ 离散方法</td></tr>
+                    <tr><th>半高宽</th><td>5°（可调）</td></tr>
+                    <tr><th>极图类型</th><td>{100}、{110}、{111} 等（可定制）</td></tr>
+                    <tr><th>ODF截面</th><td>φ2 = 常数截面，0°-90°</td></tr>
+                    <tr><th>织构组分</th><td>Cube/Goss/Brass/Copper/S/Taylor等</td></tr>
+                    <tr><th>展布范围</th><td>±15°（可调）</td></tr>
+                    <tr><th>分析软件</th><td>MTEX + AZtecCrystal</td></tr>
+                </table>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-sample">
+                <div class="detail-desc">
+                    <h3>样品尺寸</h3>
+                    <p>块状样品 ≤ 20mm × 20mm × 10mm。织构分析需要较大的统计区域，建议提供足够大的抛光面。</p>
+
+                    <h3>表面要求</h3>
+                    <ul>
+                        <li>EBSD质量的表面抛光（标定率 > 90%）</li>
+                        <li>扫描区域需包含足够多的晶粒（建议 ≥ 1000个）</li>
+                        <li>样品方向需明确标注（RD/TD/ND）</li>
+                    </ul>
+
+                    <h3>寄送注意</h3>
+                    <ul>
+                        <li>务必标注样品坐标系（轧向RD、横向TD、法向ND）</li>
+                        <li>说明材料加工历史（轧制、退火温度等）</li>
+                        <li>如有特定关注的织构组分请提前说明</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-report">
+                <div class="detail-desc">
+                    <h3>报告包含内容</h3>
+                    <ul>
+                        <li>IPF取向图（RD/TD/ND方向）</li>
+                        <li>{100}、{110}、{111}极图</li>
+                        <li>RD/TD/ND反极图</li>
+                        <li>ODF截面图（φ2 = 0°/45°/65°等）</li>
+                        <li>织构组分体积分数统计表</li>
+                        <li>织构指数（Texture Index）与最大ODF密度</li>
+                        <li>各织构组分的空间分布图</li>
+                    </ul>
+                    <h3>交付格式</h3>
+                    <p>PDF分析报告 + 原始EBSD数据（.ctf/.ang）+ 高清图片（TIFF 300dpi）+ MTEX脚本（如需）。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-booking" id="detail-booking">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">在线预约</span>
+                <h2>预约测试机时</h2>
+                <p>选择时间，填写信息，即刻预约</p>
+            </div>
+            <div class="booking-grid">
+                <div class="booking-calendar-card">
+                    <h3><i class="fas fa-calendar-alt"></i> 选择预约日期</h3>
+                    <div id="detailCalendar"></div>
+                </div>
+                <div class="booking-form-card">
+                    <h3><i class="fas fa-edit"></i> 填写预约信息</h3>
+                    <form id="detailBookingForm">
+                        <div class="form-group">
+                            <label>姓名 *</label>
+                            <input type="text" name="bookName" required placeholder="您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <label>手机号 *</label>
+                            <input type="tel" name="bookPhone" required placeholder="手机号码">
+                        </div>
+                        <div class="form-group">
+                            <label>单位 *</label>
+                            <input type="text" name="bookOrg" required placeholder="学校/公司">
+                        </div>
+                        <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                            <div class="form-group">
+                                <label>预约日期</label>
+                                <input type="date" name="bookDate" id="bookDate">
+                            </div>
+                            <div class="form-group">
+                                <label>样品数量</label>
+                                <input type="number" name="bookQty" min="1" value="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>备注</label>
+                            <textarea name="bookNote" rows="2" placeholder="材料、尺寸、特殊要求等"></textarea>
+                        </div>
+                        <div class="form-total" id="formTotal">
+                            预估费用：<span id="detailTotal">¥600</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            <i class="fas fa-paper-plane"></i> 提交预约
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-services">
+        <div class="container">
+            <div class="section-header">
+                <h2>相关推荐</h2>
+            </div>
+            <div class="related-grid">
+                <a href="ebsd-largemap.html" class="related-card">
+                    <h4>大面积拼图EBSD扫描</h4>
+                    <p>mm级大视场取向成像</p>
+                    <span class="r-price">¥800<small>/样</small></span>
+                </a>
+                <a href="ebsd-standard.html" class="related-card">
+                    <h4>标准EBSD扫描</h4>
+                    <p>基础EBSD取向成像</p>
+                    <span class="r-price">¥500<small>/样</small></span>
+                </a>
+                <a href="adv-taylor.html" class="related-card">
+                    <h4>Taylor因子与塑性功分析</h4>
+                    <p>多晶塑性各向异性</p>
+                    <span class="r-price">¥600<small>/样</small></span>
+                </a>
+                <a href="post-recrystallization.html" class="related-card">
+                    <h4>再结晶分数统计</h4>
+                    <p>退火组织定量分析</p>
+                    <span class="r-price">¥300<small>/样</small></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <div id="site-extras"></div>
+
+    <script src="../../js/components.js"></script>
+    <script src="../../js/detail.js"></script>
+</body>
+</html>

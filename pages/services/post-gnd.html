@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GND几何必需位错密度计算 | 菊池实验室</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="site-navbar"></div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../../index.html">首页</a><span>/</span>
+            <a href="../services.html">测试服务</a><span>/</span>
+            <a href="../services.html?cat=postprocess">EBSD后处理</a><span>/</span>
+            <strong>GND几何必需位错密度计算</strong>
+        </div>
+    </div>
+
+    <section class="detail-top">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-img-area">
+                    <div class="detail-img-main">
+                        <div class="detail-img-placeholder">
+                            <i class="fas fa-wave-square"></i>
+                            <span>后期配图：GND密度分布图（对数标度）</span>
+                        </div>
+                    </div>
+                    <div class="detail-img-gallery">
+                        <div class="thumb active"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                    </div>
+                </div>
+                <div class="detail-info">
+                    <span class="detail-cat cat-postprocess">EBSD后处理</span>
+                    <h1 class="detail-title" id="detailServiceName">GND几何必需位错密度计算</h1>
+                    <p class="detail-subtitle">基于取向梯度计算GND密度分布，通过Nye张量定量表征材料中的位错存储</p>
+
+                    <div class="detail-stats">
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">3-5天</span>
+                            <span class="detail-stat-label">平均周期</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">4,521</span>
+                            <span class="detail-stat-label">已预约</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">99.1%</span>
+                            <span class="detail-stat-label">满意度</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">Nye张量</span>
+                            <span class="detail-stat-label">计算方法</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-price-row">
+                        <div class="detail-price" id="detailUnitPrice" data-price="500">¥500<small>/样</small></div>
+                        <span class="detail-price-note">批量 ≥10样 享9折</span>
+                    </div>
+
+                    <div class="detail-actions">
+                        <a href="#detail-booking" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> 立即预约</a>
+                        <button class="btn btn-outline-primary btn-lg"><i class="fas fa-phone"></i> 咨询客服</button>
+                    </div>
+
+                    <div class="detail-guarantees">
+                        <span><i class="fas fa-check-circle"></i> 7天免费复测</span>
+                        <span><i class="fas fa-check-circle"></i> 数据原始文件交付</span>
+                        <span><i class="fas fa-check-circle"></i> 专业分析报告</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-content">
+        <div class="container">
+            <div class="detail-tabs">
+                <button class="detail-tab active" data-tab="desc">服务说明</button>
+                <button class="detail-tab" data-tab="params">技术参数</button>
+                <button class="detail-tab" data-tab="sample">送样要求</button>
+                <button class="detail-tab" data-tab="report">报告内容</button>
+            </div>
+
+            <div class="detail-tab-panel active" id="tab-desc">
+                <div class="detail-desc">
+                    <h3>服务介绍</h3>
+                    <p>几何必需位错（Geometrically Necessary Dislocations, GND）是为了维持晶格的连续性而必须存在的位错。通过EBSD数据中的取向梯度，可以计算Nye位错密度张量，进而求得GND密度的空间分布。与KAM不同，GND密度具有明确的物理意义（单位：m⁻²），是定量表征位错密度的有力工具。</p>
+
+                    <h3>计算方法</h3>
+                    <ul>
+                        <li><strong>Nye张量法</strong> — 从取向梯度场计算Nye位错密度张量α，再通过L1最小化求解各滑移系上的GND密度</li>
+                        <li><strong>滑移系分解</strong> — 将总GND密度分解到各个可能的滑移系统上（刃型+螺型位错）</li>
+                        <li><strong>步长依赖性分析</strong> — 评估GND密度计算对EBSD步长的敏感性</li>
+                        <li><strong>噪声滤除</strong> — 高级去噪算法减小测量噪声对GND计算的影响</li>
+                    </ul>
+
+                    <h3>适用场景</h3>
+                    <p>变形材料的位错密度定量统计、加工硬化机制研究、晶界附近位错塞积分析、异质结构材料的GND分布、应变梯度塑性（SGP）研究、位错密度与力学性能的定量关联等。</p>
+
+                    <h3>分析软件</h3>
+                    <p>MTEX工具箱进行GND密度计算，支持FCC、BCC、HCP晶体结构的完整滑移系分解。</p>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-params">
+                <table class="param-table">
+                    <tr><th>计算方法</th><td>Nye张量 + L1最小化</td></tr>
+                    <tr><th>支持晶体结构</th><td>FCC / BCC / HCP</td></tr>
+                    <tr><th>FCC滑移系</th><td>{111}<110> 12个滑移系（24个位错类型）</td></tr>
+                    <tr><th>BCC滑移系</th><td>{110}<111> + {112}<111>（48个位错类型）</td></tr>
+                    <tr><th>HCP滑移系</th><td>基面/棱柱面/锥面滑移 + 孪生</td></tr>
+                    <tr><th>GND密度范围</th><td>10¹² - 10¹⁶ m⁻²</td></tr>
+                    <tr><th>建议步长</th><td>≤ 0.5 μm（步长越小精度越高）</td></tr>
+                    <tr><th>输入格式</th><td>.ctf / .ang / .h5</td></tr>
+                    <tr><th>分析软件</th><td>MTEX（MATLAB）</td></tr>
+                </table>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-sample">
+                <div class="detail-desc">
+                    <h3>数据要求</h3>
+                    <ul>
+                        <li>EBSD数据标定率 > 90%（GND计算对数据质量敏感）</li>
+                        <li>步长建议 ≤ 0.5 μm（步长影响GND密度下限）</li>
+                        <li>提供材料的晶体结构和弹性常数（如已知）</li>
+                        <li>接受 .ctf / .ang / .h5 格式</li>
+                    </ul>
+
+                    <h3>如需同步EBSD测试</h3>
+                    <ul>
+                        <li>建议使用小步长采集（0.1-0.5 μm）</li>
+                        <li>长时振动抛光或CP抛光获得最佳标定率</li>
+                        <li>可与标准EBSD扫描一起下单</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-report">
+                <div class="detail-desc">
+                    <h3>报告包含内容</h3>
+                    <ul>
+                        <li>GND总密度分布图（对数标度色标）</li>
+                        <li>各滑移系上的GND密度分解图</li>
+                        <li>刃型 vs 螺型位错密度分布</li>
+                        <li>GND密度统计直方图（对数正态分布拟合）</li>
+                        <li>平均GND密度 + 标准偏差</li>
+                        <li>与KAM的对比分析</li>
+                    </ul>
+                    <h3>交付格式</h3>
+                    <p>PDF分析报告 + 高清图片（TIFF 300dpi）+ GND密度数据（MAT/TXT格式）+ MTEX脚本。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-booking" id="detail-booking">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">在线预约</span>
+                <h2>预约测试机时</h2>
+                <p>选择时间，填写信息，即刻预约</p>
+            </div>
+            <div class="booking-grid">
+                <div class="booking-calendar-card">
+                    <h3><i class="fas fa-calendar-alt"></i> 选择预约日期</h3>
+                    <div id="detailCalendar"></div>
+                </div>
+                <div class="booking-form-card">
+                    <h3><i class="fas fa-edit"></i> 填写预约信息</h3>
+                    <form id="detailBookingForm">
+                        <div class="form-group">
+                            <label>姓名 *</label>
+                            <input type="text" name="bookName" required placeholder="您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <label>手机号 *</label>
+                            <input type="tel" name="bookPhone" required placeholder="手机号码">
+                        </div>
+                        <div class="form-group">
+                            <label>单位 *</label>
+                            <input type="text" name="bookOrg" required placeholder="学校/公司">
+                        </div>
+                        <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                            <div class="form-group">
+                                <label>预约日期</label>
+                                <input type="date" name="bookDate" id="bookDate">
+                            </div>
+                            <div class="form-group">
+                                <label>样品数量</label>
+                                <input type="number" name="bookQty" min="1" value="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>备注</label>
+                            <textarea name="bookNote" rows="2" placeholder="材料、晶体结构、EBSD数据格式等"></textarea>
+                        </div>
+                        <div class="form-total" id="formTotal">
+                            预估费用：<span id="detailTotal">¥500</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            <i class="fas fa-paper-plane"></i> 提交预约
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-services">
+        <div class="container">
+            <div class="section-header">
+                <h2>相关推荐</h2>
+            </div>
+            <div class="related-grid">
+                <a href="post-kam.html" class="related-card">
+                    <h4>KAM/GOS/GAM分析</h4>
+                    <p>局部取向差分析</p>
+                    <span class="r-price">¥300<small>/样</small></span>
+                </a>
+                <a href="ebsd-hr.html" class="related-card">
+                    <h4>高分辨EBSD（HR-EBSD）</h4>
+                    <p>高精度GND+应变测量</p>
+                    <span class="r-price">¥1,800<small>/样</small></span>
+                </a>
+                <a href="post-recrystallization.html" class="related-card">
+                    <h4>再结晶分数统计</h4>
+                    <p>再结晶/变形区域区分</p>
+                    <span class="r-price">¥300<small>/样</small></span>
+                </a>
+                <a href="adv-strain.html" class="related-card">
+                    <h4>应变分区与变形带分析</h4>
+                    <p>变形组织定量解析</p>
+                    <span class="r-price">¥500<small>/样</small></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <div id="site-extras"></div>
+
+    <script src="../../js/components.js"></script>
+    <script src="../../js/detail.js"></script>
+</body>
+</html>

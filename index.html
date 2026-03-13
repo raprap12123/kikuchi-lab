@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>菊池实验室 Kikuchi Lab | EBSD抛光与分析服务</title>
+    <meta name="description" content="菊池实验室 - 专业EBSD抛光与测试分析服务平台。提供EBSD制样、测试、ECCI分析、后处理及球形标定、字典标定等高级分析服务。">
+    <meta name="keywords" content="EBSD,EBSD抛光,EBSD测试,ECCI,菊池花样,晶体取向,球形标定,字典标定">
+    <meta property="og:title" content="菊池实验室 Kikuchi Lab | EBSD抛光与分析服务">
+    <meta property="og:description" content="菊池实验室 - 专业EBSD抛光与测试分析服务平台。提供EBSD制样、测试、ECCI分析、后处理及球形标定、字典标定等高级分析服务。">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -53,6 +58,30 @@
         </div>
     </nav>
 
+    <!-- 促销横幅轮播 -->
+    <div class="promo-banner" id="promoBanner">
+        <div class="promo-slides">
+            <div class="promo-slide active">
+                <i class="fas fa-gift"></i> 新用户注册送200元测试券
+                <a href="#booking" class="promo-link">立即领取 &rarr;</a>
+            </div>
+            <div class="promo-slide">
+                <i class="fas fa-coins"></i> 预存充值最高享15%赠送
+                <a href="#booking" class="promo-link">查看详情 &rarr;</a>
+            </div>
+            <div class="promo-slide">
+                <i class="fas fa-award"></i> 论文致谢奖励计划 最高奖励5000元
+                <a href="#booking" class="promo-link">了解更多 &rarr;</a>
+            </div>
+        </div>
+        <div class="promo-dots">
+            <span class="promo-dot active" data-index="0"></span>
+            <span class="promo-dot" data-index="1"></span>
+            <span class="promo-dot" data-index="2"></span>
+        </div>
+        <button class="promo-close" id="promoClose"><i class="fas fa-times"></i></button>
+    </div>
+
     <!-- Hero区域 -->
     <section class="hero">
         <div class="hero-bg"></div>
@@ -60,7 +89,22 @@
         <div class="container hero-content">
             <div class="hero-badge">专业EBSD样品制备与分析</div>
             <h1>精准表征<br><span class="gradient-text">微观世界</span></h1>
-            <p class="hero-desc">一站式EBSD抛光制样与测试分析服务，配备国际顶尖设备，<br>7天出具专业报告，助力您的科研与产业创新</p>
+            <p class="hero-desc">一站式EBSD抛光制样与测试分析服务，配备国际顶尖设备，助力您的科研与产业创新</p>
+            <div class="hero-search" id="heroSearch">
+                <form action="pages/services.html" method="get" class="hero-search-form">
+                    <i class="fas fa-search hero-search-icon"></i>
+                    <input type="text" name="q" id="heroSearchInput" class="hero-search-input" autocomplete="off">
+                    <span class="hero-search-placeholder" id="heroSearchPlaceholder">EBSD抛光</span>
+                    <button type="submit" class="hero-search-btn">搜索服务</button>
+                </form>
+                <div class="hero-search-tags">
+                    <span>热门：</span>
+                    <a href="pages/services.html?q=EBSD抛光">EBSD抛光</a>
+                    <a href="pages/services.html?q=ECCI位错成像">ECCI位错成像</a>
+                    <a href="pages/services.html?q=织构分析">织构分析</a>
+                    <a href="pages/services.html?q=KAM分析">KAM分析</a>
+                </div>
+            </div>
             <div class="hero-buttons">
                 <a href="#booking" class="btn btn-primary btn-lg">
                     <i class="fas fa-calendar-check"></i> 在线预约测试
@@ -71,20 +115,20 @@
             </div>
             <div class="hero-stats">
                 <div class="stat-item">
-                    <span class="stat-number" data-target="5000">0</span>+
+                    <span class="stat-number" data-target="12000">0</span>+
                     <span class="stat-label">服务客户</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" data-target="20000">0</span>+
+                    <span class="stat-number" data-target="50000">0</span>+
                     <span class="stat-label">测试样品</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" data-target="99">0</span>%
+                    <span class="stat-number" data-target="99.4" data-decimal="1">0</span>%
                     <span class="stat-label">客户满意度</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" data-target="7">0</span>天
-                    <span class="stat-label">出具报告</span>
+                    <span class="stat-number" data-target="5">0</span>天
+                    <span class="stat-label">平均周期</span>
                 </div>
             </div>
         </div>
@@ -103,6 +147,42 @@
                 <div class="client-logo">中南大学</div>
                 <div class="client-logo">宝钢集团</div>
                 <div class="client-logo">中航工业</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务保障 -->
+    <section class="guarantees-bar">
+        <div class="container">
+            <div class="guarantees-grid">
+                <div class="guarantee-item">
+                    <div class="guarantee-icon"><i class="fas fa-redo-alt"></i></div>
+                    <div class="guarantee-text">
+                        <h4>7天免费复测</h4>
+                        <p>结果不满意免费重测</p>
+                    </div>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-icon"><i class="fas fa-database"></i></div>
+                    <div class="guarantee-text">
+                        <h4>数据原始文件交付</h4>
+                        <p>提供全部原始数据文件</p>
+                    </div>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="guarantee-text">
+                        <h4>专业分析报告</h4>
+                        <p>图文并茂详细报告</p>
+                    </div>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="guarantee-text">
+                        <h4>先测后付</h4>
+                        <p>验收满意后再付款</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -844,41 +924,63 @@
         </div>
     </footer>
 
-    <!-- 在线客服浮窗 -->
-    <div class="chat-widget" id="chatWidget">
-        <div class="chat-window" id="chatWindow">
-            <div class="chat-header">
-                <span><i class="fas fa-headset"></i> 在线客服</span>
-                <button class="chat-minimize" id="chatMinimize">&minus;</button>
+    <!-- 右侧浮动工具栏 -->
+    <div class="floating-toolbar" id="floatingToolbar">
+        <div class="toolbar-item" id="toolbarChat">
+            <i class="fas fa-headset"></i>
+            <span class="toolbar-label">在线客服</span>
+        </div>
+        <div class="toolbar-item" id="toolbarWechat">
+            <i class="fab fa-weixin"></i>
+            <span class="toolbar-label">微信咨询</span>
+            <div class="toolbar-popup toolbar-popup-wechat">
+                <div class="toolbar-popup-arrow"></div>
+                <div class="toolbar-qr-placeholder">
+                    <i class="fab fa-weixin"></i>
+                    <p>扫码添加微信客服</p>
+                    <div class="qr-box">二维码</div>
+                </div>
             </div>
-            <div class="chat-body" id="chatBody">
-                <div class="chat-msg bot">
-                    <div class="chat-avatar"><i class="fas fa-robot"></i></div>
-                    <div class="chat-bubble">您好！欢迎咨询菊池实验室，请问有什么可以帮您？<br><br>
-                        <div class="quick-replies">
-                            <button class="quick-reply" data-msg="我想了解EBSD测试流程">EBSD测试流程</button>
-                            <button class="quick-reply" data-msg="送样有什么要求？">送样要求</button>
-                            <button class="quick-reply" data-msg="测试大概多久出结果？">出结果时间</button>
-                            <button class="quick-reply" data-msg="我想转接人工客服">转人工客服</button>
-                        </div>
+        </div>
+        <div class="toolbar-item" id="toolbarPhone">
+            <i class="fas fa-phone-alt"></i>
+            <span class="toolbar-label">电话咨询</span>
+            <div class="toolbar-popup toolbar-popup-phone">
+                <div class="toolbar-popup-arrow"></div>
+                <p class="toolbar-phone-number"><i class="fas fa-phone-alt"></i> 400-888-9999</p>
+                <p class="toolbar-phone-time">工作日 8:30 - 17:30</p>
+            </div>
+        </div>
+        <div class="toolbar-item toolbar-backtop" id="toolbarBackTop">
+            <i class="fas fa-arrow-up"></i>
+            <span class="toolbar-label">回到顶部</span>
+        </div>
+    </div>
+
+    <!-- 聊天窗口 (独立于工具栏) -->
+    <div class="chat-window-standalone" id="chatWindow">
+        <div class="chat-header">
+            <span><i class="fas fa-headset"></i> 在线客服</span>
+            <button class="chat-minimize" id="chatMinimize">&minus;</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-msg bot">
+                <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+                <div class="chat-bubble">您好！欢迎咨询菊池实验室，请问有什么可以帮您？<br><br>
+                    <div class="quick-replies">
+                        <button class="quick-reply" data-msg="我想了解EBSD测试流程">EBSD测试流程</button>
+                        <button class="quick-reply" data-msg="送样有什么要求？">送样要求</button>
+                        <button class="quick-reply" data-msg="测试大概多久出结果？">出结果时间</button>
+                        <button class="quick-reply" data-msg="我想转接人工客服">转人工客服</button>
                     </div>
                 </div>
             </div>
-            <div class="chat-input">
-                <input type="text" id="chatInput" placeholder="输入您的问题...">
-                <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
-            </div>
         </div>
-        <button class="chat-toggle" id="chatToggle">
-            <i class="fas fa-headset"></i>
-            <span class="chat-badge">1</span>
-        </button>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="输入您的问题...">
+            <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
     </div>
-
-    <!-- 回到顶部 -->
-    <button class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
     <script src="js/main.js"></script>
 </body>

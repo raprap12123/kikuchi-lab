@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schmid因子分析 | 菊池实验室</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="site-navbar"></div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../../index.html">首页</a><span>/</span>
+            <a href="../services.html">测试服务</a><span>/</span>
+            <a href="../services.html?cat=postprocess">EBSD后处理</a><span>/</span>
+            <strong>Schmid因子分析</strong>
+        </div>
+    </div>
+
+    <section class="detail-top">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-img-area">
+                    <div class="detail-img-main">
+                        <div class="detail-img-placeholder">
+                            <i class="fas fa-arrows-alt"></i>
+                            <span>后期配图：Schmid因子分布图与滑移系统选择</span>
+                        </div>
+                    </div>
+                    <div class="detail-img-gallery">
+                        <div class="thumb active"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                    </div>
+                </div>
+                <div class="detail-info">
+                    <span class="detail-cat cat-postprocess">EBSD后处理</span>
+                    <h1 class="detail-title" id="detailServiceName">Schmid因子分析</h1>
+                    <p class="detail-subtitle">基于EBSD取向数据计算各滑移系的Schmid因子分布，预测塑性变形行为</p>
+
+                    <div class="detail-stats">
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">3-5天</span>
+                            <span class="detail-stat-label">平均周期</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">2,156</span>
+                            <span class="detail-stat-label">已预约</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">99.2%</span>
+                            <span class="detail-stat-label">满意度</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">多滑移系</span>
+                            <span class="detail-stat-label">分析能力</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-price-row">
+                        <div class="detail-price" id="detailUnitPrice" data-price="400">¥400<small>/样</small></div>
+                        <span class="detail-price-note">批量 ≥10样 享9折</span>
+                    </div>
+
+                    <div class="detail-actions">
+                        <a href="#detail-booking" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> 立即预约</a>
+                        <button class="btn btn-outline-primary btn-lg"><i class="fas fa-phone"></i> 咨询客服</button>
+                    </div>
+
+                    <div class="detail-guarantees">
+                        <span><i class="fas fa-check-circle"></i> 7天免费复测</span>
+                        <span><i class="fas fa-check-circle"></i> 数据原始文件交付</span>
+                        <span><i class="fas fa-check-circle"></i> 专业分析报告</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-content">
+        <div class="container">
+            <div class="detail-tabs">
+                <button class="detail-tab active" data-tab="desc">服务说明</button>
+                <button class="detail-tab" data-tab="params">技术参数</button>
+                <button class="detail-tab" data-tab="sample">送样要求</button>
+                <button class="detail-tab" data-tab="report">报告内容</button>
+            </div>
+
+            <div class="detail-tab-panel active" id="tab-desc">
+                <div class="detail-desc">
+                    <h3>服务介绍</h3>
+                    <p>Schmid因子（m = cosφ·cosλ）反映了外加应力在特定滑移系上分解切应力的大小。通过EBSD取向数据，可以计算每个像素点在给定加载方向下所有滑移系的Schmid因子，识别最易活化的滑移系（最大Schmid因子），预测材料的塑性变形行为。该分析对于理解变形机制、预测屈服行为、分析变形不均匀性等具有重要意义。</p>
+
+                    <h3>分析内容</h3>
+                    <ul>
+                        <li><strong>最大Schmid因子图</strong> — 每个像素点在所有滑移系中的最大Schmid因子分布</li>
+                        <li><strong>活化滑移系图</strong> — 每个像素点预测最易活化的滑移系编号</li>
+                        <li><strong>各滑移系Schmid因子</strong> — 特定滑移系的Schmid因子分布图</li>
+                        <li><strong>Schmid因子统计</strong> — 直方图、平均值、与取向的相关性</li>
+                    </ul>
+
+                    <h3>适用场景</h3>
+                    <p>单轴拉伸/压缩变形机制分析、多滑移/交滑移行为预测、HCP材料基面/棱柱面/锥面滑移竞争、TWIP钢孪生与滑移竞争分析、疲劳裂纹萌生位置预测等。</p>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-params">
+                <table class="param-table">
+                    <tr><th>加载方向</th><td>用户指定（默认沿RD方向）</td></tr>
+                    <tr><th>FCC滑移系</th><td>{111}<110> — 12个滑移系</td></tr>
+                    <tr><th>BCC滑移系</th><td>{110}<111> + {112}<111> + {123}<111></td></tr>
+                    <tr><th>HCP滑移系</th><td>基面/棱柱面/锥面 + 孪生系统</td></tr>
+                    <tr><th>Schmid因子范围</th><td>0 - 0.5</td></tr>
+                    <tr><th>输入格式</th><td>.ctf / .ang / .h5</td></tr>
+                    <tr><th>分析软件</th><td>MTEX</td></tr>
+                </table>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-sample">
+                <div class="detail-desc">
+                    <h3>数据要求</h3>
+                    <ul>
+                        <li>EBSD数据，标定率 > 85%</li>
+                        <li>需明确提供加载方向（相对于样品坐标系）</li>
+                        <li>需提供材料的晶体结构和滑移系统信息</li>
+                        <li>接受 .ctf / .ang / .h5 格式</li>
+                    </ul>
+
+                    <h3>需要提供的信息</h3>
+                    <ul>
+                        <li>外加载荷方向（单轴拉伸/压缩方向）</li>
+                        <li>材料的晶体结构（FCC/BCC/HCP）</li>
+                        <li>关注的滑移系统类型</li>
+                        <li>样品坐标系定义（RD/TD/ND）</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-report">
+                <div class="detail-desc">
+                    <h3>报告包含内容</h3>
+                    <ul>
+                        <li>最大Schmid因子分布图</li>
+                        <li>活化滑移系编号分布图</li>
+                        <li>各滑移系Schmid因子分布图（可选）</li>
+                        <li>Schmid因子统计直方图</li>
+                        <li>Schmid因子与取向（IPF）的对应关系</li>
+                    </ul>
+                    <h3>交付格式</h3>
+                    <p>PDF分析报告 + 高清图片（TIFF 300dpi）+ 数据表（Excel）+ MTEX脚本（如需）。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-booking" id="detail-booking">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">在线预约</span>
+                <h2>预约测试机时</h2>
+                <p>选择时间，填写信息，即刻预约</p>
+            </div>
+            <div class="booking-grid">
+                <div class="booking-calendar-card">
+                    <h3><i class="fas fa-calendar-alt"></i> 选择预约日期</h3>
+                    <div id="detailCalendar"></div>
+                </div>
+                <div class="booking-form-card">
+                    <h3><i class="fas fa-edit"></i> 填写预约信息</h3>
+                    <form id="detailBookingForm">
+                        <div class="form-group">
+                            <label>姓名 *</label>
+                            <input type="text" name="bookName" required placeholder="您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <label>手机号 *</label>
+                            <input type="tel" name="bookPhone" required placeholder="手机号码">
+                        </div>
+                        <div class="form-group">
+                            <label>单位 *</label>
+                            <input type="text" name="bookOrg" required placeholder="学校/公司">
+                        </div>
+                        <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                            <div class="form-group">
+                                <label>预约日期</label>
+                                <input type="date" name="bookDate" id="bookDate">
+                            </div>
+                            <div class="form-group">
+                                <label>样品数量</label>
+                                <input type="number" name="bookQty" min="1" value="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>备注</label>
+                            <textarea name="bookNote" rows="2" placeholder="加载方向、晶体结构、关注的滑移系等"></textarea>
+                        </div>
+                        <div class="form-total" id="formTotal">
+                            预估费用：<span id="detailTotal">¥400</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            <i class="fas fa-paper-plane"></i> 提交预约
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-services">
+        <div class="container">
+            <div class="section-header">
+                <h2>相关推荐</h2>
+            </div>
+            <div class="related-grid">
+                <a href="adv-slip.html" class="related-card">
+                    <h4>滑移系分析与活化识别</h4>
+                    <p>滑移迹线验证</p>
+                    <span class="r-price">¥800<small>/样</small></span>
+                </a>
+                <a href="adv-mprime.html" class="related-card">
+                    <h4>几何相容因子（m'）</h4>
+                    <p>滑移传递分析</p>
+                    <span class="r-price">¥800<small>/样</small></span>
+                </a>
+                <a href="adv-taylor.html" class="related-card">
+                    <h4>Taylor因子分析</h4>
+                    <p>多晶塑性预测</p>
+                    <span class="r-price">¥600<small>/样</small></span>
+                </a>
+                <a href="post-kam.html" class="related-card">
+                    <h4>KAM/GOS/GAM分析</h4>
+                    <p>变形程度表征</p>
+                    <span class="r-price">¥300<small>/样</small></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <div id="site-extras"></div>
+
+    <script src="../../js/components.js"></script>
+    <script src="../../js/detail.js"></script>
+</body>
+</html>

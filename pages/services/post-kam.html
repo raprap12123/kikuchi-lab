@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAM/GOS/GAM分析 | 菊池实验室</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="site-navbar"></div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../../index.html">首页</a><span>/</span>
+            <a href="../services.html">测试服务</a><span>/</span>
+            <a href="../services.html?cat=postprocess">EBSD后处理</a><span>/</span>
+            <strong>KAM/GOS/GAM分析</strong>
+        </div>
+    </div>
+
+    <section class="detail-top">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-img-area">
+                    <div class="detail-img-main">
+                        <div class="detail-img-placeholder">
+                            <i class="fas fa-chart-area"></i>
+                            <span>后期配图：KAM分布图与GOS统计直方图</span>
+                        </div>
+                    </div>
+                    <div class="detail-img-gallery">
+                        <div class="thumb active"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                    </div>
+                </div>
+                <div class="detail-info">
+                    <span class="detail-cat cat-postprocess">EBSD后处理</span>
+                    <h1 class="detail-title" id="detailServiceName">KAM / GOS / GAM 分析</h1>
+                    <p class="detail-subtitle">核平均取向差、晶粒取向展布、晶粒平均取向差分析，定量表征应变/变形程度</p>
+
+                    <div class="detail-stats">
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">2-3天</span>
+                            <span class="detail-stat-label">平均周期</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">7,832</span>
+                            <span class="detail-stat-label">已预约</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">99.4%</span>
+                            <span class="detail-stat-label">满意度</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">定量</span>
+                            <span class="detail-stat-label">应变分析</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-price-row">
+                        <div class="detail-price" id="detailUnitPrice" data-price="300">¥300<small>/样</small></div>
+                        <span class="detail-price-note">批量 ≥10样 享9折</span>
+                    </div>
+
+                    <div class="detail-actions">
+                        <a href="#detail-booking" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> 立即预约</a>
+                        <button class="btn btn-outline-primary btn-lg"><i class="fas fa-phone"></i> 咨询客服</button>
+                    </div>
+
+                    <div class="detail-guarantees">
+                        <span><i class="fas fa-check-circle"></i> 7天免费复测</span>
+                        <span><i class="fas fa-check-circle"></i> 数据原始文件交付</span>
+                        <span><i class="fas fa-check-circle"></i> 专业分析报告</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-content">
+        <div class="container">
+            <div class="detail-tabs">
+                <button class="detail-tab active" data-tab="desc">服务说明</button>
+                <button class="detail-tab" data-tab="params">技术参数</button>
+                <button class="detail-tab" data-tab="sample">送样要求</button>
+                <button class="detail-tab" data-tab="report">报告内容</button>
+            </div>
+
+            <div class="detail-tab-panel active" id="tab-desc">
+                <div class="detail-desc">
+                    <h3>服务介绍</h3>
+                    <p>KAM、GOS和GAM是EBSD数据后处理中最常用的局部取向差分析指标，广泛用于定量表征材料的变形程度、应变分布和储存能。这三个参数从不同尺度反映了晶体内部的取向梯度信息：KAM反映逐点的局部取向差，GAM反映晶粒内的平均取向差，GOS反映晶粒整体的取向展布。</p>
+
+                    <h3>参数说明</h3>
+                    <ul>
+                        <li><strong>KAM（Kernel Average Misorientation）</strong> — 每个像素点与其相邻像素点的平均取向差，反映局部应变分布。通常选择1st-3rd近邻，阈值5°</li>
+                        <li><strong>GOS（Grain Orientation Spread）</strong> — 晶粒内所有像素点取向与晶粒平均取向的偏差，反映整个晶粒的变形程度。常用于区分再结晶晶粒（低GOS）与变形晶粒（高GOS）</li>
+                        <li><strong>GAM（Grain Average Misorientation）</strong> — 晶粒内所有相邻像素对的平均取向差的晶粒平均值</li>
+                    </ul>
+
+                    <h3>适用场景</h3>
+                    <p>变形程度定量评估、应变局部化分析、再结晶/变形区域区分、不同变形条件下的应变对比、焊接热影响区应变分布、喷丸/表面处理效果评估等。</p>
+
+                    <h3>数据来源</h3>
+                    <p>可处理客户提供的已有EBSD数据（.ctf/.ang格式），也可配合我们的EBSD测试服务一起下单。</p>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-params">
+                <table class="param-table">
+                    <tr><th>KAM近邻阶数</th><td>1st / 2nd / 3rd（默认1st）</td></tr>
+                    <tr><th>KAM阈值</th><td>5°（可调，排除晶界贡献）</td></tr>
+                    <tr><th>GOS计算方式</th><td>相对于晶粒平均取向的标准偏差</td></tr>
+                    <tr><th>GAM计算方式</th><td>晶粒内相邻点对取向差的均值</td></tr>
+                    <tr><th>晶界判据</th><td>大角晶界 > 15°，小角晶界 2-15°</td></tr>
+                    <tr><th>数据清理</th><td>CI/MAD过滤 + 噪声点去除</td></tr>
+                    <tr><th>输入格式</th><td>.ctf / .ang / .h5</td></tr>
+                    <tr><th>分析软件</th><td>MTEX + AZtecCrystal</td></tr>
+                </table>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-sample">
+                <div class="detail-desc">
+                    <h3>数据要求</h3>
+                    <p>如提供已有EBSD数据进行后处理：</p>
+                    <ul>
+                        <li>接受 .ctf / .ang / .h5 格式的EBSD数据</li>
+                        <li>数据质量需保证标定率 > 85%</li>
+                        <li>步长需合理（过大会损失局部信息）</li>
+                    </ul>
+
+                    <h3>如需同步EBSD测试</h3>
+                    <ul>
+                        <li>样品需EBSD质量的表面抛光</li>
+                        <li>块状样品 ≤ 20mm × 20mm × 10mm</li>
+                        <li>可与标准EBSD扫描一起下单，享受组合优惠</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-report">
+                <div class="detail-desc">
+                    <h3>报告包含内容</h3>
+                    <ul>
+                        <li>KAM分布图（彩色映射）</li>
+                        <li>KAM统计直方图 + 平均KAM值</li>
+                        <li>GOS分布图（晶粒着色）</li>
+                        <li>GOS统计直方图 + 平均GOS值</li>
+                        <li>GAM分布图 + 统计数据</li>
+                        <li>不同区域/条件的对比分析（如适用）</li>
+                    </ul>
+                    <h3>交付格式</h3>
+                    <p>PDF分析报告 + 高清图片（TIFF 300dpi）+ 统计数据表（Excel）+ MTEX脚本（如需）。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-booking" id="detail-booking">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">在线预约</span>
+                <h2>预约测试机时</h2>
+                <p>选择时间，填写信息，即刻预约</p>
+            </div>
+            <div class="booking-grid">
+                <div class="booking-calendar-card">
+                    <h3><i class="fas fa-calendar-alt"></i> 选择预约日期</h3>
+                    <div id="detailCalendar"></div>
+                </div>
+                <div class="booking-form-card">
+                    <h3><i class="fas fa-edit"></i> 填写预约信息</h3>
+                    <form id="detailBookingForm">
+                        <div class="form-group">
+                            <label>姓名 *</label>
+                            <input type="text" name="bookName" required placeholder="您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <label>手机号 *</label>
+                            <input type="tel" name="bookPhone" required placeholder="手机号码">
+                        </div>
+                        <div class="form-group">
+                            <label>单位 *</label>
+                            <input type="text" name="bookOrg" required placeholder="学校/公司">
+                        </div>
+                        <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                            <div class="form-group">
+                                <label>预约日期</label>
+                                <input type="date" name="bookDate" id="bookDate">
+                            </div>
+                            <div class="form-group">
+                                <label>样品数量</label>
+                                <input type="number" name="bookQty" min="1" value="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>备注</label>
+                            <textarea name="bookNote" rows="2" placeholder="EBSD数据格式、分析参数要求等"></textarea>
+                        </div>
+                        <div class="form-total" id="formTotal">
+                            预估费用：<span id="detailTotal">¥300</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            <i class="fas fa-paper-plane"></i> 提交预约
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-services">
+        <div class="container">
+            <div class="section-header">
+                <h2>相关推荐</h2>
+            </div>
+            <div class="related-grid">
+                <a href="post-gnd.html" class="related-card">
+                    <h4>GND几何必需位错密度</h4>
+                    <p>定量位错密度计算</p>
+                    <span class="r-price">¥500<small>/样</small></span>
+                </a>
+                <a href="post-recrystallization.html" class="related-card">
+                    <h4>再结晶分数统计</h4>
+                    <p>基于GOS的再结晶分析</p>
+                    <span class="r-price">¥300<small>/样</small></span>
+                </a>
+                <a href="ebsd-standard.html" class="related-card">
+                    <h4>标准EBSD扫描</h4>
+                    <p>获取EBSD原始数据</p>
+                    <span class="r-price">¥500<small>/样</small></span>
+                </a>
+                <a href="adv-strain.html" class="related-card">
+                    <h4>应变分区与变形带分析</h4>
+                    <p>变形组织深度解析</p>
+                    <span class="r-price">¥500<small>/样</small></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <div id="site-extras"></div>
+
+    <script src="../../js/components.js"></script>
+    <script src="../../js/detail.js"></script>
+</body>
+</html>

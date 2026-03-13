@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor因子与塑性功分析 | 菊池实验室</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="site-navbar"></div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../../index.html">首页</a><span>/</span>
+            <a href="../services.html">测试服务</a><span>/</span>
+            <a href="../services.html?cat=advanced">高级分析</a><span>/</span>
+            <strong>Taylor因子与塑性功分析</strong>
+        </div>
+    </div>
+
+    <section class="detail-top">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-img-area">
+                    <div class="detail-img-main">
+                        <div class="detail-img-placeholder">
+                            <i class="fas fa-cubes"></i>
+                            <span>后期配图：Taylor因子分布图与取向依赖性</span>
+                        </div>
+                    </div>
+                    <div class="detail-img-gallery">
+                        <div class="thumb active"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                    </div>
+                </div>
+                <div class="detail-info">
+                    <span class="detail-cat cat-advanced">高级分析</span>
+                    <h1 class="detail-title" id="detailServiceName">Taylor因子与塑性功分析</h1>
+                    <p class="detail-subtitle">Full/Relaxed constraints Taylor模型，预测多晶塑性各向异性与变形行为</p>
+
+                    <div class="detail-stats">
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">5-7天</span>
+                            <span class="detail-stat-label">平均周期</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">876</span>
+                            <span class="detail-stat-label">已预约</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">99.0%</span>
+                            <span class="detail-stat-label">满意度</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">FC/RC</span>
+                            <span class="detail-stat-label">模型选择</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-price-row">
+                        <div class="detail-price" id="detailUnitPrice" data-price="600">¥600<small>/样</small></div>
+                        <span class="detail-price-note">批量 ≥10样 享9折</span>
+                    </div>
+
+                    <div class="detail-actions">
+                        <a href="#detail-booking" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> 立即预约</a>
+                        <button class="btn btn-outline-primary btn-lg"><i class="fas fa-phone"></i> 咨询客服</button>
+                    </div>
+
+                    <div class="detail-guarantees">
+                        <span><i class="fas fa-check-circle"></i> 7天免费复测</span>
+                        <span><i class="fas fa-check-circle"></i> 数据原始文件交付</span>
+                        <span><i class="fas fa-check-circle"></i> 专业分析报告</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-content">
+        <div class="container">
+            <div class="detail-tabs">
+                <button class="detail-tab active" data-tab="desc">服务说明</button>
+                <button class="detail-tab" data-tab="params">技术参数</button>
+                <button class="detail-tab" data-tab="sample">送样要求</button>
+                <button class="detail-tab" data-tab="report">报告内容</button>
+            </div>
+
+            <div class="detail-tab-panel active" id="tab-desc">
+                <div class="detail-desc">
+                    <h3>服务介绍</h3>
+                    <p>Taylor因子（M）是描述晶粒在给定外加应变状态下需要多少内部滑移来协调变形的标量。M = sigma_yield / tau_CRSS，连接了宏观屈服应力与微观临界分切应力。通过EBSD取向数据和Taylor模型，可以计算每个晶粒的Taylor因子，预测材料的塑性各向异性、屈服行为和变形织构演变。</p>
+
+                    <h3>模型选择</h3>
+                    <ul>
+                        <li><strong>Full Constraints (FC)</strong> — 假设所有晶粒经历相同的应变张量，适用于细晶等轴组织</li>
+                        <li><strong>Relaxed Constraints (RC)</strong> — 放松部分约束条件，适用于扁平/拉长晶粒（轧制组织）</li>
+                        <li><strong>VPSC</strong> — 粘塑性自洽模型，考虑晶粒间的应力-应变相互作用（可选高级服务）</li>
+                    </ul>
+
+                    <h3>适用场景</h3>
+                    <p>轧制/拉拔材料的塑性各向异性预测、R值（Lankford系数）估算、屈服面预测、变形织构演变预测、材料成形性评估等。</p>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-params">
+                <table class="param-table">
+                    <tr><th>Taylor模型</th><td>Full Constraints / Relaxed Constraints</td></tr>
+                    <tr><th>应变模式</th><td>单轴拉伸/压缩/平面应变/双轴等</td></tr>
+                    <tr><th>FCC滑移系</th><td>{111}<110></td></tr>
+                    <tr><th>BCC滑移系</th><td>{110}<111> + {112}<111></td></tr>
+                    <tr><th>Taylor因子范围</th><td>FCC: 2.0-3.67; BCC: 2.0-3.67</td></tr>
+                    <tr><th>活化滑移系数</th><td>≥ 5（Von Mises准则）</td></tr>
+                    <tr><th>输入格式</th><td>.ctf / .ang / .h5</td></tr>
+                    <tr><th>分析软件</th><td>MTEX / ATEX</td></tr>
+                </table>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-sample">
+                <div class="detail-desc">
+                    <h3>数据要求</h3>
+                    <ul>
+                        <li>EBSD数据，标定率 > 85%</li>
+                        <li>覆盖足够晶粒数（> 500个）以保证统计可靠性</li>
+                        <li>需提供加载方向/应变模式</li>
+                        <li>接受 .ctf / .ang / .h5 格式</li>
+                    </ul>
+
+                    <h3>需要提供的信息</h3>
+                    <ul>
+                        <li>材料晶体结构与滑移系统</li>
+                        <li>外加载荷条件（单轴/双轴/平面应变等）</li>
+                        <li>样品坐标系定义</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-report">
+                <div class="detail-desc">
+                    <h3>报告包含内容</h3>
+                    <ul>
+                        <li>Taylor因子分布图（逐晶粒着色）</li>
+                        <li>Taylor因子统计直方图与平均值</li>
+                        <li>Taylor因子与取向（IPF着色）的对应关系</li>
+                        <li>不同应变模式下的Taylor因子对比（如需）</li>
+                        <li>平均Taylor因子用于屈服应力估算</li>
+                    </ul>
+                    <h3>交付格式</h3>
+                    <p>PDF分析报告 + 高清图片（TIFF 300dpi）+ 数据表 + MTEX脚本（如需）。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detail-booking" id="detail-booking">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">在线预约</span>
+                <h2>预约测试机时</h2>
+                <p>选择时间，填写信息，即刻预约</p>
+            </div>
+            <div class="booking-grid">
+                <div class="booking-calendar-card">
+                    <h3><i class="fas fa-calendar-alt"></i> 选择预约日期</h3>
+                    <div id="detailCalendar"></div>
+                </div>
+                <div class="booking-form-card">
+                    <h3><i class="fas fa-edit"></i> 填写预约信息</h3>
+                    <form id="detailBookingForm">
+                        <div class="form-group">
+                            <label>姓名 *</label>
+                            <input type="text" name="bookName" required placeholder="您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <label>手机号 *</label>
+                            <input type="tel" name="bookPhone" required placeholder="手机号码">
+                        </div>
+                        <div class="form-group">
+                            <label>单位 *</label>
+                            <input type="text" name="bookOrg" required placeholder="学校/公司">
+                        </div>
+                        <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                            <div class="form-group">
+                                <label>预约日期</label>
+                                <input type="date" name="bookDate" id="bookDate">
+                            </div>
+                            <div class="form-group">
+                                <label>样品数量</label>
+                                <input type="number" name="bookQty" min="1" value="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>备注</label>
+                            <textarea name="bookNote" rows="2" placeholder="材料、应变模式、加载方向等"></textarea>
+                        </div>
+                        <div class="form-total" id="formTotal">
+                            预估费用：<span id="detailTotal">¥600</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            <i class="fas fa-paper-plane"></i> 提交预约
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-services">
+        <div class="container">
+            <div class="section-header">
+                <h2>相关推荐</h2>
+            </div>
+            <div class="related-grid">
+                <a href="post-schmid.html" class="related-card">
+                    <h4>Schmid因子分析</h4>
+                    <p>单晶粒滑移预测</p>
+                    <span class="r-price">¥400<small>/样</small></span>
+                </a>
+                <a href="ebsd-texture.html" class="related-card">
+                    <h4>织构分析（极图+ODF）</h4>
+                    <p>定量织构表征</p>
+                    <span class="r-price">¥600<small>/样</small></span>
+                </a>
+                <a href="adv-slip.html" class="related-card">
+                    <h4>滑移系分析与活化识别</h4>
+                    <p>实际滑移系鉴定</p>
+                    <span class="r-price">¥800<small>/样</small></span>
+                </a>
+                <a href="adv-mprime.html" class="related-card">
+                    <h4>几何相容因子（m'）</h4>
+                    <p>滑移传递几何分析</p>
+                    <span class="r-price">¥800<small>/样</small></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <div id="site-extras"></div>
+
+    <script src="../../js/components.js"></script>
+    <script src="../../js/detail.js"></script>
+</body>
+</html>

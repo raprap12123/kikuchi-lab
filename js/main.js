@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initBookingForm();
     initAuthModal();
     initChatWidget();
-    initBackToTop();
+    initFloatingToolbar();
+    initPromoBanner();
+    initHeroSearch();
     initServiceButtons();
     initArticleTabs();
     initUserCenter();
@@ -58,8 +60,9 @@ function initCountUp() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const el = entry.target;
-                const target = parseInt(el.dataset.target);
-                animateCount(el, target);
+                const target = parseFloat(el.dataset.target);
+                const decimal = parseInt(el.dataset.decimal) || 0;
+                animateCount(el, target, decimal);
                 observer.unobserve(el);
             }
         });
@@ -68,14 +71,19 @@ function initCountUp() {
     counters.forEach(c => observer.observe(c));
 }
 
-function animateCount(el, target) {
+function animateCount(el, target, decimal) {
     const duration = 2000;
     const start = performance.now();
     function update(now) {
         const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(eased * target).toLocaleString();
+        const current = eased * target;
+        if (decimal > 0) {
+            el.textContent = current.toFixed(decimal);
+        } else {
+            el.textContent = Math.floor(current).toLocaleString();
+        }
         if (progress < 1) requestAnimationFrame(update);
     }
     requestAnimationFrame(update);
@@ -391,21 +399,16 @@ function updateUserUI(user) {
 
 // ========== Chat Widget ==========
 function initChatWidget() {
-    const toggle = document.getElementById('chatToggle');
-    const window_ = document.getElementById('chatWindow');
+    const chatWindow = document.getElementById('chatWindow');
     const minimize = document.getElementById('chatMinimize');
     const input = document.getElementById('chatInput');
     const sendBtn = document.getElementById('chatSend');
     const body = document.getElementById('chatBody');
-    const badge = toggle.querySelector('.chat-badge');
 
-    toggle.addEventListener('click', () => {
-        window_.classList.toggle('active');
-        badge.style.display = 'none';
-    });
+    if (!chatWindow || !minimize || !input || !sendBtn || !body) return;
 
     minimize.addEventListener('click', () => {
-        window_.classList.remove('active');
+        chatWindow.classList.remove('active');
     });
 
     function addMessage(text, isUser) {
@@ -420,7 +423,6 @@ function initChatWidget() {
     }
 
     function botReply(userMsg) {
-        // 简单关键词匹配
         const replies = {
             '流程': 'EBSD测试流程：<br>1. 在线提交预约<br>2. 寄送/自送样品<br>3. 技术员进行抛光+扫描<br>4. 数据处理与分析<br>5. 报告交付（邮件+快递）<br><br>整个流程约5-7个工作日。',
             '送样': '送样要求：<br>- 金属样品建议尺寸 ≤ 20×20×10mm<br>- 做好防震防潮包装<br>- 随附样品信息表（可在预约后下载）<br>- 危险/放射性样品请提前告知<br><br>地址：北京市海淀区中关村科技园',
@@ -464,14 +466,145 @@ function initChatWidget() {
     });
 }
 
-// ========== Back to Top ==========
-function initBackToTop() {
-    const btn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-        btn.classList.toggle('visible', window.scrollY > 500);
+// ========== Floating Toolbar ==========
+function initFloatingToolbar() {
+    const chatBtn = document.getElementById('toolbarChat');
+    const backTopBtn = document.getElementById('toolbarBackTop');
+    const chatWindow = document.getElementById('chatWindow');
+
+    if (chatBtn && chatWindow) {
+        chatBtn.addEventListener('click', () => {
+            chatWindow.classList.toggle('active');
+        });
+    }
+
+    if (backTopBtn) {
+        backTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+}
+
+// ========== Promotional Banner Carousel ==========
+function initPromoBanner() {
+    const banner = document.getElementById('promoBanner');
+    if (!banner) return;
+
+    const slides = banner.querySelectorAll('.promo-slide');
+    const dots = banner.querySelectorAll('.promo-dot');
+    const closeBtn = document.getElementById('promoClose');
+    let currentIndex = 0;
+    let interval;
+
+    function goToSlide(index) {
+        slides.forEach(s => s.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        currentIndex = index;
+        slides[currentIndex].classList.add('active');
+        dots[currentIndex].classList.add('active');
+    }
+
+    function nextSlide() {
+        goToSlide((currentIndex + 1) % slides.length);
+    }
+
+    function startAutoRotate() {
+        interval = setInterval(nextSlide, 4000);
+    }
+
+    function stopAutoRotate() {
+        clearInterval(interval);
+    }
+
+    // Dot click navigation
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            stopAutoRotate();
+            goToSlide(parseInt(dot.dataset.index));
+            startAutoRotate();
+        });
     });
-    btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Close button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            banner.classList.add('hidden');
+            stopAutoRotate();
+        });
+    }
+
+    // Pause on hover
+    banner.addEventListener('mouseenter', stopAutoRotate);
+    banner.addEventListener('mouseleave', startAutoRotate);
+
+    startAutoRotate();
+}
+
+// ========== Animated Hero Search Placeholder ==========
+function initHeroSearch() {
+    const input = document.getElementById('heroSearchInput');
+    const placeholder = document.getElementById('heroSearchPlaceholder');
+    if (!input || !placeholder) return;
+
+    const texts = ['EBSD抛光', 'ECCI位错成像', '球形标定', '织构分析', 'KAM分析'];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 120;
+
+    function type() {
+        // Hide animated placeholder when user is typing
+        if (input.value.length > 0) {
+            placeholder.classList.add('hidden');
+            return;
+        }
+        placeholder.classList.remove('hidden');
+
+        const currentText = texts[textIndex];
+
+        if (isDeleting) {
+            placeholder.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 60;
+        } else {
+            placeholder.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 120;
+        }
+
+        if (!isDeleting && charIndex === currentText.length) {
+            // Pause at end of word
+            typingSpeed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+            typingSpeed = 300;
+        }
+
+        setTimeout(type, typingSpeed);
+    }
+
+    // Start typing animation
+    type();
+
+    // Hide placeholder when input is focused and has text
+    input.addEventListener('input', () => {
+        if (input.value.length > 0) {
+            placeholder.classList.add('hidden');
+        }
+    });
+
+    input.addEventListener('focus', () => {
+        if (input.value.length > 0) {
+            placeholder.classList.add('hidden');
+        }
+    });
+
+    input.addEventListener('blur', () => {
+        if (input.value.length === 0) {
+            placeholder.classList.remove('hidden');
+        }
     });
 }
 
