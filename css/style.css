@@ -2852,13 +2852,18 @@ a {
     .recharge-banner { padding: 32px 20px; }
     .recharge-content h2 { font-size: 24px; }
 
-    /* Modal - full screen on mobile */
+    /* Modal - full screen on mobile, above tab bar */
+    .modal-overlay {
+        z-index: 2000;
+    }
     .modal {
         width: 100%;
         max-width: 100vw;
-        min-height: 100vh;
+        max-height: 100vh;
+        min-height: auto;
         border-radius: 0;
-        padding: 24px 20px;
+        padding: 24px 20px 80px;
+        overflow-y: auto;
     }
     .modal-close {
         width: 44px;
@@ -2866,13 +2871,19 @@ a {
         top: 12px;
         right: 12px;
     }
+    .modal-tab {
+        font-size: 16px;
+        padding: 14px 12px;
+    }
 
     .modal-wide {
         flex-direction: column;
         width: 100%;
         max-width: 100vw;
-        min-height: 100vh;
+        max-height: 100vh;
+        min-height: auto;
         border-radius: 0;
+        padding-bottom: 80px;
     }
     .user-center { flex-direction: column; min-height: auto; }
     .uc-sidebar {
