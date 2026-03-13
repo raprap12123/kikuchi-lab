@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>锐测科技 | EBSD抛光与测试服务中心</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 顶部通知栏 -->
+    <div class="top-bar">
+        <div class="container">
+            <span><i class="fas fa-clock"></i> 工作时间：周一至周五 8:30 - 17:30</span>
+            <div class="top-bar-right">
+                <a href="tel:400-888-9999"><i class="fas fa-phone"></i> 400-888-9999</a>
+                <a href="mailto:service@ruice-tech.com"><i class="fas fa-envelope"></i> service@ruice-tech.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-microscope"></i></span>
+                <span class="logo-text">锐测科技<small>RUICE TECH</small></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">首页</a></li>
+                <li class="dropdown">
+                    <a href="pages/services.html">测试服务 <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="pages/services.html?cat=polishing">EBSD抛光制样</a>
+                        <a href="pages/services.html?cat=ebsd">EBSD测试分析</a>
+                        <a href="pages/services.html?cat=ecci">ECCI分析</a>
+                        <a href="pages/services.html?cat=postprocess">EBSD后处理</a>
+                        <a href="pages/services.html?cat=advanced">高级分析</a>
+                    </div>
+                </li>
+                <li><a href="#simulation">模拟计算</a></li>
+                <li><a href="#articles">EBSD干货</a></li>
+                <li><a href="#about">关于我们</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#booking" class="btn btn-primary btn-nav">立即预约</a>
+                <button class="btn-login" id="loginBtn"><i class="fas fa-user"></i> 登录</button>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero区域 -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="container hero-content">
+            <div class="hero-badge">专业EBSD样品制备与分析</div>
+            <h1>精准表征<br><span class="gradient-text">微观世界</span></h1>
+            <p class="hero-desc">一站式EBSD抛光制样与测试分析服务，配备国际顶尖设备，<br>7天出具专业报告，助力您的科研与产业创新</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn btn-primary btn-lg">
+                    <i class="fas fa-calendar-check"></i> 在线预约测试
+                </a>
+                <a href="#services" class="btn btn-outline btn-lg">
+                    <i class="fas fa-flask"></i> 查看服务项目
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5000">0</span>+
+                    <span class="stat-label">服务客户</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="20000">0</span>+
+                    <span class="stat-label">测试样品</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="99">0</span>%
+                    <span class="stat-label">客户满意度</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="7">0</span>天
+                    <span class="stat-label">出具报告</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 合作客户 -->
+    <section class="clients-bar">
+        <div class="container">
+            <p class="clients-label">受到国内顶尖科研机构信赖</p>
+            <div class="clients-logos">
+                <div class="client-logo">中国科学院</div>
+                <div class="client-logo">清华大学</div>
+                <div class="client-logo">北京大学</div>
+                <div class="client-logo">上海交通大学</div>
+                <div class="client-logo">浙江大学</div>
+                <div class="client-logo">中南大学</div>
+                <div class="client-logo">宝钢集团</div>
+                <div class="client-logo">中航工业</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务项目 -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">我们的服务</span>
+                <h2>EBSD全流程解决方案</h2>
+                <p>从样品抛光到高级数据分析，提供MTEX/OIM之外的独家能力</p>
+            </div>
+            <div class="services-grid services-grid-5">
+                <a href="pages/services.html?cat=polishing" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-gem"></i></div>
+                        <h3>EBSD抛光制样</h3>
+                        <p>机械研磨、OPS振动抛光、CP/FIB离子抛光、电解抛光，确保零应力层</p>
+                        <div class="service-price">
+                            <span class="price">¥150</span><span class="price-unit">/样起</span>
+                        </div>
+                        <span class="card-arrow"><i class="fas fa-arrow-right"></i> 查看6项服务</span>
+                    </div>
+                </a>
+                <a href="pages/services.html?cat=ebsd" class="service-card-link">
+                    <div class="service-card featured">
+                        <div class="featured-badge">热门</div>
+                        <div class="service-icon"><i class="fas fa-microscope"></i></div>
+                        <h3>EBSD测试分析</h3>
+                        <p>标准扫描、大面积拼图、织构分析、原位加热、TKD透射、HR-EBSD</p>
+                        <div class="service-price">
+                            <span class="price">¥500</span><span class="price-unit">/样起</span>
+                        </div>
+                        <span class="card-arrow"><i class="fas fa-arrow-right"></i> 查看6项服务</span>
+                    </div>
+                </a>
+                <a href="pages/services.html?cat=ecci" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #10b981, #059669); color: white;"><i class="fas fa-eye"></i></div>
+                        <h3>ECCI分析</h3>
+                        <p>位错成像、精确衍射条件控制、ECCI虚拟模拟、EBSD+ECCI联合</p>
+                        <div class="service-price">
+                            <span class="price">¥600</span><span class="price-unit">/样起</span>
+                        </div>
+                        <span class="card-arrow"><i class="fas fa-arrow-right"></i> 查看4项服务</span>
+                    </div>
+                </a>
+                <a href="pages/services.html?cat=postprocess" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-chart-bar"></i></div>
+                        <h3>EBSD后处理</h3>
+                        <p>KAM/GND、再结晶分数、晶界GBCD、Schmid因子、母相重构</p>
+                        <div class="service-price">
+                            <span class="price">¥300</span><span class="price-unit">/样起</span>
+                        </div>
+                        <span class="card-arrow"><i class="fas fa-arrow-right"></i> 查看6项服务</span>
+                    </div>
+                </a>
+                <a href="pages/services.html?cat=advanced" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #ef4444, #ec4899); color: white;"><i class="fas fa-brain"></i></div>
+                        <h3>高级分析</h3>
+                        <p>球形标定、字典标定、滑移系分析、几何相容因子m'、Taylor因子</p>
+                        <div class="service-price">
+                            <span class="price">¥500</span><span class="price-unit">/样起</span>
+                        </div>
+                        <span class="card-arrow"><i class="fas fa-arrow-right"></i> 查看8项服务</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 模拟计算 -->
+    <section class="simulation" id="simulation">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">模拟计算</span>
+                <h2>EBSD相关模拟与仿真服务</h2>
+                <p>结合实验数据与计算模拟，深度理解材料变形与断裂机制</p>
+            </div>
+            <div class="sim-grid">
+                <div class="sim-card">
+                    <div class="sim-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>ECCI虚拟模拟</h3>
+                    <p>基于Howie-Whelan动力学衍射理论模拟ECCI图像，辅助位错Burgers矢量鉴定，对比实验图像进行缺陷解析</p>
+                    <div class="sim-tags">
+                        <span>动力学衍射</span><span>g·b分析</span><span>位错鉴定</span>
+                    </div>
+                    <div class="sim-footer">
+                        <span class="sim-price">¥1,500<small>/次</small></span>
+                        <a href="pages/services/ecci-virtual.html" class="btn btn-primary btn-sm">了解详情</a>
+                    </div>
+                </div>
+                <div class="sim-card">
+                    <div class="sim-icon"><i class="fas fa-cubes"></i></div>
+                    <h3>CPFEM晶体塑性有限元</h3>
+                    <p>基于真实EBSD微观组织建立晶体塑性有限元模型，模拟变形过程中应力/应变场演化与滑移系活化</p>
+                    <div class="sim-tags">
+                        <span>DAMASK</span><span>Abaqus UMAT</span><span>微观力学</span>
+                    </div>
+                    <div class="sim-footer">
+                        <span class="sim-price">¥3,000<small>/次起</small></span>
+                        <a href="#booking" class="btn btn-primary btn-sm">咨询预约</a>
+                    </div>
+                </div>
+                <div class="sim-card">
+                    <div class="sim-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Dream.3D微观组织重构</h3>
+                    <p>基于EBSD数据进行3D微观组织统计重构，生成代表性体积元（RVE），用于后续力学/热学模拟</p>
+                    <div class="sim-tags">
+                        <span>RVE生成</span><span>3D重构</span><span>统计等价</span>
+                    </div>
+                    <div class="sim-footer">
+                        <span class="sim-price">¥2,000<small>/次起</small></span>
+                        <a href="#booking" class="btn btn-primary btn-sm">咨询预约</a>
+                    </div>
+                </div>
+                <div class="sim-card">
+                    <div class="sim-icon"><i class="fas fa-brain"></i></div>
+                    <h3>织构演化模拟（VPSC）</h3>
+                    <p>粘塑性自洽模型模拟变形过程中织构演化，预测不同加工路径下的织构发展趋势</p>
+                    <div class="sim-tags">
+                        <span>VPSC</span><span>Taylor模型</span><span>织构预测</span>
+                    </div>
+                    <div class="sim-footer">
+                        <span class="sim-price">¥2,500<small>/次起</small></span>
+                        <a href="#booking" class="btn btn-primary btn-sm">咨询预约</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务流程 -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">服务流程</span>
+                <h2>从下单到报告，全程透明可追踪</h2>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-icon"><i class="fas fa-user-plus"></i></div>
+                    <div class="step-line"></div>
+                    <h4>注册登录</h4>
+                    <p>创建账号，完善信息</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon"><i class="fas fa-mouse-pointer"></i></div>
+                    <div class="step-line"></div>
+                    <h4>选择服务</h4>
+                    <p>浏览项目，查看详情</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon"><i class="fas fa-calendar-check"></i></div>
+                    <div class="step-line"></div>
+                    <h4>在线预约</h4>
+                    <p>选定日期，提交订单</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon"><i class="fas fa-shipping-fast"></i></div>
+                    <div class="step-line"></div>
+                    <h4>寄送样品</h4>
+                    <p>快递或自送至实验室</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon"><i class="fas fa-microscope"></i></div>
+                    <div class="step-line"></div>
+                    <h4>测试进行</h4>
+                    <p>专业技术员操作测试</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon"><i class="fas fa-file-alt"></i></div>
+                    <h4>报告交付</h4>
+                    <p>数据+报告邮件送达</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 在线预约 -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">在线预约</span>
+                <h2>提交测试预约</h2>
+                <p>填写以下信息，我们将在1个工作日内确认您的预约</p>
+            </div>
+            <div class="booking-wrapper">
+                <div class="booking-form-container">
+                    <form class="booking-form" id="bookingForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-user"></i> 姓名 *</label>
+                                <input type="text" name="name" required placeholder="请输入您的姓名">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-phone"></i> 手机号 *</label>
+                                <input type="tel" name="phone" required placeholder="请输入手机号">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-building"></i> 单位名称 *</label>
+                                <input type="text" name="organization" required placeholder="学校/公司名称">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-envelope"></i> 邮箱</label>
+                                <input type="email" name="email" placeholder="用于接收报告">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-flask"></i> 测试项目 *</label>
+                                <select name="service" id="serviceSelect" required>
+                                    <option value="">请选择测试项目</option>
+                                    <optgroup label="EBSD抛光制样">
+                                        <option value="机械研磨+OPS振动抛光 ¥200/样">机械研磨+OPS振动抛光 — ¥200/样</option>
+                                        <option value="离子束截面抛光 ¥500/样">离子束截面抛光（CP）— ¥500/样</option>
+                                        <option value="聚焦离子束抛光 ¥800/样">聚焦离子束抛光（FIB）— ¥800/样</option>
+                                        <option value="电解抛光 ¥150/样">电解抛光 — ¥150/样</option>
+                                        <option value="长时振动抛光 ¥350/样">长时振动抛光（8h+）— ¥350/样</option>
+                                        <option value="多步复合抛光 ¥600/样">多步复合抛光（机械+CP/FIB）— ¥600/样</option>
+                                    </optgroup>
+                                    <optgroup label="EBSD测试分析">
+                                        <option value="标准EBSD扫描 ¥500/样">标准EBSD扫描（单区域）— ¥500/样</option>
+                                        <option value="大面积拼图扫描 ¥800/样">大面积拼图扫描 — ¥800/样</option>
+                                        <option value="织构分析 ¥600/样">织构分析（极图+ODF）— ¥600/样</option>
+                                        <option value="原位加热EBSD ¥1500/样">原位加热EBSD — ¥1500/样</option>
+                                        <option value="TKD透射EBSD ¥1200/样">TKD透射EBSD — ¥1200/样</option>
+                                        <option value="HR-EBSD ¥1800/样">高分辨HR-EBSD — ¥1800/样</option>
+                                    </optgroup>
+                                    <optgroup label="ECCI分析">
+                                        <option value="ECCI位错成像 ¥600/样">ECCI位错成像 — ¥600/样</option>
+                                        <option value="ECCI精确衍射条件 ¥1000/样">ECCI精确衍射条件控制 — ¥1000/样</option>
+                                        <option value="ECCI虚拟模拟 ¥1500/次">ECCI虚拟模拟 — ¥1500/次</option>
+                                        <option value="EBSD+ECCI联合分析 ¥1200/样">EBSD+ECCI联合分析 — ¥1200/样</option>
+                                    </optgroup>
+                                    <optgroup label="EBSD后处理">
+                                        <option value="KAM/GOS/GND分析 ¥300/样">KAM/GOS/GND分析 — ¥300/样</option>
+                                        <option value="GND位错密度 ¥500/样">GND几何必需位错密度 — ¥500/样</option>
+                                        <option value="再结晶分数统计 ¥300/样">再结晶分数统计 — ¥300/样</option>
+                                        <option value="晶界特征分布 ¥400/样">晶界特征分布（GBCD）— ¥400/样</option>
+                                        <option value="Schmid因子分析 ¥400/样">Schmid因子分析 — ¥400/样</option>
+                                        <option value="母相重构 ¥800/样">母相重构 — ¥800/样</option>
+                                    </optgroup>
+                                    <optgroup label="高级分析">
+                                        <option value="球形标定 ¥1000/样">球形标定（Spherical Indexing）— ¥1000/样</option>
+                                        <option value="字典标定 ¥1200/样">字典标定（Dictionary Indexing）— ¥1200/样</option>
+                                        <option value="滑移系分析 ¥800/样">滑移系分析与活化识别 — ¥800/样</option>
+                                        <option value="几何相容因子 ¥800/样">几何相容因子（m'）— ¥800/样</option>
+                                        <option value="Taylor因子 ¥600/样">Taylor因子与塑性功 — ¥600/样</option>
+                                        <option value="取向关系测定 ¥600/样">取向关系（OR）精确测定 — ¥600/样</option>
+                                        <option value="定制化分析 ¥2000/次起">定制化EBSD数据分析 — ¥2000/次起</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-sort-numeric-up"></i> 样品数量 *</label>
+                                <input type="number" name="quantity" min="1" value="1" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-info-circle"></i> 样品信息</label>
+                            <textarea name="sampleInfo" rows="3" placeholder="请描述样品材料、尺寸、特殊要求等信息，例如：316L不锈钢，10×10×5mm，需要观察截面组织"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-calendar"></i> 期望测试日期</label>
+                                <input type="date" name="preferDate">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-truck"></i> 送样方式</label>
+                                <select name="delivery">
+                                    <option value="自送">自送到实验室</option>
+                                    <option value="快递">快递寄送</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-total" id="formTotal">
+                            预估费用：<span id="totalPrice">¥0</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            <i class="fas fa-paper-plane"></i> 提交预约
+                        </button>
+                    </form>
+                </div>
+                <div class="booking-sidebar">
+                    <div class="sidebar-card">
+                        <h4><i class="fas fa-shipping-fast"></i> 送样流程</h4>
+                        <div class="flow-steps">
+                            <div class="flow-step">
+                                <div class="step-num">1</div>
+                                <div>
+                                    <strong>在线预约</strong>
+                                    <p>填写预约表单</p>
+                                </div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="step-num">2</div>
+                                <div>
+                                    <strong>寄送样品</strong>
+                                    <p>快递或亲自送样</p>
+                                </div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="step-num">3</div>
+                                <div>
+                                    <strong>测试进行</strong>
+                                    <p>专业技术员操作</p>
+                                </div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="step-num">4</div>
+                                <div>
+                                    <strong>报告交付</strong>
+                                    <p>邮件发送报告</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4><i class="fas fa-map-marker-alt"></i> 送样地址</h4>
+                        <p>北京市海淀区中关村科技园<br>锐测科技实验楼 A座 302</p>
+                        <p><strong>收件人：</strong>样品接收组<br>
+                        <strong>电话：</strong>400-888-9999</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4><i class="fas fa-exclamation-triangle"></i> 送样须知</h4>
+                        <ul class="notice-list">
+                            <li>样品需做好防护包装</li>
+                            <li>随附样品信息单</li>
+                            <li>危险品请提前告知</li>
+                            <li>样品留存3个月</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EBSD干货推文 -->
+    <section class="articles" id="articles">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">EBSD干货</span>
+                <h2>技术推文与科研资讯</h2>
+                <p>深入浅出的EBSD技术文章，助力您的科研工作</p>
+            </div>
+            <div class="articles-tabs">
+                <button class="article-tab active" data-category="all">全部</button>
+                <button class="article-tab" data-category="tutorial">入门教程</button>
+                <button class="article-tab" data-category="case">测试案例</button>
+                <button class="article-tab" data-category="technique">技术前沿</button>
+                <button class="article-tab" data-category="faq">常见问题</button>
+            </div>
+            <div class="articles-grid" id="articlesGrid">
+                <article class="article-card" data-category="tutorial">
+                    <div class="article-img">
+                        <div class="article-img-placeholder"><i class="fas fa-graduation-cap"></i></div>
+                        <span class="article-tag tag-tutorial">入门教程</span>
+                    </div>
+                    <div class="article-body">
+                        <h3>EBSD新手必读：从原理到应用的完整指南</h3>
+                        <p>什么是EBSD？电子背散射衍射技术的基本原理、适用材料、能获取的信息类型，以及与XRD织构分析的对比...</p>
+                        <div class="article-meta">
+                            <span><i class="fas fa-clock"></i> 2024-12-15</span>
+                            <span><i class="fas fa-eye"></i> 3,842</span>
+                            <span><i class="fas fa-thumbs-up"></i> 186</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card" data-category="tutorial">
+                    <div class="article-img">
+                        <div class="article-img-placeholder"><i class="fas fa-gem"></i></div>
+                        <span class="article-tag tag-tutorial">入门教程</span>
+                    </div>
+                    <div class="article-body">
+                        <h3>EBSD样品制备全攻略：不同材料的抛光方案</h3>
+                        <p>针对钢铁、铝合金、钛合金、铜合金、镍基高温合金等不同材料，详解机械抛光、振动抛光、离子抛光的最佳参数...</p>
+                        <div class="article-meta">
+                            <span><i class="fas fa-clock"></i> 2024-12-08</span>
+                            <span><i class="fas fa-eye"></i> 2,915</span>
+                            <span><i class="fas fa-thumbs-up"></i> 142</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card" data-category="case">
+                    <div class="article-img">
+                        <div class="article-img-placeholder"><i class="fas fa-flask"></i></div>
+                        <span class="article-tag tag-case">测试案例</span>
+                    </div>
+                    <div class="article-body">
+                        <h3>增材制造316L不锈钢的EBSD织构分析案例</h3>
+                        <p>SLM成形316L不锈钢的柱状晶取向特征、沿建造方向的织构演变、再结晶退火后的晶粒细化效果分析...</p>
+                        <div class="article-meta">
+                            <span><i class="fas fa-clock"></i> 2024-11-28</span>
+                            <span><i class="fas fa-eye"></i> 2,103</span>
+                            <span><i class="fas fa-thumbs-up"></i> 98</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card" data-category="technique">
+                    <div class="article-img">
+                        <div class="article-img-placeholder"><i class="fas fa-rocket"></i></div>
+                        <span class="article-tag tag-technique">技术前沿</span>
+                    </div>
+                    <div class="article-body">
+                        <h3>TKD技术：纳米级晶粒的EBSD解决方案</h3>
+                        <p>透射菊池衍射（TKD/t-EBSD）可将空间分辨率提升至2-10nm，适用于纳米晶、薄膜、界面等超细组织的表征...</p>
+                        <div class="article-meta">
+                            <span><i class="fas fa-clock"></i> 2024-11-15</span>
+                            <span><i class="fas fa-eye"></i> 1,876</span>
+                            <span><i class="fas fa-thumbs-up"></i> 112</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card" data-category="case">
+                    <div class="article-img">
+                        <div class="article-img-placeholder"><i class="fas fa-fire"></i></div>
+                        <span class="article-tag tag-case">测试案例</span>
+                    </div>
+                    <div class="article-body">
+                        <h3>双相钛合金热变形组织的原位EBSD观察</h3>
+                        <p>TC4钛合金在不同温度下热压缩变形过程中α/β两相的动态再结晶行为，利用原位加热EBSD实时观测...</p>
+                        <div class="article-meta">
+                            <span><i class="fas fa-clock"></i> 2024-11-05</span>
+                            <span><i class="fas fa-eye"></i> 1,654</span>
+                            <span><i class="fas fa-thumbs-up"></i> 89</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card" data-category="faq">
+                    <div class="article-img">
+                        <div class="article-img-placeholder"><i class="fas fa-question-circle"></i></div>
+                        <span class="article-tag tag-faq">常见问题</span>
+                    </div>
+                    <div class="article-body">
+                        <h3>EBSD标定率低怎么办？影响因素与解决方案</h3>
+                        <p>标定率是EBSD数据质量的核心指标。从样品制备、扫描参数、相设置等角度分析标定率低的原因及对策...</p>
+                        <div class="article-meta">
+                            <span><i class="fas fa-clock"></i> 2024-10-25</span>
+                            <span><i class="fas fa-eye"></i> 4,210</span>
+                            <span><i class="fas fa-thumbs-up"></i> 203</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="articles-more">
+                <a href="#" class="btn btn-outline-dark btn-lg">查看更多文章 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 充值优惠 -->
+    <section class="recharge" id="recharge">
+        <div class="container">
+            <div class="recharge-banner">
+                <div class="recharge-content">
+                    <span class="section-tag" style="background:rgba(255,255,255,0.2);color:white;">限时优惠</span>
+                    <h2>预存充值 享额外赠送</h2>
+                    <p>预存测试费用，享受高额赠送，测试更划算</p>
+                </div>
+                <div class="recharge-cards">
+                    <div class="recharge-card">
+                        <div class="recharge-amount">¥1,000</div>
+                        <div class="recharge-bonus">赠 <strong>¥50</strong></div>
+                        <div class="recharge-total">实得 ¥1,050</div>
+                        <button class="btn btn-primary btn-sm btn-recharge" data-amount="1000" data-bonus="50">立即充值</button>
+                    </div>
+                    <div class="recharge-card popular">
+                        <div class="recharge-badge">最受欢迎</div>
+                        <div class="recharge-amount">¥3,000</div>
+                        <div class="recharge-bonus">赠 <strong>¥300</strong></div>
+                        <div class="recharge-total">实得 ¥3,300</div>
+                        <button class="btn btn-primary btn-sm btn-recharge" data-amount="3000" data-bonus="300">立即充值</button>
+                    </div>
+                    <div class="recharge-card">
+                        <div class="recharge-amount">¥5,000</div>
+                        <div class="recharge-bonus">赠 <strong>¥600</strong></div>
+                        <div class="recharge-total">实得 ¥5,600</div>
+                        <button class="btn btn-primary btn-sm btn-recharge" data-amount="5000" data-bonus="600">立即充值</button>
+                    </div>
+                    <div class="recharge-card">
+                        <div class="recharge-amount">¥10,000</div>
+                        <div class="recharge-bonus">赠 <strong>¥1,500</strong></div>
+                        <div class="recharge-total">实得 ¥11,500</div>
+                        <button class="btn btn-primary btn-sm btn-recharge" data-amount="10000" data-bonus="1500">立即充值</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-tag">关于我们</span>
+                    <h2>专注材料微观表征 10 年</h2>
+                    <p>锐测科技是国内领先的EBSD测试与样品制备服务平台，拥有多台进口高端设备和经验丰富的技术团队。我们致力于为高校、科研院所和工业企业提供专业、高效、可靠的材料表征服务。</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <strong>ISO 17025认证</strong>
+                                <p>国际标准实验室管理体系</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>博士技术团队</strong>
+                                <p>5位博士+8位硕士技术员</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-cogs"></i>
+                            <div>
+                                <strong>顶尖设备</strong>
+                                <p>ZEISS/TESCAN/Bruker全线进口</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-file-alt"></i>
+                            <div>
+                                <strong>规范报告</strong>
+                                <p>符合SCI论文发表要求</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-img-placeholder">
+                        <i class="fas fa-microscope"></i>
+                        <span>实验室实拍</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户注册/登录模态框 -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="login">登录</button>
+                <button class="modal-tab" data-tab="register">注册</button>
+            </div>
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label>手机号 / 邮箱</label>
+                    <input type="text" name="account" required placeholder="请输入手机号或邮箱">
+                </div>
+                <div class="form-group">
+                    <label>密码</label>
+                    <input type="password" name="password" required placeholder="请输入密码">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">登录</button>
+                <div class="auth-links">
+                    <a href="#">忘记密码？</a>
+                </div>
+            </form>
+            <form class="auth-form" id="registerForm" style="display:none;">
+                <div class="form-group">
+                    <label>姓名 *</label>
+                    <input type="text" name="regName" required placeholder="您的姓名">
+                </div>
+                <div class="form-group">
+                    <label>手机号 *</label>
+                    <div class="sms-row">
+                        <input type="tel" name="regPhone" required placeholder="手机号">
+                        <button type="button" class="btn btn-outline btn-sms" id="sendSms">发送验证码</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>验证码 *</label>
+                    <input type="text" name="smsCode" required placeholder="6位验证码">
+                </div>
+                <div class="form-group">
+                    <label>单位名称 *</label>
+                    <input type="text" name="regOrg" required placeholder="学校/公司">
+                </div>
+                <div class="form-group">
+                    <label>邮箱</label>
+                    <input type="email" name="regEmail" placeholder="用于接收报告">
+                </div>
+                <div class="form-group">
+                    <label>设置密码 *</label>
+                    <input type="password" name="regPassword" required placeholder="至少6位密码">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">注册</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 预约成功弹窗 -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal modal-success">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>预约提交成功！</h3>
+            <p>我们将在1个工作日内与您联系确认</p>
+            <p class="order-number">预约编号：<span id="orderNumber"></span></p>
+            <button class="btn btn-primary" id="successClose">确定</button>
+        </div>
+    </div>
+
+    <!-- 用户中心模态框 -->
+    <div class="modal-overlay" id="userCenterModal">
+        <div class="modal modal-wide">
+            <button class="modal-close" id="ucClose">&times;</button>
+            <div class="user-center">
+                <div class="uc-sidebar">
+                    <div class="uc-avatar"><i class="fas fa-user-circle"></i></div>
+                    <div class="uc-name" id="ucName">用户</div>
+                    <div class="uc-org" id="ucOrg">单位</div>
+                    <div class="uc-balance">
+                        余额：<strong id="ucBalance">¥0</strong>
+                    </div>
+                    <nav class="uc-nav">
+                        <a class="uc-nav-item active" data-panel="orders"><i class="fas fa-clipboard-list"></i> 我的订单</a>
+                        <a class="uc-nav-item" data-panel="profile"><i class="fas fa-user-edit"></i> 个人信息</a>
+                        <a class="uc-nav-item" data-panel="recharge-history"><i class="fas fa-wallet"></i> 充值记录</a>
+                        <a class="uc-nav-item" data-panel="favorites"><i class="fas fa-heart"></i> 收藏文章</a>
+                    </nav>
+                    <button class="btn btn-sm btn-outline-danger" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> 退出登录</button>
+                </div>
+                <div class="uc-main">
+                    <!-- 我的订单 -->
+                    <div class="uc-panel active" id="panel-orders">
+                        <h3><i class="fas fa-clipboard-list"></i> 我的订单</h3>
+                        <div class="order-filters">
+                            <button class="order-filter active" data-status="all">全部</button>
+                            <button class="order-filter" data-status="待确认">待确认</button>
+                            <button class="order-filter" data-status="测试中">测试中</button>
+                            <button class="order-filter" data-status="已完成">已完成</button>
+                        </div>
+                        <div class="order-list" id="orderList">
+                            <div class="empty-state">
+                                <i class="fas fa-inbox"></i>
+                                <p>暂无订单记录</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 个人信息 -->
+                    <div class="uc-panel" id="panel-profile">
+                        <h3><i class="fas fa-user-edit"></i> 个人信息</h3>
+                        <form class="profile-form" id="profileForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>姓名</label>
+                                    <input type="text" name="profileName" id="profileName">
+                                </div>
+                                <div class="form-group">
+                                    <label>手机号</label>
+                                    <input type="tel" name="profilePhone" id="profilePhone" disabled>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>单位</label>
+                                    <input type="text" name="profileOrg" id="profileOrg">
+                                </div>
+                                <div class="form-group">
+                                    <label>邮箱</label>
+                                    <input type="email" name="profileEmail" id="profileEmail">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">保存修改</button>
+                        </form>
+                    </div>
+                    <!-- 充值记录 -->
+                    <div class="uc-panel" id="panel-recharge-history">
+                        <h3><i class="fas fa-wallet"></i> 充值记录</h3>
+                        <div class="order-list" id="rechargeList">
+                            <div class="empty-state">
+                                <i class="fas fa-wallet"></i>
+                                <p>暂无充值记录</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 收藏文章 -->
+                    <div class="uc-panel" id="panel-favorites">
+                        <h3><i class="fas fa-heart"></i> 收藏文章</h3>
+                        <div class="empty-state">
+                            <i class="fas fa-bookmark"></i>
+                            <p>暂无收藏文章</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-microscope"></i> 锐测科技
+                    </div>
+                    <p>专业EBSD抛光与测试服务平台<br>让材料表征更简单</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fas fa-blog"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>测试服务</h4>
+                    <a href="pages/services.html?cat=polishing">EBSD抛光制样</a>
+                    <a href="pages/services.html?cat=ebsd">EBSD测试分析</a>
+                    <a href="pages/services.html?cat=ecci">ECCI分析</a>
+                    <a href="pages/services.html?cat=postprocess">EBSD后处理</a>
+                    <a href="pages/services.html?cat=advanced">高级分析</a>
+                </div>
+                <div class="footer-links">
+                    <h4>帮助中心</h4>
+                    <a href="#">送样指南</a>
+                    <a href="#">常见问题</a>
+                    <a href="#">报告样例</a>
+                    <a href="#">发票说明</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>联系我们</h4>
+                    <p><i class="fas fa-phone"></i> 400-888-9999</p>
+                    <p><i class="fas fa-envelope"></i> service@ruice-tech.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 北京市海淀区中关村科技园</p>
+                    <p><i class="fas fa-clock"></i> 周一至周五 8:30-17:30</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 锐测科技 RUICE TECH. All Rights Reserved. | <a href="#">京ICP备XXXXXXXX号</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 在线客服浮窗 -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span><i class="fas fa-headset"></i> 在线客服</span>
+                <button class="chat-minimize" id="chatMinimize">&minus;</button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-msg bot">
+                    <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="chat-bubble">您好！欢迎咨询锐测科技，请问有什么可以帮您？<br><br>
+                        <div class="quick-replies">
+                            <button class="quick-reply" data-msg="我想了解EBSD测试流程">EBSD测试流程</button>
+                            <button class="quick-reply" data-msg="送样有什么要求？">送样要求</button>
+                            <button class="quick-reply" data-msg="测试大概多久出结果？">出结果时间</button>
+                            <button class="quick-reply" data-msg="我想转接人工客服">转人工客服</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="输入您的问题...">
+                <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button class="chat-toggle" id="chatToggle">
+            <i class="fas fa-headset"></i>
+            <span class="chat-badge">1</span>
+        </button>
+    </div>
+
+    <!-- 回到顶部 -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试服务 | 锐测科技 - EBSD抛光与分析服务中心</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 顶部通知栏 -->
+    <div class="top-bar">
+        <div class="container">
+            <span><i class="fas fa-clock"></i> 工作时间：周一至周五 8:30 - 17:30</span>
+            <div class="top-bar-right">
+                <a href="tel:400-888-9999"><i class="fas fa-phone"></i> 400-888-9999</a>
+                <a href="mailto:service@ruice-tech.com"><i class="fas fa-envelope"></i> service@ruice-tech.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-microscope"></i></span>
+                <span class="logo-text">锐测科技<small>RUICE TECH</small></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">首页</a></li>
+                <li class="dropdown">
+                    <a href="services.html" class="active">测试服务 <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="services.html?cat=polishing">EBSD抛光制样</a>
+                        <a href="services.html?cat=ebsd">EBSD测试分析</a>
+                        <a href="services.html?cat=ecci">ECCI分析</a>
+                        <a href="services.html?cat=postprocess">EBSD后处理</a>
+                        <a href="services.html?cat=advanced">高级分析</a>
+                    </div>
+                </li>
+                <li><a href="../index.html#pricing">价格表</a></li>
+                <li><a href="../index.html#equipment">设备机时</a></li>
+                <li><a href="../index.html#articles">EBSD干货</a></li>
+                <li><a href="../index.html#about">关于我们</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="../index.html#booking" class="btn btn-primary btn-nav">立即预约</a>
+                <button class="btn-login" id="loginBtn"><i class="fas fa-user"></i> 登录</button>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 服务页头部Banner -->
+    <section class="svc-hero">
+        <div class="container">
+            <div class="svc-hero-content">
+                <h1 id="svcTitle">EBSD抛光与分析服务</h1>
+                <p id="svcDesc">专注EBSD全流程服务：从样品制备到数据深度分析，提供MTEX/OIM无法实现的高级表征方案</p>
+            </div>
+            <div class="svc-search">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="serviceSearch" placeholder="搜索服务名称...">
+                </div>
+                <div class="hot-search">
+                    <span>热搜：</span>
+                    <a href="#" data-search="EBSD抛光">EBSD抛光</a>
+                    <a href="#" data-search="ECCI">ECCI</a>
+                    <a href="#" data-search="球形标定">球形标定</a>
+                    <a href="#" data-search="字典标定">字典标定</a>
+                    <a href="#" data-search="滑移分析">滑移分析</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主体内容 -->
+    <section class="svc-main">
+        <div class="container">
+            <div class="svc-layout">
+                <!-- 左侧分类导航 -->
+                <aside class="svc-sidebar">
+                    <div class="svc-cat active" data-cat="all">
+                        <i class="fas fa-th-large"></i> 全部服务
+                        <span class="cat-count" id="countAll">0</span>
+                    </div>
+                    <div class="svc-cat" data-cat="polishing">
+                        <i class="fas fa-gem"></i> EBSD抛光制样
+                        <span class="cat-count" id="countPolishing">0</span>
+                    </div>
+                    <div class="svc-cat" data-cat="ebsd">
+                        <i class="fas fa-microscope"></i> EBSD测试分析
+                        <span class="cat-count" id="countEbsd">0</span>
+                    </div>
+                    <div class="svc-cat" data-cat="ecci">
+                        <i class="fas fa-atom"></i> ECCI分析
+                        <span class="cat-count" id="countEcci">0</span>
+                    </div>
+                    <div class="svc-cat" data-cat="postprocess">
+                        <i class="fas fa-chart-bar"></i> EBSD后处理
+                        <span class="cat-count" id="countPostprocess">0</span>
+                    </div>
+                    <div class="svc-cat" data-cat="advanced">
+                        <i class="fas fa-brain"></i> 高级分析
+                        <span class="cat-count" id="countAdvanced">0</span>
+                    </div>
+                    <div class="svc-sidebar-promo">
+                        <div class="promo-badge">限时</div>
+                        <p>预存最高享 <strong>15%</strong> 加赠</p>
+                        <a href="../index.html#recharge" class="btn btn-primary btn-sm">去充值</a>
+                    </div>
+                </aside>
+
+                <!-- 右侧服务列表 -->
+                <div class="svc-content">
+                    <div class="svc-grid" id="svcGrid">
+                        <!-- JS动态渲染 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo"><i class="fas fa-microscope"></i> 锐测科技</div>
+                    <p>专业EBSD抛光与测试服务平台<br>让材料表征更简单</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fas fa-blog"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>测试服务</h4>
+                    <a href="services.html?cat=polishing">EBSD抛光制样</a>
+                    <a href="services.html?cat=ebsd">EBSD测试分析</a>
+                    <a href="services.html?cat=ecci">ECCI分析</a>
+                    <a href="services.html?cat=postprocess">EBSD后处理</a>
+                </div>
+                <div class="footer-links">
+                    <h4>帮助中心</h4>
+                    <a href="#">送样指南</a>
+                    <a href="#">常见问题</a>
+                    <a href="#">报告样例</a>
+                    <a href="#">发票说明</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>联系我们</h4>
+                    <p><i class="fas fa-phone"></i> 400-888-9999</p>
+                    <p><i class="fas fa-envelope"></i> service@ruice-tech.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 北京市海淀区中关村科技园</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 锐测科技 RUICE TECH. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 在线客服浮窗 -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span><i class="fas fa-headset"></i> 在线客服</span>
+                <button class="chat-minimize" id="chatMinimize">&minus;</button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-msg bot">
+                    <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="chat-bubble">您好！请问需要什么测试服务？</div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="输入您的问题...">
+                <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button class="chat-toggle" id="chatToggle">
+            <i class="fas fa-headset"></i>
+        </button>
+    </div>
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/services.js"></script>
+</body>
+</html>

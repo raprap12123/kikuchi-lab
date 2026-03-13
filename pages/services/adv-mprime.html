@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>几何相容因子（m'）计算 | 锐测科技</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="site-navbar"></div>
+
+    <!-- 面包屑 -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../../index.html">首页</a><span>/</span>
+            <a href="../services.html">测试服务</a><span>/</span>
+            <a href="../services.html?cat=advanced">高级分析</a><span>/</span>
+            <strong>几何相容因子（m'）计算</strong>
+        </div>
+    </div>
+
+    <!-- 详情顶部 -->
+    <section class="detail-top">
+        <div class="container">
+            <div class="detail-grid">
+                <!-- 左：图片 -->
+                <div class="detail-img-area">
+                    <div class="detail-img-main">
+                        <div class="detail-img-placeholder">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>后期配图：m'因子晶界分布图示例</span>
+                        </div>
+                    </div>
+                    <div class="detail-img-gallery">
+                        <div class="thumb active"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                    </div>
+                </div>
+                <!-- 右：信息 -->
+                <div class="detail-info">
+                    <span class="detail-cat cat-advanced">高级分析</span>
+                    <span class="detail-badge">独家</span>
+                    <h1 class="detail-title" id="detailServiceName">几何相容因子（m'）计算</h1>
+                    <p class="detail-subtitle">基于EBSD取向数据，定量计算相邻晶粒间滑移传递的几何相容因子m'，预测裂纹萌生与疲劳损伤的优先位置</p>
+
+                    <div class="detail-stats">
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">5-7天</span>
+                            <span class="detail-stat-label">平均周期</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">1,123</span>
+                            <span class="detail-stat-label">已预约</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">98.9%</span>
+                            <span class="detail-stat-label">满意度</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">全滑移系</span>
+                            <span class="detail-stat-label">计算覆盖</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-price-row">
+                        <div class="detail-price" id="detailUnitPrice" data-price="800">¥800<small>/样</small></div>
+                        <span class="detail-price-note">含EBSD数据处理与m'分析</span>
+                    </div>
+
+                    <div class="detail-actions">
+                        <a href="#detail-booking" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> 立即预约</a>
+                        <button class="btn btn-outline-primary btn-lg"><i class="fas fa-phone"></i> 咨询客服</button>
+                    </div>
+
+                    <div class="detail-guarantees">
+                        <span><i class="fas fa-check-circle"></i> 全晶界m'分布图</span>
+                        <span><i class="fas fa-check-circle"></i> 裂纹萌生风险评估</span>
+                        <span><i class="fas fa-check-circle"></i> 滑移传递路径分析</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 详情内容 -->
+    <section class="detail-content">
+        <div class="container">
+            <div class="detail-tabs">
+                <button class="detail-tab active" data-tab="desc">服务说明</button>
+                <button class="detail-tab" data-tab="params">技术参数</button>
+                <button class="detail-tab" data-tab="sample">送样要求</button>
+                <button class="detail-tab" data-tab="report">报告内容</button>
+            </div>
+
+            <div class="detail-tab-panel active" id="tab-desc">
+                <div class="detail-desc">
+                    <h3>服务介绍</h3>
+                    <p>几何相容因子m'（Geometric Compatibility Factor）是由Luster和Morris于1995年提出的定量参数，用于描述滑移从一个晶粒传递到相邻晶粒的几何条件难易程度。m'定义为两个相邻晶粒中活化滑移系的滑移面法线夹角余弦与滑移方向夹角余弦的乘积：m' = cos(κ) × cos(ψ)，其中κ为两滑移面法线的夹角，ψ为两滑移方向的夹角。m'值范围为0~1，越接近1表示滑移传递越容易。</p>
+
+                    <h3>物理意义</h3>
+                    <ul>
+                        <li><strong>m' → 1</strong> — 滑移面和滑移方向几乎连续跨越晶界，滑移传递容易发生</li>
+                        <li><strong>m' → 0</strong> — 滑移面和/或滑移方向在晶界处严重不连续，滑移受阻</li>
+                        <li><strong>低m'晶界</strong> — 位错堆积、应力集中，裂纹萌生的优先位置</li>
+                        <li><strong>高m'晶界</strong> — 滑移顺利传递，变形协调性好</li>
+                    </ul>
+
+                    <h3>应用场景</h3>
+                    <p>m'因子分析广泛应用于以下研究领域：</p>
+                    <ul>
+                        <li><strong>疲劳裂纹萌生预测</strong> — 识别微观组织中最易萌生疲劳裂纹的晶界</li>
+                        <li><strong>应力腐蚀开裂分析</strong> — 评估晶界处应力集中与开裂敏感性</li>
+                        <li><strong>蠕变损伤评估</strong> — 分析高温蠕变过程中的晶界滑移与空洞形核</li>
+                        <li><strong>塑性变形机理</strong> — 理解多晶体中的变形协调与应变局域化</li>
+                        <li><strong>晶界工程</strong> — 优化晶界特征分布以提高材料抗损伤性能</li>
+                    </ul>
+
+                    <h3>分析方法</h3>
+                    <p>基于EBSD获取的取向数据，利用MTEX工具箱或自主开发的Python/MATLAB程序，遍历所有相邻晶粒对，计算每对晶粒所有可能滑移系组合的m'值，取最大值作为该晶界的m'因子。最终生成全视场的晶界m'分布图，直观展示材料中滑移传递难易程度的空间分布。</p>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-params">
+                <table class="param-table">
+                    <tr><th>分析方法</th><td>Luster-Morris几何相容因子（m' = cosκ·cosψ）</td></tr>
+                    <tr><th>输入数据</th><td>EBSD取向数据（.ctf / .ang / .h5）</td></tr>
+                    <tr><th>计算软件</th><td>MTEX + 自主开发分析脚本</td></tr>
+                    <tr><th>滑移系数据库</th><td>FCC: {111}&lt;110&gt; (12个) / BCC: {110}&lt;111&gt;, {112}&lt;111&gt;, {123}&lt;111&gt; (48个) / HCP: 基面、柱面、锥面滑移系</td></tr>
+                    <tr><th>孪生系支持</th><td>支持常见孪晶变体（如HCP {10-12}拉伸孪晶）</td></tr>
+                    <tr><th>计算范围</th><td>全视场所有晶界段</td></tr>
+                    <tr><th>m'取值策略</th><td>最大m'值 / 加权Schmid因子m' / 全滑移系矩阵</td></tr>
+                    <tr><th>统计分析</th><td>m'分布直方图、与晶界类型的关联分析</td></tr>
+                    <tr><th>可视化</th><td>晶界m'彩色分布图、高/低m'晶界标注</td></tr>
+                    <tr><th>编程语言</th><td>MATLAB (MTEX) / Python (orix/pyebsd)</td></tr>
+                </table>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-sample">
+                <div class="detail-desc">
+                    <h3>数据来源</h3>
+                    <p>m'分析基于EBSD取向数据，有以下两种方式：</p>
+                    <ul>
+                        <li><strong>方式一：提交样品</strong> — 我们进行EBSD测试 + m'分析一站式服务</li>
+                        <li><strong>方式二：提交数据</strong> — 您已有EBSD数据（.ctf/.ang格式），我们仅做m'分析计算</li>
+                    </ul>
+
+                    <h3>样品要求（方式一）</h3>
+                    <ul>
+                        <li>与标准EBSD测试要求一致</li>
+                        <li>块状样品 ≤ 20mm × 20mm × 10mm</li>
+                        <li>需EBSD级别表面抛光</li>
+                    </ul>
+
+                    <h3>数据要求（方式二）</h3>
+                    <ul>
+                        <li>EBSD数据格式：.ctf / .ang / .h5</li>
+                        <li>标定率建议 > 90%（低标定率区域将被排除）</li>
+                        <li>需提供材料的晶体结构信息与活化滑移系类型</li>
+                        <li>如有外加载荷方向信息，请一并提供（用于Schmid因子加权计算）</li>
+                    </ul>
+
+                    <h3>附加信息</h3>
+                    <ul>
+                        <li>请说明关注的晶界类型（如大角晶界、特定CSL晶界等）</li>
+                        <li>如有裂纹或损伤的实验观察数据，可与m'结果对比分析</li>
+                        <li>如需结合Schmid因子分析，请提供加载方向</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-report">
+                <div class="detail-desc">
+                    <h3>报告包含内容</h3>
+                    <ul>
+                        <li>全视场晶界m'彩色分布图（高分辨率）</li>
+                        <li>m'值统计直方图与累积分布曲线</li>
+                        <li>高风险晶界（低m'值）标注图</li>
+                        <li>m'与晶界取向差的关联分析</li>
+                        <li>m'与CSL晶界类型的关联分析</li>
+                        <li>各晶粒对的最优滑移系组合列表</li>
+                        <li>滑移传递路径可视化</li>
+                        <li>裂纹萌生风险区域标注（如适用）</li>
+                    </ul>
+                    <h3>交付格式</h3>
+                    <p>PDF详细分析报告 + 高清m'分布图（TIFF 300dpi）+ MTEX/Python处理脚本（可选）+ 完整的m'数值数据（CSV格式）。报告包含方法描述与参考文献，可直接用于论文发表。如需进一步结合Schmid因子或滑移迹线分析，可搭配相关服务。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 预约机时 -->
+    <section class="detail-booking" id="detail-booking">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">在线预约</span>
+                <h2>预约测试机时</h2>
+                <p>选择时间，填写信息，即刻预约</p>
+            </div>
+            <div class="booking-grid">
+                <div class="booking-calendar-card">
+                    <h3><i class="fas fa-calendar-alt"></i> 选择预约日期</h3>
+                    <div id="detailCalendar"></div>
+                </div>
+                <div class="booking-form-card">
+                    <h3><i class="fas fa-edit"></i> 填写预约信息</h3>
+                    <form id="detailBookingForm">
+                        <div class="form-group">
+                            <label>姓名 *</label>
+                            <input type="text" name="bookName" required placeholder="您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <label>手机号 *</label>
+                            <input type="tel" name="bookPhone" required placeholder="手机号码">
+                        </div>
+                        <div class="form-group">
+                            <label>单位 *</label>
+                            <input type="text" name="bookOrg" required placeholder="学校/公司">
+                        </div>
+                        <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                            <div class="form-group">
+                                <label>预约日期</label>
+                                <input type="date" name="bookDate" id="bookDate">
+                            </div>
+                            <div class="form-group">
+                                <label>样品数量</label>
+                                <input type="number" name="bookQty" min="1" value="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>备注</label>
+                            <textarea name="bookNote" rows="2" placeholder="材料体系、滑移系类型、加载方向等"></textarea>
+                        </div>
+                        <div class="form-total" id="formTotal">
+                            预估费用：<span id="detailTotal">¥800</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            <i class="fas fa-paper-plane"></i> 提交预约
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 相关推荐 -->
+    <section class="related-services">
+        <div class="container">
+            <div class="section-header">
+                <h2>相关推荐</h2>
+            </div>
+            <div class="related-grid">
+                <a href="adv-slip.html" class="related-card">
+                    <h4>滑移迹线分析</h4>
+                    <p>滑移系激活鉴定</p>
+                    <span class="r-price">¥800<small>/样</small></span>
+                </a>
+                <a href="adv-spherical.html" class="related-card">
+                    <h4>球形标定（Spherical Indexing）</h4>
+                    <p>超高精度EBSD标定</p>
+                    <span class="r-price">¥1,000<small>/样</small></span>
+                </a>
+                <a href="post-schmid.html" class="related-card">
+                    <h4>Schmid因子分析</h4>
+                    <p>滑移系激活难易评估</p>
+                    <span class="r-price">¥300<small>/样</small></span>
+                </a>
+                <a href="ebsd-standard.html" class="related-card">
+                    <h4>标准EBSD扫描</h4>
+                    <p>单区域EBSD取向成像</p>
+                    <span class="r-price">¥500<small>/样</small></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <div id="site-extras"></div>
+
+    <script src="../../js/components.js"></script>
+    <script src="../../js/detail.js"></script>
+</body>
+</html>

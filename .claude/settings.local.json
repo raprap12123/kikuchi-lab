@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:measurlabs.com)",
+      "WebFetch(domain:www.eag.com)",
+      "WebFetch(domain:mcf.tamu.edu)",
+      "Bash(start \"\" \"E:/网站/index.html\")",
+      "Bash(explorer.exe \"E:\\\\\\\\网站\\\\\\\\index.html\")",
+      "Bash(cmd.exe /c start \"\" \"E:\\\\网站\\\\index.html\")",
+      "WebFetch(domain:www.ceshigo.com)",
+      "Bash(cmd.exe /c start \"\" \"E:\\\\网站\\\\pages\\\\services.html\")",
+      "Bash(ls -la \"E:/网站/pages/services/\"*.html)",
+      "Bash(cmd.exe /c start \"\" \"E:\\\\网站\\\\pages\\\\services.html\" && cmd.exe /c start \"\" \"E:\\\\网站\\\\pages\\\\services\\\\ebsd-standard.html\")"
+    ]
+  }
+}

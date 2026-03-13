@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>球形标定（Spherical Indexing） | 锐测科技</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="site-navbar"></div>
+
+    <!-- 面包屑 -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../../index.html">首页</a><span>/</span>
+            <a href="../services.html">测试服务</a><span>/</span>
+            <a href="../services.html?cat=advanced">高级分析</a><span>/</span>
+            <strong>球形标定（Spherical Indexing）</strong>
+        </div>
+    </div>
+
+    <!-- 详情顶部 -->
+    <section class="detail-top">
+        <div class="container">
+            <div class="detail-grid">
+                <!-- 左：图片 -->
+                <div class="detail-img-area">
+                    <div class="detail-img-main">
+                        <div class="detail-img-placeholder">
+                            <i class="fas fa-globe"></i>
+                            <span>后期配图：球谐函数Kikuchi花样匹配示例</span>
+                        </div>
+                    </div>
+                    <div class="detail-img-gallery">
+                        <div class="thumb active"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                        <div class="thumb"><i class="fas fa-image"></i></div>
+                    </div>
+                </div>
+                <!-- 右：信息 -->
+                <div class="detail-info">
+                    <span class="detail-cat cat-advanced">高级分析</span>
+                    <span class="detail-badge">独家</span>
+                    <h1 class="detail-title" id="detailServiceName">球形标定（Spherical Indexing）</h1>
+                    <p class="detail-subtitle">基于球谐函数的新一代EBSD标定算法，突破传统Hough变换局限，显著提升低信号质量花样的标定成功率与角分辨率</p>
+
+                    <div class="detail-stats">
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">5-7天</span>
+                            <span class="detail-stat-label">平均周期</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">1,234</span>
+                            <span class="detail-stat-label">已预约</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">99.5%</span>
+                            <span class="detail-stat-label">满意度</span>
+                        </div>
+                        <div class="detail-stat">
+                            <span class="detail-stat-val">~0.1°</span>
+                            <span class="detail-stat-label">角分辨率</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-price-row">
+                        <div class="detail-price" id="detailUnitPrice" data-price="1000">¥1,000<small>/样</small></div>
+                        <span class="detail-price-note">含数据采集与球形标定处理</span>
+                    </div>
+
+                    <div class="detail-actions">
+                        <a href="#detail-booking" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> 立即预约</a>
+                        <button class="btn btn-outline-primary btn-lg"><i class="fas fa-phone"></i> 咨询客服</button>
+                    </div>
+
+                    <div class="detail-guarantees">
+                        <span><i class="fas fa-check-circle"></i> 超高角分辨率</span>
+                        <span><i class="fas fa-check-circle"></i> 低质量花样可标定</span>
+                        <span><i class="fas fa-check-circle"></i> 伪对称性解决方案</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 详情内容 -->
+    <section class="detail-content">
+        <div class="container">
+            <div class="detail-tabs">
+                <button class="detail-tab active" data-tab="desc">服务说明</button>
+                <button class="detail-tab" data-tab="params">技术参数</button>
+                <button class="detail-tab" data-tab="sample">送样要求</button>
+                <button class="detail-tab" data-tab="report">报告内容</button>
+            </div>
+
+            <div class="detail-tab-panel active" id="tab-desc">
+                <div class="detail-desc">
+                    <h3>服务介绍</h3>
+                    <p>球形标定（Spherical Indexing）是一种基于球谐函数（Spherical Harmonics）的新一代EBSD花样标定方法。不同于传统Hough变换先检测Kikuchi带再匹配的"两步法"，球形标定将整个Kikuchi花样投影到球面上，通过球谐函数分解计算花样与模板库的互相关，直接确定最佳取向匹配。这种全局匹配策略显著提升了标定精度和鲁棒性。</p>
+
+                    <h3>相比Hough变换的优势</h3>
+                    <ul>
+                        <li><strong>更高的角分辨率</strong> — 球形标定角分辨率可达~0.1°，远优于Hough变换的~0.5°</li>
+                        <li><strong>更强的低信噪比处理能力</strong> — 对模糊花样、弱信号花样的标定成功率显著提升</li>
+                        <li><strong>有效解决伪对称性问题</strong> — 利用全花样信息区分伪对称相关的取向（如α-Ti的伪对称）</li>
+                        <li><strong>多相材料适应性</strong> — 对晶体结构相似的多相识别更准确</li>
+                        <li><strong>形变材料友好</strong> — 对严重形变导致花样退化的样品，仍能保持较高标定率</li>
+                    </ul>
+
+                    <h3>技术原理</h3>
+                    <p>球形标定的核心是将EBSD花样从平面探测器坐标系重投影到球面坐标系，利用球谐函数Y_l^m(θ,φ)展开为一组球谐系数。同样地，对模板花样（基于动力学模拟或主成分列表生成）进行球谐展开。取向匹配等价于球面上的旋转互相关问题，可通过Wigner-D矩阵在频域高效计算。该方法由Lenthe等人（2019）提出，已在EMSphInx开源代码中实现。</p>
+
+                    <h3>适用场景</h3>
+                    <p>特别适用于以下挑战性EBSD测试：(1) 严重塑性变形材料（冷轧、ECAP、HPT处理）；(2) 具有伪对称性的HCP材料（钛、锆合金）；(3) 纳米晶材料（花样质量低）；(4) 多相材料的精确相鉴定；(5) 需要超高角分辨率的应变分析前处理。</p>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-params">
+                <table class="param-table">
+                    <tr><th>标定算法</th><td>Spherical Indexing（球谐函数互相关法）</td></tr>
+                    <tr><th>计算软件</th><td>EMSphInx + 自主优化脚本</td></tr>
+                    <tr><th>球谐展开阶数</th><td>最高 l = 68（可按需调整）</td></tr>
+                    <tr><th>角分辨率</th><td>~0.1°（约为Hough法的5倍）</td></tr>
+                    <tr><th>模板生成</th><td>动力学模拟（EMsoft）/ 主成分分析</td></tr>
+                    <tr><th>花样尺寸</th><td>支持 120×120 ~ 640×640 像素</td></tr>
+                    <tr><th>多相支持</th><td>支持，可同时标定多个相</td></tr>
+                    <tr><th>GPU加速</th><td>CUDA GPU加速计算，大幅缩短处理时间</td></tr>
+                    <tr><th>数据采集</th><td>Oxford Symmetry S2（需保存原始花样）</td></tr>
+                    <tr><th>输出格式</th><td>.ctf / .ang / .h5 + 置信度指数图</td></tr>
+                </table>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-sample">
+                <div class="detail-desc">
+                    <h3>样品要求</h3>
+                    <p>与标准EBSD测试相同。块状样品 ≤ 20mm × 20mm × 10mm，表面需EBSD级别抛光。</p>
+
+                    <h3>表面要求</h3>
+                    <ul>
+                        <li>OPS振动抛光、电解抛光或离子束抛光均可</li>
+                        <li>表面无划痕、无氧化层、无残余变形层</li>
+                        <li>如未抛光，可同时下单抛光制样服务</li>
+                    </ul>
+
+                    <h3>特别说明</h3>
+                    <ul>
+                        <li>球形标定需要保存原始EBSD花样（raw patterns），数据量较大</li>
+                        <li>如您已有EBSD原始花样数据，可直接提交数据进行离线球形标定处理</li>
+                        <li>请提供完整的晶体结构信息（空间群、点阵参数、原子坐标）</li>
+                        <li>如涉及多相材料，请列出所有可能的相</li>
+                    </ul>
+
+                    <h3>寄送注意</h3>
+                    <ul>
+                        <li>与标准EBSD送样要求一致</li>
+                        <li>防震防潮包装，抛光面保护</li>
+                        <li>随附样品信息表，注明使用球形标定的原因（如伪对称、低标定率等）</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="detail-tab-panel" id="tab-report">
+                <div class="detail-desc">
+                    <h3>报告包含内容</h3>
+                    <ul>
+                        <li>球形标定IPF取向图（X/Y/Z方向）</li>
+                        <li>标定置信度指数图（Spherical Correlation Index）</li>
+                        <li>与传统Hough标定的对比分析（标定率、取向精度对比）</li>
+                        <li>相分布图（多相材料）</li>
+                        <li>晶界图（含CSL特殊晶界）</li>
+                        <li>KAM/GOS分布图</li>
+                        <li>伪对称校正报告（如适用）</li>
+                        <li>极图与ODF（如需要）</li>
+                    </ul>
+                    <h3>交付格式</h3>
+                    <p>PDF测试报告 + 球形标定数据文件（.ctf/.ang/.h5）+ 高清图片（TIFF 300dpi）+ 原始花样数据（.h5格式，可选）。数据可直接导入MTEX、DREAM.3D等后处理软件。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 预约机时 -->
+    <section class="detail-booking" id="detail-booking">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">在线预约</span>
+                <h2>预约测试机时</h2>
+                <p>选择时间，填写信息，即刻预约</p>
+            </div>
+            <div class="booking-grid">
+                <div class="booking-calendar-card">
+                    <h3><i class="fas fa-calendar-alt"></i> 选择预约日期</h3>
+                    <div id="detailCalendar"></div>
+                </div>
+                <div class="booking-form-card">
+                    <h3><i class="fas fa-edit"></i> 填写预约信息</h3>
+                    <form id="detailBookingForm">
+                        <div class="form-group">
+                            <label>姓名 *</label>
+                            <input type="text" name="bookName" required placeholder="您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <label>手机号 *</label>
+                            <input type="tel" name="bookPhone" required placeholder="手机号码">
+                        </div>
+                        <div class="form-group">
+                            <label>单位 *</label>
+                            <input type="text" name="bookOrg" required placeholder="学校/公司">
+                        </div>
+                        <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                            <div class="form-group">
+                                <label>预约日期</label>
+                                <input type="date" name="bookDate" id="bookDate">
+                            </div>
+                            <div class="form-group">
+                                <label>样品数量</label>
+                                <input type="number" name="bookQty" min="1" value="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>备注</label>
+                            <textarea name="bookNote" rows="2" placeholder="材料体系、相信息、特殊需求等"></textarea>
+                        </div>
+                        <div class="form-total" id="formTotal">
+                            预估费用：<span id="detailTotal">¥1,000</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            <i class="fas fa-paper-plane"></i> 提交预约
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 相关推荐 -->
+    <section class="related-services">
+        <div class="container">
+            <div class="section-header">
+                <h2>相关推荐</h2>
+            </div>
+            <div class="related-grid">
+                <a href="adv-dictionary.html" class="related-card">
+                    <h4>字典标定（Dictionary Indexing）</h4>
+                    <p>基于模板匹配的EBSD标定</p>
+                    <span class="r-price">¥1,000<small>/样</small></span>
+                </a>
+                <a href="ebsd-standard.html" class="related-card">
+                    <h4>标准EBSD扫描</h4>
+                    <p>单区域EBSD取向成像</p>
+                    <span class="r-price">¥500<small>/样</small></span>
+                </a>
+                <a href="adv-slip.html" class="related-card">
+                    <h4>滑移迹线分析</h4>
+                    <p>滑移系激活鉴定</p>
+                    <span class="r-price">¥800<small>/样</small></span>
+                </a>
+                <a href="adv-mprime.html" class="related-card">
+                    <h4>几何相容因子（m'）计算</h4>
+                    <p>滑移传递定量分析</p>
+                    <span class="r-price">¥800<small>/样</small></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <div id="site-extras"></div>
+
+    <script src="../../js/components.js"></script>
+    <script src="../../js/detail.js"></script>
+</body>
+</html>

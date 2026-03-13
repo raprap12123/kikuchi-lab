@@ -1,0 +1,683 @@
+// ========== DOM Ready ==========
+document.addEventListener('DOMContentLoaded', () => {
+    initNavbar();
+    initParticles();
+    initCountUp();
+    initBookingForm();
+    initAuthModal();
+    initChatWidget();
+    initBackToTop();
+    initServiceButtons();
+    initArticleTabs();
+    initUserCenter();
+    initRecharge();
+});
+
+// ========== Navbar ==========
+function initNavbar() {
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        hamburger.classList.toggle('active');
+    });
+
+    // 点击导航链接关闭菜单
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+        });
+    });
+}
+
+// ========== Particles ==========
+function initParticles() {
+    const container = document.getElementById('particles');
+    if (!container) return;
+    for (let i = 0; i < 30; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.animationDuration = (8 + Math.random() * 12) + 's';
+        p.style.animationDelay = Math.random() * 10 + 's';
+        p.style.width = p.style.height = (2 + Math.random() * 4) + 'px';
+        container.appendChild(p);
+    }
+}
+
+// ========== Counter Animation ==========
+function initCountUp() {
+    const counters = document.querySelectorAll('.stat-number');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.dataset.target);
+                animateCount(el, target);
+                observer.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => observer.observe(c));
+}
+
+function animateCount(el, target) {
+    const duration = 2000;
+    const start = performance.now();
+    function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target).toLocaleString();
+        if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+}
+
+// ========== Equipment Calendar ==========
+function initCalendars() {
+    const calendarIds = ['calendar-sem1', 'calendar-sem2', 'calendar-cp', 'calendar-xrd']; // xrd now = vibro polisher
+    const today = new Date();
+
+    calendarIds.forEach((id, idx) => {
+        renderCalendar(id, today.getFullYear(), today.getMonth(), idx);
+    });
+}
+
+function renderCalendar(containerId, year, month, equipIdx) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const months = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+    const days = ['日','一','二','三','四','五','六'];
+    const today = new Date();
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    // 模拟预约数据
+    const seed = equipIdx * 7 + month;
+    const bookedDays = new Set();
+    const maintenanceDays = new Set();
+    for (let i = 0; i < 6; i++) {
+        bookedDays.add(((seed * 3 + i * 5) % daysInMonth) + 1);
+    }
+    // no maintenance days by default
+
+    let html = `
+        <div class="calendar-header">
+            <button class="cal-prev" data-container="${containerId}" data-equip="${equipIdx}"
+                data-year="${month === 0 ? year - 1 : year}" data-month="${month === 0 ? 11 : month - 1}">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <h5>${year}年${months[month]}</h5>
+            <button class="cal-next" data-container="${containerId}" data-equip="${equipIdx}"
+                data-year="${month === 11 ? year + 1 : year}" data-month="${month === 11 ? 0 : month + 1}">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="calendar-grid">
+    `;
+
+    days.forEach(d => html += `<div class="day-header">${d}</div>`);
+
+    for (let i = 0; i < firstDay; i++) {
+        html += `<div class="day empty"></div>`;
+    }
+
+    for (let d = 1; d <= daysInMonth; d++) {
+        const isToday = year === today.getFullYear() && month === today.getMonth() && d === today.getDate();
+        const isPast = new Date(year, month, d) < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        let cls = 'day';
+        if (isToday) cls += ' today';
+        if (maintenanceDays.has(d)) {
+            cls += ' maintenance';
+        } else if (isPast || bookedDays.has(d)) {
+            cls += ' booked';
+        } else {
+            cls += ' available';
+        }
+        html += `<div class="${cls}" data-date="${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}">${d}</div>`;
+    }
+
+    html += `</div>`;
+    container.innerHTML = html;
+
+    // 绑定翻页
+    container.querySelectorAll('.cal-prev, .cal-next').forEach(btn => {
+        btn.addEventListener('click', () => {
+            renderCalendar(btn.dataset.container, parseInt(btn.dataset.year), parseInt(btn.dataset.month), parseInt(btn.dataset.equip));
+        });
+    });
+
+    // 点击可预约日期
+    container.querySelectorAll('.day.available').forEach(day => {
+        day.addEventListener('click', () => {
+            const dateInput = document.querySelector('input[name="preferDate"]');
+            if (dateInput) {
+                dateInput.value = day.dataset.date;
+                document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+}
+
+// ========== Booking Form ==========
+function initBookingForm() {
+    const form = document.getElementById('bookingForm');
+    const serviceSelect = document.getElementById('serviceSelect');
+    const quantityInput = document.querySelector('input[name="quantity"]');
+    const totalPrice = document.getElementById('totalPrice');
+
+    function updateTotal() {
+        const val = serviceSelect.value;
+        const match = val.match(/¥(\d+)/);
+        const price = match ? parseInt(match[1]) : 0;
+        const qty = parseInt(quantityInput.value) || 1;
+        totalPrice.textContent = '¥' + (price * qty).toLocaleString();
+    }
+
+    serviceSelect.addEventListener('change', updateTotal);
+    quantityInput.addEventListener('input', updateTotal);
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // 必须先登录
+        const currentUser = JSON.parse(localStorage.getItem('rc_current_user'));
+        if (!currentUser) {
+            alert('请先登录或注册后再提交预约');
+            document.getElementById('authModal').classList.add('active');
+            return;
+        }
+
+        // 验证手机号
+        const phone = form.querySelector('input[name="phone"]').value;
+        if (!/^1\d{10}$/.test(phone)) {
+            alert('请输入正确的手机号码');
+            return;
+        }
+
+        // 生成订单号
+        const orderNum = 'RC' + Date.now().toString(36).toUpperCase();
+        document.getElementById('orderNumber').textContent = orderNum;
+
+        // 保存到 localStorage
+        const order = {
+            id: orderNum,
+            name: form.querySelector('input[name="name"]').value,
+            phone: phone,
+            organization: form.querySelector('input[name="organization"]').value,
+            email: form.querySelector('input[name="email"]').value,
+            service: serviceSelect.value,
+            quantity: quantityInput.value,
+            sampleInfo: form.querySelector('textarea[name="sampleInfo"]').value,
+            preferDate: form.querySelector('input[name="preferDate"]').value,
+            delivery: form.querySelector('select[name="delivery"]').value,
+            total: totalPrice.textContent,
+            status: '待确认',
+            createTime: new Date().toLocaleString('zh-CN')
+        };
+
+        let orders = JSON.parse(localStorage.getItem('rc_orders') || '[]');
+        orders.push(order);
+        localStorage.setItem('rc_orders', JSON.stringify(orders));
+
+        // 显示成功弹窗
+        document.getElementById('successModal').classList.add('active');
+        form.reset();
+        totalPrice.textContent = '¥0';
+    });
+
+    document.getElementById('successClose').addEventListener('click', () => {
+        document.getElementById('successModal').classList.remove('active');
+    });
+}
+
+// ========== Service Buttons ==========
+function initServiceButtons() {
+    // 点击服务卡片和价格表的预约按钮，自动填充服务类型
+    document.querySelectorAll('[data-service]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const service = btn.dataset.service;
+            const select = document.getElementById('serviceSelect');
+
+            // 查找匹配选项
+            for (let opt of select.options) {
+                if (opt.value.includes(service) || opt.text.includes(service)) {
+                    select.value = opt.value;
+                    select.dispatchEvent(new Event('change'));
+                    break;
+                }
+            }
+        });
+    });
+}
+
+// ========== Auth Modal ==========
+function initAuthModal() {
+    const modal = document.getElementById('authModal');
+    const loginBtn = document.getElementById('loginBtn');
+    const closeBtn = document.getElementById('modalClose');
+    const tabs = modal.querySelectorAll('.modal-tab');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const sendSmsBtn = document.getElementById('sendSms');
+
+    loginBtn.addEventListener('click', () => {
+        modal.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('active');
+    });
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            if (tab.dataset.tab === 'login') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+            }
+        });
+    });
+
+    // 发送验证码
+    let smsTimer = 0;
+    sendSmsBtn.addEventListener('click', () => {
+        const phone = registerForm.querySelector('input[name="regPhone"]').value;
+        if (!/^1\d{10}$/.test(phone)) {
+            alert('请输入正确的手机号');
+            return;
+        }
+        if (smsTimer > 0) return;
+        smsTimer = 60;
+        sendSmsBtn.textContent = `${smsTimer}s`;
+        sendSmsBtn.disabled = true;
+        const interval = setInterval(() => {
+            smsTimer--;
+            sendSmsBtn.textContent = smsTimer > 0 ? `${smsTimer}s` : '发送验证码';
+            if (smsTimer <= 0) {
+                clearInterval(interval);
+                sendSmsBtn.disabled = false;
+            }
+        }, 1000);
+        alert('验证码已发送（演示模式）');
+    });
+
+    // 登录
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const account = loginForm.querySelector('input[name="account"]').value;
+        const password = loginForm.querySelector('input[name="password"]').value;
+
+        // 从 localStorage 查找用户
+        const users = JSON.parse(localStorage.getItem('rc_users') || '[]');
+        const user = users.find(u => (u.phone === account || u.email === account) && u.password === password);
+
+        if (user) {
+            localStorage.setItem('rc_current_user', JSON.stringify(user));
+            modal.classList.remove('active');
+            updateUserUI(user);
+            alert('登录成功！欢迎回来，' + user.name);
+        } else {
+            alert('账号或密码错误');
+        }
+    });
+
+    // 注册
+    registerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const user = {
+            name: registerForm.querySelector('input[name="regName"]').value,
+            phone: registerForm.querySelector('input[name="regPhone"]').value,
+            email: registerForm.querySelector('input[name="regEmail"]').value,
+            organization: registerForm.querySelector('input[name="regOrg"]').value,
+            password: registerForm.querySelector('input[name="regPassword"]').value,
+            createTime: new Date().toLocaleString('zh-CN')
+        };
+
+        let users = JSON.parse(localStorage.getItem('rc_users') || '[]');
+        if (users.find(u => u.phone === user.phone)) {
+            alert('该手机号已注册');
+            return;
+        }
+        users.push(user);
+        localStorage.setItem('rc_users', JSON.stringify(users));
+        localStorage.setItem('rc_current_user', JSON.stringify(user));
+        modal.classList.remove('active');
+        updateUserUI(user);
+        alert('注册成功！欢迎，' + user.name);
+    });
+
+    // 检查是否已登录
+    const currentUser = JSON.parse(localStorage.getItem('rc_current_user'));
+    if (currentUser) {
+        updateUserUI(currentUser);
+    }
+}
+
+function updateUserUI(user) {
+    const loginBtn = document.getElementById('loginBtn');
+    loginBtn.innerHTML = `<i class="fas fa-user-check"></i> ${user.name}`;
+    loginBtn.onclick = () => {
+        openUserCenter();
+    };
+
+    // 自动填充预约表单
+    const nameInput = document.querySelector('input[name="name"]');
+    const phoneInput = document.querySelector('input[name="phone"]');
+    const orgInput = document.querySelector('input[name="organization"]');
+    const emailInput = document.querySelector('input[name="email"]');
+    if (nameInput && !nameInput.value) nameInput.value = user.name || '';
+    if (phoneInput && !phoneInput.value) phoneInput.value = user.phone || '';
+    if (orgInput && !orgInput.value) orgInput.value = user.organization || '';
+    if (emailInput && !emailInput.value) emailInput.value = user.email || '';
+}
+
+// ========== Chat Widget ==========
+function initChatWidget() {
+    const toggle = document.getElementById('chatToggle');
+    const window_ = document.getElementById('chatWindow');
+    const minimize = document.getElementById('chatMinimize');
+    const input = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('chatSend');
+    const body = document.getElementById('chatBody');
+    const badge = toggle.querySelector('.chat-badge');
+
+    toggle.addEventListener('click', () => {
+        window_.classList.toggle('active');
+        badge.style.display = 'none';
+    });
+
+    minimize.addEventListener('click', () => {
+        window_.classList.remove('active');
+    });
+
+    function addMessage(text, isUser) {
+        const msg = document.createElement('div');
+        msg.className = `chat-msg ${isUser ? 'user' : 'bot'}`;
+        msg.innerHTML = `
+            <div class="chat-avatar"><i class="fas fa-${isUser ? 'user' : 'robot'}"></i></div>
+            <div class="chat-bubble">${text}</div>
+        `;
+        body.appendChild(msg);
+        body.scrollTop = body.scrollHeight;
+    }
+
+    function botReply(userMsg) {
+        // 简单关键词匹配
+        const replies = {
+            '流程': 'EBSD测试流程：<br>1. 在线提交预约<br>2. 寄送/自送样品<br>3. 技术员进行抛光+扫描<br>4. 数据处理与分析<br>5. 报告交付（邮件+快递）<br><br>整个流程约5-7个工作日。',
+            '送样': '送样要求：<br>- 金属样品建议尺寸 ≤ 20×20×10mm<br>- 做好防震防潮包装<br>- 随附样品信息表（可在预约后下载）<br>- 危险/放射性样品请提前告知<br><br>地址：北京市海淀区中关村科技园',
+            '时间': '常规EBSD测试约5-7个工作日出结果。<br>加急服务可在3个工作日内完成（加收30%费用）。<br>具体以样品复杂程度为准。',
+            '人工': '正在为您转接人工客服...<br><br>您也可以直接拨打电话：<strong>400-888-9999</strong><br>或添加微信客服咨询。',
+            '价格': '我们的价格固定透明，您可以在价格表页面查看所有服务项目的具体价格。<br>批量送样（≥10样）享9折优惠。',
+        };
+
+        setTimeout(() => {
+            let reply = '感谢您的咨询！您可以查看我们的服务页面了解详细信息，或拨打 400-888-9999 咨询人工客服。';
+            for (const [key, val] of Object.entries(replies)) {
+                if (userMsg.includes(key)) {
+                    reply = val;
+                    break;
+                }
+            }
+            addMessage(reply, false);
+        }, 800);
+    }
+
+    function sendMessage() {
+        const text = input.value.trim();
+        if (!text) return;
+        addMessage(text, true);
+        input.value = '';
+        botReply(text);
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendMessage();
+    });
+
+    // 快速回复
+    body.addEventListener('click', (e) => {
+        if (e.target.classList.contains('quick-reply')) {
+            const msg = e.target.dataset.msg;
+            addMessage(msg, true);
+            botReply(msg);
+        }
+    });
+}
+
+// ========== Back to Top ==========
+function initBackToTop() {
+    const btn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 500);
+    });
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// ========== Article Tabs ==========
+function initArticleTabs() {
+    const tabs = document.querySelectorAll('.article-tab');
+    const cards = document.querySelectorAll('.article-card');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const cat = tab.dataset.category;
+            cards.forEach(card => {
+                if (cat === 'all' || card.dataset.category === cat) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+}
+
+// ========== User Center ==========
+function initUserCenter() {
+    const modal = document.getElementById('userCenterModal');
+    const closeBtn = document.getElementById('ucClose');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const navItems = modal.querySelectorAll('.uc-nav-item');
+    const panels = modal.querySelectorAll('.uc-panel');
+    const orderFilters = modal.querySelectorAll('.order-filter');
+
+    // Close
+    closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+
+    // Nav
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navItems.forEach(n => n.classList.remove('active'));
+            item.classList.add('active');
+            panels.forEach(p => p.classList.remove('active'));
+            document.getElementById('panel-' + item.dataset.panel).classList.add('active');
+        });
+    });
+
+    // Order filters
+    orderFilters.forEach(btn => {
+        btn.addEventListener('click', () => {
+            orderFilters.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderOrders(btn.dataset.status);
+        });
+    });
+
+    // Logout
+    logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('rc_current_user');
+        modal.classList.remove('active');
+        location.reload();
+    });
+
+    // Profile form
+    document.getElementById('profileForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const user = JSON.parse(localStorage.getItem('rc_current_user'));
+        if (!user) return;
+        user.name = document.getElementById('profileName').value;
+        user.organization = document.getElementById('profileOrg').value;
+        user.email = document.getElementById('profileEmail').value;
+        localStorage.setItem('rc_current_user', JSON.stringify(user));
+
+        // Update users list too
+        let users = JSON.parse(localStorage.getItem('rc_users') || '[]');
+        const idx = users.findIndex(u => u.phone === user.phone);
+        if (idx >= 0) users[idx] = user;
+        localStorage.setItem('rc_users', JSON.stringify(users));
+        alert('信息已更新！');
+    });
+}
+
+function openUserCenter() {
+    const user = JSON.parse(localStorage.getItem('rc_current_user'));
+    if (!user) return;
+
+    document.getElementById('ucName').textContent = user.name;
+    document.getElementById('ucOrg').textContent = user.organization || '';
+    document.getElementById('ucBalance').textContent = '¥' + (user.balance || 0).toLocaleString();
+
+    // Profile form
+    document.getElementById('profileName').value = user.name || '';
+    document.getElementById('profilePhone').value = user.phone || '';
+    document.getElementById('profileOrg').value = user.organization || '';
+    document.getElementById('profileEmail').value = user.email || '';
+
+    renderOrders('all');
+    renderRechargeHistory();
+    document.getElementById('userCenterModal').classList.add('active');
+}
+
+function renderOrders(statusFilter) {
+    const list = document.getElementById('orderList');
+    let orders = JSON.parse(localStorage.getItem('rc_orders') || '[]');
+    const user = JSON.parse(localStorage.getItem('rc_current_user'));
+
+    // Filter by current user
+    if (user) {
+        orders = orders.filter(o => o.phone === user.phone);
+    }
+
+    if (statusFilter !== 'all') {
+        orders = orders.filter(o => o.status === statusFilter);
+    }
+
+    if (orders.length === 0) {
+        list.innerHTML = '<div class="empty-state"><i class="fas fa-inbox"></i><p>暂无订单记录</p></div>';
+        return;
+    }
+
+    list.innerHTML = orders.reverse().map(o => {
+        let statusClass = 'status-pending';
+        if (o.status === '测试中') statusClass = 'status-testing';
+        if (o.status === '已完成') statusClass = 'status-done';
+
+        return `<div class="order-item">
+            <div class="order-item-header">
+                <span class="order-item-id">${o.id}</span>
+                <span class="order-status ${statusClass}">${o.status}</span>
+            </div>
+            <div class="order-item-info">
+                <span><i class="fas fa-flask"></i> ${o.service}</span>
+                <span><i class="fas fa-sort-numeric-up"></i> ${o.quantity}样</span>
+                <span><i class="fas fa-yen-sign"></i> ${o.total}</span>
+                <span><i class="fas fa-clock"></i> ${o.createTime}</span>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+function renderRechargeHistory() {
+    const list = document.getElementById('rechargeList');
+    const user = JSON.parse(localStorage.getItem('rc_current_user'));
+    let records = JSON.parse(localStorage.getItem('rc_recharge') || '[]');
+
+    if (user) {
+        records = records.filter(r => r.phone === user.phone);
+    }
+
+    if (records.length === 0) {
+        list.innerHTML = '<div class="empty-state"><i class="fas fa-wallet"></i><p>暂无充值记录</p></div>';
+        return;
+    }
+
+    list.innerHTML = records.reverse().map(r => `
+        <div class="order-item">
+            <div class="order-item-header">
+                <span class="order-item-id">充值 ¥${r.amount.toLocaleString()}</span>
+                <span class="order-status status-done">赠送 ¥${r.bonus}</span>
+            </div>
+            <div class="order-item-info">
+                <span><i class="fas fa-clock"></i> ${r.time}</span>
+                <span><i class="fas fa-wallet"></i> 余额 ¥${r.balanceAfter.toLocaleString()}</span>
+            </div>
+        </div>
+    `).join('');
+}
+
+// ========== Recharge ==========
+function initRecharge() {
+    document.querySelectorAll('.btn-recharge').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const user = JSON.parse(localStorage.getItem('rc_current_user'));
+            if (!user) {
+                alert('请先登录后再充值');
+                document.getElementById('authModal').classList.add('active');
+                return;
+            }
+
+            const amount = parseInt(btn.dataset.amount);
+            const bonus = parseInt(btn.dataset.bonus);
+
+            if (!confirm(`确认充值 ¥${amount.toLocaleString()}？将额外赠送 ¥${bonus}`)) return;
+
+            // Update user balance
+            user.balance = (user.balance || 0) + amount + bonus;
+            localStorage.setItem('rc_current_user', JSON.stringify(user));
+
+            // Update users list
+            let users = JSON.parse(localStorage.getItem('rc_users') || '[]');
+            const idx = users.findIndex(u => u.phone === user.phone);
+            if (idx >= 0) { users[idx] = user; }
+            localStorage.setItem('rc_users', JSON.stringify(users));
+
+            // Save recharge record
+            let records = JSON.parse(localStorage.getItem('rc_recharge') || '[]');
+            records.push({
+                phone: user.phone,
+                amount: amount,
+                bonus: bonus,
+                balanceAfter: user.balance,
+                time: new Date().toLocaleString('zh-CN')
+            });
+            localStorage.setItem('rc_recharge', JSON.stringify(records));
+
+            alert(`充值成功！已到账 ¥${(amount + bonus).toLocaleString()}，当前余额 ¥${user.balance.toLocaleString()}`);
+        });
+    });
+}
