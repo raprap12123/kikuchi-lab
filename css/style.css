@@ -3094,3 +3094,102 @@ a {
 .toast-error i { color: #ef4444; }
 .toast-info { border-left: 4px solid var(--primary); color: var(--primary); }
 .toast-info i { color: var(--primary); }
+
+/* ========== Side Float Ads ========== */
+.side-float {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 990;
+    width: 160px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+    overflow: hidden;
+    animation: sideFloatIn 0.6s ease 2s both;
+}
+
+@keyframes sideFloatIn {
+    from { opacity: 0; transform: translateY(-50%) scale(0.8); }
+    to { opacity: 1; transform: translateY(-50%) scale(1); }
+}
+
+.side-float-left { left: 16px; }
+.side-float-right { right: 16px; }
+
+.side-float-close {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.1);
+    border: none;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: var(--transition);
+}
+.side-float-close:hover { background: rgba(0,0,0,0.2); }
+
+.side-float-content {
+    padding: 24px 16px 20px;
+    text-align: center;
+}
+
+.side-float-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #ef4444, #f97316);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.side-float-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.side-float-highlight {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 4px;
+}
+.side-float-highlight strong {
+    color: #ef4444;
+    font-size: 20px;
+}
+
+.side-float-content p {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-bottom: 12px;
+}
+
+.side-float-content .btn {
+    width: 100%;
+    font-size: 13px;
+    padding: 8px 0;
+}
+
+.side-float.hidden {
+    display: none;
+}
+
+/* 避免遮挡内容区 - 屏幕较小时隐藏 */
+@media (max-width: 1400px) {
+    .side-float-left { display: none; }
+}
+@media (max-width: 1200px) {
+    .side-float-right { display: none; }
+}
