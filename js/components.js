@@ -49,7 +49,7 @@ function renderNavbar(activePage) {
                 <li><a href="${ROOT}pages/about.html" ${activePage==='about'?'class="active"':''}>关于我们</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="${ROOT}index.html#booking" class="btn btn-primary btn-nav">立即预约</a>
+                <a href="${ROOT}pages/services.html" class="btn btn-primary btn-nav">立即预约</a>
                 <button class="btn-login" id="loginBtn"><i class="fas fa-user"></i> 登录</button>
                 <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
             </div>

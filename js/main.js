@@ -3,13 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initParticles();
     initCountUp();
-    initBookingForm();
     initAuthModal();
     initChatWidget();
     initFloatingToolbar();
     initPromoBanner();
     initHeroSearch();
-    initServiceButtons();
     initArticleTabs();
     initUserCenter();
     initRecharge();
@@ -176,93 +174,6 @@ function renderCalendar(containerId, year, month, equipIdx) {
             if (dateInput) {
                 dateInput.value = day.dataset.date;
                 document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-}
-
-// ========== Booking Form ==========
-function initBookingForm() {
-    const form = document.getElementById('bookingForm');
-    const serviceSelect = document.getElementById('serviceSelect');
-    const quantityInput = document.querySelector('input[name="quantity"]');
-    const totalPrice = document.getElementById('totalPrice');
-
-    function updateTotal() {
-        const val = serviceSelect.value;
-        const match = val.match(/¥(\d+)/);
-        const price = match ? parseInt(match[1]) : 0;
-        const qty = parseInt(quantityInput.value) || 1;
-        totalPrice.textContent = '¥' + (price * qty).toLocaleString();
-    }
-
-    serviceSelect.addEventListener('change', updateTotal);
-    quantityInput.addEventListener('input', updateTotal);
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // 必须先登录（使用新token机制）
-        if (!isLoggedIn()) {
-            showToast('请先登录或注册后再提交预约', 'error');
-            document.getElementById('authModal').classList.add('active');
-            return;
-        }
-
-        // 验证手机号
-        const phone = form.querySelector('input[name="phone"]').value;
-        if (!/^1\d{10}$/.test(phone)) {
-            showToast('请输入正确的手机号码', 'error');
-            return;
-        }
-
-        const submitBtn = form.querySelector('button[type="submit"]');
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 提交中...';
-
-        try {
-            // 调用后端API创建订单
-            const order = await submitOrder({
-                service: serviceSelect.value,
-                quantity: quantityInput.value,
-                sampleInfo: form.querySelector('textarea[name="sampleInfo"]').value,
-                preferDate: form.querySelector('input[name="preferDate"]').value,
-                delivery: form.querySelector('select[name="delivery"]').value,
-                total: totalPrice.textContent
-            });
-
-            document.getElementById('orderNumber').textContent = order.id;
-            document.getElementById('successModal').classList.add('active');
-            form.reset();
-            totalPrice.textContent = '¥0';
-        } catch (err) {
-            showToast(err.message || '预约提交失败，请重试', 'error');
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> 提交预约';
-        }
-    });
-
-    document.getElementById('successClose').addEventListener('click', () => {
-        document.getElementById('successModal').classList.remove('active');
-    });
-}
-
-// ========== Service Buttons ==========
-function initServiceButtons() {
-    // 点击服务卡片和价格表的预约按钮，自动填充服务类型
-    document.querySelectorAll('[data-service]').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const service = btn.dataset.service;
-            const select = document.getElementById('serviceSelect');
-
-            // 查找匹配选项
-            for (let opt of select.options) {
-                if (opt.value.includes(service) || opt.text.includes(service)) {
-                    select.value = opt.value;
-                    select.dispatchEvent(new Event('change'));
-                    break;
-                }
             }
         });
     });

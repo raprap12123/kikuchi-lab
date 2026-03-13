@@ -50,7 +50,7 @@
                 <li><a href="pages/about.html">关于我们</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="#booking" class="btn btn-primary btn-nav">立即预约</a>
+                <a href="pages/services.html" class="btn btn-primary btn-nav">立即预约</a>
                 <button class="btn-login" id="loginBtn"><i class="fas fa-user"></i> 登录</button>
                 <button class="hamburger" id="hamburger">
                     <span></span><span></span><span></span>
@@ -64,15 +64,15 @@
         <div class="promo-slides">
             <div class="promo-slide active">
                 <i class="fas fa-gift"></i> 新用户注册送200元测试券
-                <a href="#booking" class="promo-link">立即领取 &rarr;</a>
+                <a href="pages/services.html" class="promo-link">立即领取 &rarr;</a>
             </div>
             <div class="promo-slide">
                 <i class="fas fa-coins"></i> 预存充值最高享15%赠送
-                <a href="#booking" class="promo-link">查看详情 &rarr;</a>
+                <a href="pages/services.html" class="promo-link">查看详情 &rarr;</a>
             </div>
             <div class="promo-slide">
                 <i class="fas fa-award"></i> 论文致谢奖励计划 最高奖励5000元
-                <a href="#booking" class="promo-link">了解更多 &rarr;</a>
+                <a href="pages/services.html" class="promo-link">了解更多 &rarr;</a>
             </div>
         </div>
         <div class="promo-dots">
@@ -107,7 +107,7 @@
                 </div>
             </div>
             <div class="hero-buttons">
-                <a href="#booking" class="btn btn-primary btn-lg">
+                <a href="pages/services.html" class="btn btn-primary btn-lg">
                     <i class="fas fa-calendar-check"></i> 在线预约测试
                 </a>
                 <a href="#services" class="btn btn-outline btn-lg">
@@ -293,7 +293,7 @@
                 <div class="paper-reward-content">
                     <h2>论文致谢奖励计划</h2>
                     <p>在SCI/EI论文中致谢菊池实验室，即可申请最高 <strong>¥5,000</strong> 现金奖励。我们鼓励并支持每一位科研工作者的学术成果！</p>
-                    <a href="#booking" class="btn btn-primary btn-lg"><i class="fas fa-pen-nib"></i> 了解详情并申请</a>
+                    <a href="pages/services.html" class="btn btn-primary btn-lg"><i class="fas fa-pen-nib"></i> 了解详情并申请</a>
                 </div>
             </div>
         </div>
@@ -346,166 +346,6 @@
         </div>
     </section>
 
-    <!-- 在线预约 -->
-    <section class="booking" id="booking">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">在线预约</span>
-                <h2>提交测试预约</h2>
-                <p>填写以下信息，我们将在1个工作日内确认您的预约</p>
-            </div>
-            <div class="booking-wrapper">
-                <div class="booking-form-container">
-                    <form class="booking-form" id="bookingForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label><i class="fas fa-user"></i> 姓名 *</label>
-                                <input type="text" name="name" required placeholder="请输入您的姓名">
-                            </div>
-                            <div class="form-group">
-                                <label><i class="fas fa-phone"></i> 手机号 *</label>
-                                <input type="tel" name="phone" required placeholder="请输入手机号">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label><i class="fas fa-building"></i> 单位名称 *</label>
-                                <input type="text" name="organization" required placeholder="学校/公司名称">
-                            </div>
-                            <div class="form-group">
-                                <label><i class="fas fa-envelope"></i> 邮箱</label>
-                                <input type="email" name="email" placeholder="用于接收报告">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label><i class="fas fa-flask"></i> 测试项目 *</label>
-                                <select name="service" id="serviceSelect" required>
-                                    <option value="">请选择测试项目</option>
-                                    <optgroup label="EBSD抛光制样">
-                                        <option value="机械研磨+OPS振动抛光 ¥200/样">机械研磨+OPS振动抛光 — ¥200/样</option>
-                                        <option value="离子束截面抛光 ¥500/样">离子束截面抛光（CP）— ¥500/样</option>
-                                        <option value="聚焦离子束抛光 ¥800/样">聚焦离子束抛光（FIB）— ¥800/样</option>
-                                        <option value="电解抛光 ¥150/样">电解抛光 — ¥150/样</option>
-                                        <option value="长时振动抛光 ¥350/样">长时振动抛光（8h+）— ¥350/样</option>
-                                        <option value="多步复合抛光 ¥600/样">多步复合抛光（机械+CP/FIB）— ¥600/样</option>
-                                    </optgroup>
-                                    <optgroup label="EBSD测试分析">
-                                        <option value="标准EBSD扫描 ¥500/样">标准EBSD扫描（单区域）— ¥500/样</option>
-                                        <option value="大面积拼图扫描 ¥800/样">大面积拼图扫描 — ¥800/样</option>
-                                        <option value="织构分析 ¥600/样">织构分析（极图+ODF）— ¥600/样</option>
-                                        <option value="原位加热EBSD ¥1500/样">原位加热EBSD — ¥1500/样</option>
-                                        <option value="TKD透射EBSD ¥1200/样">TKD透射EBSD — ¥1200/样</option>
-                                        <option value="HR-EBSD ¥1800/样">高分辨HR-EBSD — ¥1800/样</option>
-                                    </optgroup>
-                                    <optgroup label="ECCI分析">
-                                        <option value="ECCI位错成像 ¥600/样">ECCI位错成像 — ¥600/样</option>
-                                        <option value="ECCI精确衍射条件 ¥1000/样">ECCI精确衍射条件控制 — ¥1000/样</option>
-                                        <option value="ECCI虚拟模拟 ¥1500/次">ECCI虚拟模拟 — ¥1500/次</option>
-                                        <option value="EBSD+ECCI联合分析 ¥1200/样">EBSD+ECCI联合分析 — ¥1200/样</option>
-                                    </optgroup>
-                                    <optgroup label="EBSD后处理">
-                                        <option value="KAM/GOS/GND分析 ¥300/样">KAM/GOS/GND分析 — ¥300/样</option>
-                                        <option value="GND位错密度 ¥500/样">GND几何必需位错密度 — ¥500/样</option>
-                                        <option value="再结晶分数统计 ¥300/样">再结晶分数统计 — ¥300/样</option>
-                                        <option value="晶界特征分布 ¥400/样">晶界特征分布（GBCD）— ¥400/样</option>
-                                        <option value="Schmid因子分析 ¥400/样">Schmid因子分析 — ¥400/样</option>
-                                        <option value="母相重构 ¥800/样">母相重构 — ¥800/样</option>
-                                    </optgroup>
-                                    <optgroup label="高级分析">
-                                        <option value="球形标定 ¥1000/样">球形标定（Spherical Indexing）— ¥1000/样</option>
-                                        <option value="字典标定 ¥1200/样">字典标定（Dictionary Indexing）— ¥1200/样</option>
-                                        <option value="滑移系分析 ¥800/样">滑移系分析与活化识别 — ¥800/样</option>
-                                        <option value="几何相容因子 ¥800/样">几何相容因子（m'）— ¥800/样</option>
-                                        <option value="Taylor因子 ¥600/样">Taylor因子与塑性功 — ¥600/样</option>
-                                        <option value="取向关系测定 ¥600/样">取向关系（OR）精确测定 — ¥600/样</option>
-                                        <option value="定制化分析 ¥2000/次起">定制化EBSD数据分析 — ¥2000/次起</option>
-                                    </optgroup>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label><i class="fas fa-sort-numeric-up"></i> 样品数量 *</label>
-                                <input type="number" name="quantity" min="1" value="1" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label><i class="fas fa-info-circle"></i> 样品信息</label>
-                            <textarea name="sampleInfo" rows="3" placeholder="请描述样品材料、尺寸、特殊要求等信息，例如：316L不锈钢，10×10×5mm，需要观察截面组织"></textarea>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label><i class="fas fa-calendar"></i> 期望测试日期</label>
-                                <input type="date" name="preferDate">
-                            </div>
-                            <div class="form-group">
-                                <label><i class="fas fa-truck"></i> 送样方式</label>
-                                <select name="delivery">
-                                    <option value="自送">自送到实验室</option>
-                                    <option value="快递">快递寄送</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-total" id="formTotal">
-                            预估费用：<span id="totalPrice">¥0</span>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">
-                            <i class="fas fa-paper-plane"></i> 提交预约
-                        </button>
-                    </form>
-                </div>
-                <div class="booking-sidebar">
-                    <div class="sidebar-card">
-                        <h4><i class="fas fa-shipping-fast"></i> 送样流程</h4>
-                        <div class="flow-steps">
-                            <div class="flow-step">
-                                <div class="step-num">1</div>
-                                <div>
-                                    <strong>在线预约</strong>
-                                    <p>填写预约表单</p>
-                                </div>
-                            </div>
-                            <div class="flow-step">
-                                <div class="step-num">2</div>
-                                <div>
-                                    <strong>寄送样品</strong>
-                                    <p>快递或亲自送样</p>
-                                </div>
-                            </div>
-                            <div class="flow-step">
-                                <div class="step-num">3</div>
-                                <div>
-                                    <strong>测试进行</strong>
-                                    <p>专业技术员操作</p>
-                                </div>
-                            </div>
-                            <div class="flow-step">
-                                <div class="step-num">4</div>
-                                <div>
-                                    <strong>报告交付</strong>
-                                    <p>邮件发送报告</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sidebar-card">
-                        <h4><i class="fas fa-map-marker-alt"></i> 送样地址</h4>
-                        <p>北京市海淀区中关村科技园<br>菊池实验室实验楼 A座 302</p>
-                        <p><strong>收件人：</strong>样品接收组<br>
-                        <strong>电话：</strong>400-888-9999</p>
-                    </div>
-                    <div class="sidebar-card">
-                        <h4><i class="fas fa-exclamation-triangle"></i> 送样须知</h4>
-                        <ul class="notice-list">
-                            <li>样品需做好防护包装</li>
-                            <li>随附样品信息单</li>
-                            <li>危险品请提前告知</li>
-                            <li>样品留存3个月</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
     <!-- 充值优惠 -->
@@ -604,16 +444,6 @@
         </div>
     </div>
 
-    <!-- 预约成功弹窗 -->
-    <div class="modal-overlay" id="successModal">
-        <div class="modal modal-success">
-            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-            <h3>预约提交成功！</h3>
-            <p>我们将在1个工作日内与您联系确认</p>
-            <p class="order-number">预约编号：<span id="orderNumber"></span></p>
-            <button class="btn btn-primary" id="successClose">确定</button>
-        </div>
-    </div>
 
     <!-- 用户中心模态框 -->
     <div class="modal-overlay" id="userCenterModal">
