@@ -43,9 +43,9 @@ function renderNavbar(activePage) {
                         <a href="${ROOT}pages/services.html?cat=advanced">高级分析</a>
                     </div>
                 </li>
-                <li><a href="${ROOT}pages/simulation.html" ${activePage==='simulation'?'class="active"':''}>模拟计算</a></li>
-                <li><a href="${ROOT}index.html#articles">EBSD干货</a></li>
-                <li><a href="${ROOT}index.html#about">关于我们</a></li>
+                <li><a href="${ROOT}pages/simulation.html" ${activePage==='simulation'?'class="active"':''}>模拟仿真</a></li>
+                <li><a href="${ROOT}pages/articles.html" ${activePage==='articles'?'class="active"':''}>EBSD干货</a></li>
+                <li><a href="${ROOT}pages/about.html" ${activePage==='about'?'class="active"':''}>关于我们</a></li>
             </ul>
             <div class="nav-actions">
                 <a href="${ROOT}index.html#booking" class="btn btn-primary btn-nav">立即预约</a>
@@ -167,9 +167,11 @@ function initCommon() {
         window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 300));
         btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
-    // Login button
+    // Login button - check both new (kl_user) and old (rc_current_user) auth
     const loginBtn = document.getElementById('loginBtn');
-    const user = JSON.parse(localStorage.getItem('rc_current_user'));
+    let user = null;
+    try { user = JSON.parse(localStorage.getItem('kl_user')); } catch {}
+    if (!user) try { user = JSON.parse(localStorage.getItem('rc_current_user')); } catch {}
     if (loginBtn && user) {
         loginBtn.innerHTML = `<i class="fas fa-user-check"></i> ${user.name}`;
     }
