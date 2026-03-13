@@ -43,7 +43,7 @@ function renderNavbar(activePage) {
                         <a href="${ROOT}pages/services.html?cat=advanced">高级分析</a>
                     </div>
                 </li>
-                <li><a href="${ROOT}index.html#simulation">模拟计算</a></li>
+                <li><a href="${ROOT}pages/simulation.html" ${activePage==='simulation'?'class="active"':''}>模拟计算</a></li>
                 <li><a href="${ROOT}index.html#articles">EBSD干货</a></li>
                 <li><a href="${ROOT}index.html#about">关于我们</a></li>
             </ul>

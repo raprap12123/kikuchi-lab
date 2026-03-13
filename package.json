@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@alicloud/dysmsapi20170525": "^4.5.0",
+    "@alicloud/openapi-client": "^0.4.15",
+    "@alicloud/tea-util": "^1.4.11",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.2"
   }

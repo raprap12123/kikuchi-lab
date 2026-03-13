@@ -23,7 +23,11 @@
       "WebFetch(domain:www.shiyanjia.com)",
       "Bash(cd \"E:/网站\" && npm init -y 2>&1 | tail -5)",
       "Bash(cd \"E:/网站\" && npm init -y --name kikuchi-lab 2>&1 | head -5)",
-      "Bash(cd \"E:/网站\" && npm install 2>&1 | tail -5)"
+      "Bash(cd \"E:/网站\" && npm install 2>&1 | tail -5)",
+      "Bash(cd \"E:/网站\" && gh api repos/raprap12123/kikuchi-lab/deployments --jq '.[0] | {state: .environment, created: .created_at, sha: .sha[0:7]}')",
+      "Bash(curl -s -X POST https://kikuchi-lab.vercel.app/api/send-sms -H \"Content-Type: application/json\" -d '{\"phone\":\"13800138000\"}' 2>&1)",
+      "Bash(sleep 45 && curl -s -X POST https://kikuchi-lab.vercel.app/api/send-sms -H \"Content-Type: application/json\" -d '{\"phone\":\"13800138000\"}' 2>&1)",
+      "Bash(cd \"E:/网站\" && npm install @alicloud/dysmsapi20170525 @alicloud/openapi-client @alicloud/tea-util 2>&1 | tail -5)"
     ]
   }
 }

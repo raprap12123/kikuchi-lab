@@ -60,6 +60,11 @@ function updateUser(phone, updates) {
 }
 
 // === SMS Codes ===
+function getRecentCode(phone) {
+    const codes = readJSON(CODES_FILE);
+    return codes.find(c => c.phone === phone) || null;
+}
+
 function saveSmsCode(phone, code) {
     const codes = readJSON(CODES_FILE);
     // 移除该手机号旧的验证码
@@ -102,6 +107,6 @@ function createOrder(orderData) {
 
 module.exports = {
     getUsers, findUserByPhone, createUser, updateUser,
-    saveSmsCode, verifySmsCode,
+    getRecentCode, saveSmsCode, verifySmsCode,
     getOrders, createOrder
 };

@@ -1,0 +1,822 @@
+/* ========== About Page Styles ========== */
+
+/* ---------- Hero Section ---------- */
+.about-hero {
+    position: relative;
+    padding: 160px 0 100px;
+    background: linear-gradient(135deg, var(--secondary) 0%, #1a1850 50%, var(--primary-dark) 100%);
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+}
+
+.about-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(24, 94, 242, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 201, 167, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+}
+
+.about-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    pointer-events: none;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-tag i {
+    margin-right: 8px;
+}
+
+.about-hero h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ---------- Section Common ---------- */
+.about-intro,
+.about-advantages,
+.about-equipment,
+.about-team,
+.about-milestones,
+.about-contact {
+    padding: 100px 0;
+}
+
+.about-advantages,
+.about-team {
+    background: var(--bg-gray);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header .section-tag {
+    display: inline-block;
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.section-header p {
+    font-size: 16px;
+    color: var(--text-light);
+}
+
+/* ---------- Introduction Section ---------- */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.intro-content .section-tag {
+    display: inline-block;
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.intro-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+.intro-content > p {
+    font-size: 16px;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.intro-mission-vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.mv-item {
+    background: var(--bg-gray);
+    border-radius: var(--radius);
+    padding: 24px;
+}
+
+.mv-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.mv-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.mv-item p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.intro-img-placeholder {
+    width: 100%;
+    height: 480px;
+    background: linear-gradient(135deg, var(--primary-light) 0%, #e0e7ff 100%);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: var(--primary);
+}
+
+.intro-img-placeholder i {
+    font-size: 64px;
+    opacity: 0.5;
+}
+
+.intro-img-placeholder span {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+/* ---------- Advantages Section ---------- */
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.advantage-card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 40px 28px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.advantage-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.advantage-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.advantage-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin: 0 auto 24px;
+    transition: var(--transition);
+}
+
+.advantage-card:hover .advantage-icon {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(24, 94, 242, 0.3);
+}
+
+.advantage-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.advantage-card p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* ---------- Equipment Section ---------- */
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.equipment-card {
+    display: flex;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.equipment-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.equipment-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.equipment-img {
+    width: 200px;
+    min-height: 220px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    color: var(--primary);
+    opacity: 0.6;
+}
+
+.equipment-info {
+    padding: 28px;
+    flex: 1;
+}
+
+.equipment-info h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.equipment-sub {
+    font-size: 14px;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.equipment-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.equipment-info ul li {
+    font-size: 14px;
+    color: var(--text-light);
+    padding: 4px 0;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.equipment-info ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+/* ---------- Team Section ---------- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.team-card {
+    display: flex;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    gap: 24px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.team-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.team-card.team-director {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--secondary) 0%, #1a1850 100%);
+    color: #fff;
+}
+
+.team-card.team-director .team-title {
+    color: var(--accent);
+}
+
+.team-card.team-director p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.team-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    flex-shrink: 0;
+}
+
+.team-director .team-photo {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 42px;
+}
+
+.team-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.team-title {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.team-info p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* ---------- Timeline / Milestones ---------- */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary), var(--accent));
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item:nth-child(odd) {
+    justify-content: flex-start;
+    padding-right: calc(50% + 40px);
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-end;
+    padding-left: calc(50% + 40px);
+    text-align: left;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 4px var(--primary-light);
+    transform: translateX(-50%);
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: translateX(-50%) scale(1.3);
+    box-shadow: 0 0 0 6px var(--primary-light);
+}
+
+.timeline-content {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-content {
+    box-shadow: var(--shadow-lg);
+}
+
+.timeline-year {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    padding: 4px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.timeline-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.timeline-content p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* ---------- Contact Section ---------- */
+.about-contact {
+    background: var(--bg-gray);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, #e8efff 0%, #dbe4ff 100%);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--primary);
+}
+
+.map-placeholder i {
+    font-size: 56px;
+    opacity: 0.4;
+}
+
+.map-placeholder span {
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+.contact-info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.contact-info-card:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.contact-info-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.contact-info-card p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* ---------- Scroll Animation Transitions ---------- */
+.advantage-card,
+.equipment-card,
+.team-card,
+.timeline-item {
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+.advantage-card:nth-child(2),
+.equipment-card:nth-child(2),
+.team-card:nth-child(2),
+.timeline-item:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.advantage-card:nth-child(3),
+.equipment-card:nth-child(3),
+.team-card:nth-child(3),
+.timeline-item:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.advantage-card:nth-child(4),
+.equipment-card:nth-child(4),
+.team-card:nth-child(4),
+.timeline-item:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.timeline-item:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.timeline-item:nth-child(6) {
+    transition-delay: 0.5s;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .equipment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-card.team-director {
+        grid-column: 1;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .intro-image {
+        order: -1;
+    }
+
+    .intro-img-placeholder {
+        height: 320px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 130px 0 70px;
+    }
+
+    .about-hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .about-intro,
+    .about-advantages,
+    .about-equipment,
+    .about-team,
+    .about-milestones,
+    .about-contact {
+        padding: 60px 0;
+    }
+
+    .section-header h2 {
+        font-size: 28px;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .advantage-card {
+        padding: 28px 24px;
+    }
+
+    .advantage-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 26px;
+    }
+
+    .equipment-card {
+        flex-direction: column;
+    }
+
+    .equipment-img {
+        width: 100%;
+        min-height: 160px;
+    }
+
+    .team-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 24px;
+    }
+
+    .team-director .team-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .intro-mission-vision {
+        grid-template-columns: 1fr;
+    }
+
+    /* Timeline mobile: single column */
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        padding-left: 56px;
+        padding-right: 0;
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .timeline-dot {
+        left: 20px;
+    }
+
+    .timeline-content {
+        padding: 20px;
+    }
+
+    .contact-info-card {
+        padding: 16px;
+    }
+
+    .map-placeholder {
+        height: 260px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero h1 {
+        font-size: 26px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .advantage-card p,
+    .equipment-info ul li,
+    .team-info p,
+    .timeline-content p {
+        font-size: 13px;
+    }
+}

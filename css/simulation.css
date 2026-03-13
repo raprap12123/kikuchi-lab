@@ -1,0 +1,456 @@
+/* ========== Simulation Page Styles ========== */
+
+/* ---------- Hero Section ---------- */
+.sim-hero {
+    position: relative;
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #0a1628 0%, #132244 40%, #0d2f5e 70%, #0a1e3d 100%);
+    color: #fff;
+    overflow: hidden;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+}
+
+.sim-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(24, 94, 242, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 30%, rgba(0, 201, 167, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.sim-hero::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    pointer-events: none;
+}
+
+.sim-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+}
+
+.sim-hero-tag {
+    display: inline-block;
+    padding: 6px 18px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.sim-hero-tag i {
+    margin-right: 6px;
+    color: var(--accent, #00c9a7);
+}
+
+.sim-hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.sim-hero-content > p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.85;
+    margin-bottom: 36px;
+}
+
+.sim-hero-stats {
+    display: flex;
+    gap: 40px;
+}
+
+.sim-hero-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.sim-hero-stat .stat-num {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--accent, #00c9a7);
+}
+
+.sim-hero-stat .stat-label {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-top: 4px;
+}
+
+/* ---------- Services Section ---------- */
+.sim-services {
+    padding: 80px 0;
+    background: #f5f7fb;
+}
+
+.sim-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 40px;
+}
+
+/* ---------- Sim Card ---------- */
+.sim-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 28px 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eef0f5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.sim-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary, #185ef2), var(--accent, #00c9a7));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sim-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(24, 94, 242, 0.12);
+    border-color: rgba(24, 94, 242, 0.2);
+}
+
+.sim-card:hover::before {
+    opacity: 1;
+}
+
+.sim-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.sim-card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--primary-light, #e8efff), #f0f4ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--primary, #185ef2);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sim-card:hover .sim-card-icon {
+    background: linear-gradient(135deg, var(--primary, #185ef2), var(--accent, #00c9a7));
+    color: #fff;
+}
+
+.sim-card-badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--primary, #185ef2), var(--primary-dark, #0c3db8));
+    color: #fff;
+}
+
+.sim-card-badge.hot {
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+}
+
+.sim-card-badge.new {
+    background: linear-gradient(135deg, var(--accent, #00c9a7), #0ea5e9);
+}
+
+.sim-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1a1a2e;
+}
+
+.sim-card-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #5a6070;
+    margin-bottom: 16px;
+    flex: 1;
+}
+
+.sim-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.sim-card-tags span {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #f0f4ff;
+    color: var(--primary, #185ef2);
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    border: 1px solid rgba(24, 94, 242, 0.1);
+}
+
+.sim-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid #f0f2f7;
+}
+
+.sim-card-price {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #ef4444;
+}
+
+.sim-card-price small {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: #888;
+}
+
+/* ---------- Workflow Timeline ---------- */
+.sim-workflow {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.sim-timeline {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-top: 48px;
+    position: relative;
+}
+
+.sim-timeline-item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    padding: 0 16px;
+    max-width: 220px;
+}
+
+.sim-timeline-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary, #185ef2), var(--accent, #00c9a7));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin: 0 auto 16px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 16px rgba(24, 94, 242, 0.25);
+}
+
+.sim-timeline-line {
+    position: absolute;
+    top: 32px;
+    left: calc(50% + 32px);
+    width: calc(100% - 64px);
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary, #185ef2), var(--accent, #00c9a7));
+    opacity: 0.3;
+    z-index: 1;
+}
+
+/* Last item has no line - handled by absence of .sim-timeline-line in HTML */
+
+.sim-timeline-item h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+}
+
+.sim-timeline-item p {
+    font-size: 0.85rem;
+    color: #5a6070;
+    line-height: 1.6;
+}
+
+/* ---------- CTA Section ---------- */
+.sim-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0a1628 0%, #132244 50%, #0d2f5e 100%);
+    text-align: center;
+    color: #fff;
+}
+
+.sim-cta-content h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.sim-cta-content > p {
+    font-size: 1.05rem;
+    opacity: 0.8;
+    margin-bottom: 32px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sim-cta-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sim-cta-actions .btn-outline-light {
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    background: transparent;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sim-cta-actions .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---------- Responsive: 2 columns ---------- */
+@media (max-width: 1024px) {
+    .sim-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .sim-hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .sim-timeline {
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center;
+    }
+
+    .sim-timeline-item {
+        max-width: 180px;
+    }
+
+    .sim-timeline-line {
+        display: none;
+    }
+}
+
+/* ---------- Responsive: 1 column ---------- */
+@media (max-width: 640px) {
+    .sim-hero {
+        padding: 100px 0 60px;
+        min-height: auto;
+    }
+
+    .sim-hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .sim-hero-content > p {
+        font-size: 0.95rem;
+    }
+
+    .sim-hero-stats {
+        gap: 24px;
+    }
+
+    .sim-hero-stat .stat-num {
+        font-size: 1.5rem;
+    }
+
+    .sim-card-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .sim-services {
+        padding: 48px 0;
+    }
+
+    .sim-workflow {
+        padding: 48px 0;
+    }
+
+    .sim-timeline {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .sim-timeline-item {
+        max-width: 100%;
+        padding: 0 0 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sim-timeline-line {
+        display: block;
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 3px;
+        height: 32px;
+        margin: 0 auto;
+    }
+
+    .sim-timeline-item:last-child .sim-timeline-line {
+        display: none;
+    }
+
+    .sim-cta-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .sim-cta {
+        padding: 48px 0;
+    }
+}

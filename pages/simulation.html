@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模拟仿真服务 | 菊池实验室</title>
+    <meta name="description" content="菊池实验室模拟仿真服务 - 提供ECCI虚拟模拟、CPFEM晶体塑性有限元、Dream.3D微观组织重构、VPSC织构演化、分子动力学(LAMMPS)、第一性原理计算(VASP/DFT)等专业计算服务。">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/simulation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="site-navbar"></div>
+
+    <!-- Hero Banner -->
+    <section class="sim-hero">
+        <div class="sim-hero-overlay"></div>
+        <div class="container">
+            <div class="sim-hero-content">
+                <span class="sim-hero-tag"><i class="fas fa-microchip"></i> Simulation & Computation</span>
+                <h1>模拟仿真服务</h1>
+                <p>结合实验数据与计算模拟，深度理解材料变形、断裂与相变机制。<br>从原子尺度到宏观力学，提供全尺度材料模拟解决方案。</p>
+                <div class="sim-hero-stats">
+                    <div class="sim-hero-stat">
+                        <span class="stat-num">6</span>
+                        <span class="stat-label">模拟服务项目</span>
+                    </div>
+                    <div class="sim-hero-stat">
+                        <span class="stat-num">500+</span>
+                        <span class="stat-label">已完成项目</span>
+                    </div>
+                    <div class="sim-hero-stat">
+                        <span class="stat-num">98%</span>
+                        <span class="stat-label">客户满意度</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulation Cards -->
+    <section class="sim-services" id="sim-services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">服务项目</span>
+                <h2>全方位模拟计算服务</h2>
+                <p>涵盖电子衍射模拟、晶体塑性力学、微观组织重构、织构演化、分子动力学及第一性原理计算</p>
+            </div>
+            <div class="sim-card-grid">
+
+                <!-- Card 1: ECCI虚拟模拟 -->
+                <div class="sim-card">
+                    <div class="sim-card-header">
+                        <div class="sim-card-icon"><i class="fas fa-laptop-code"></i></div>
+                        <span class="sim-card-badge">独家</span>
+                    </div>
+                    <h3 class="sim-card-title">ECCI虚拟模拟</h3>
+                    <p class="sim-card-desc">基于Howie-Whelan动力学衍射理论模拟ECCI图像，辅助位错Burgers矢量鉴定。通过数值求解电子波在含缺陷晶体中的衍射行为，生成模拟ECCI图像并与实验结果系统对比，精确鉴定位错的Burgers向量和性质。</p>
+                    <div class="sim-card-tags">
+                        <span>动力学衍射</span>
+                        <span>g·b分析</span>
+                        <span>位错鉴定</span>
+                        <span>Howie-Whelan方程</span>
+                    </div>
+                    <div class="sim-card-footer">
+                        <div class="sim-card-price">¥1,500<small>/次</small></div>
+                        <a href="services/ecci-virtual.html" class="btn btn-primary btn-sm">咨询预约</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: CPFEM -->
+                <div class="sim-card">
+                    <div class="sim-card-header">
+                        <div class="sim-card-icon"><i class="fas fa-cubes"></i></div>
+                        <span class="sim-card-badge hot">热门</span>
+                    </div>
+                    <h3 class="sim-card-title">CPFEM晶体塑性有限元</h3>
+                    <p class="sim-card-desc">基于真实EBSD微观组织建立晶体塑性有限元模型，模拟变形过程中应力/应变场演化与滑移系活化。支持DAMASK与Abaqus UMAT本构，可耦合相变、孪生等多种变形机制，揭示微观力学行为。</p>
+                    <div class="sim-card-tags">
+                        <span>DAMASK</span>
+                        <span>Abaqus UMAT</span>
+                        <span>微观力学</span>
+                        <span>滑移系活化</span>
+                    </div>
+                    <div class="sim-card-footer">
+                        <div class="sim-card-price">¥3,000<small>/次起</small></div>
+                        <a href="#sim-contact" class="btn btn-primary btn-sm">咨询预约</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Dream.3D -->
+                <div class="sim-card">
+                    <div class="sim-card-header">
+                        <div class="sim-card-icon"><i class="fas fa-project-diagram"></i></div>
+                    </div>
+                    <h3 class="sim-card-title">Dream.3D微观组织重构</h3>
+                    <p class="sim-card-desc">基于EBSD数据进行3D微观组织统计重构，生成代表性体积元（RVE），用于后续力学/热学模拟。通过统计匹配晶粒尺寸、形状、取向分布等参数，构建与实验等价的三维微观组织模型。</p>
+                    <div class="sim-card-tags">
+                        <span>RVE生成</span>
+                        <span>3D重构</span>
+                        <span>统计等价</span>
+                        <span>微观组织建模</span>
+                    </div>
+                    <div class="sim-card-footer">
+                        <div class="sim-card-price">¥2,000<small>/次起</small></div>
+                        <a href="#sim-contact" class="btn btn-primary btn-sm">咨询预约</a>
+                    </div>
+                </div>
+
+                <!-- Card 4: VPSC -->
+                <div class="sim-card">
+                    <div class="sim-card-header">
+                        <div class="sim-card-icon"><i class="fas fa-brain"></i></div>
+                    </div>
+                    <h3 class="sim-card-title">织构演化模拟（VPSC）</h3>
+                    <p class="sim-card-desc">粘塑性自洽模型模拟变形过程中织构演化，预测不同加工路径下的织构发展趋势。支持轧制、拉伸、压缩等多种变形模式，可模拟HCP金属的孪生与滑移竞争机制，预测ODF与极图。</p>
+                    <div class="sim-card-tags">
+                        <span>VPSC</span>
+                        <span>Taylor模型</span>
+                        <span>织构预测</span>
+                        <span>ODF计算</span>
+                    </div>
+                    <div class="sim-card-footer">
+                        <div class="sim-card-price">¥2,500<small>/次起</small></div>
+                        <a href="#sim-contact" class="btn btn-primary btn-sm">咨询预约</a>
+                    </div>
+                </div>
+
+                <!-- Card 5: LAMMPS -->
+                <div class="sim-card">
+                    <div class="sim-card-header">
+                        <div class="sim-card-icon"><i class="fas fa-atom"></i></div>
+                        <span class="sim-card-badge new">新增</span>
+                    </div>
+                    <h3 class="sim-card-title">分子动力学模拟（LAMMPS）</h3>
+                    <p class="sim-card-desc">采用LAMMPS进行原子尺度的分子动力学模拟，揭示材料在纳米尺度下的变形、断裂与扩散行为。支持EAM/MEAM/ReaxFF等多种势函数，可模拟位错运动、晶界迁移、裂纹扩展、辐照损伤等过程。</p>
+                    <div class="sim-card-tags">
+                        <span>LAMMPS</span>
+                        <span>分子动力学</span>
+                        <span>EAM势函数</span>
+                        <span>纳米力学</span>
+                    </div>
+                    <div class="sim-card-footer">
+                        <div class="sim-card-price">¥2,000<small>/次</small></div>
+                        <a href="#sim-contact" class="btn btn-primary btn-sm">咨询预约</a>
+                    </div>
+                </div>
+
+                <!-- Card 6: VASP/DFT -->
+                <div class="sim-card">
+                    <div class="sim-card-header">
+                        <div class="sim-card-icon"><i class="fas fa-wave-square"></i></div>
+                        <span class="sim-card-badge new">新增</span>
+                    </div>
+                    <h3 class="sim-card-title">第一性原理计算（VASP/DFT）</h3>
+                    <p class="sim-card-desc">基于密度泛函理论（DFT）进行第一性原理计算，获取材料的电子结构、能带、态密度、弹性常数等基本物理性质。支持结构优化、能量计算、声子谱、过渡态搜索（NEB），为合金设计提供理论依据。</p>
+                    <div class="sim-card-tags">
+                        <span>VASP</span>
+                        <span>DFT</span>
+                        <span>电子结构</span>
+                        <span>弹性常数</span>
+                    </div>
+                    <div class="sim-card-footer">
+                        <div class="sim-card-price">¥3,000<small>/次</small></div>
+                        <a href="#sim-contact" class="btn btn-primary btn-sm">咨询预约</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Timeline -->
+    <section class="sim-workflow" id="sim-workflow">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">服务流程</span>
+                <h2>模拟计算服务流程</h2>
+                <p>从数据提交到报告交付，全流程标准化管理</p>
+            </div>
+            <div class="sim-timeline">
+                <div class="sim-timeline-item">
+                    <div class="sim-timeline-icon"><i class="fas fa-database"></i></div>
+                    <div class="sim-timeline-line"></div>
+                    <h4>提供EBSD数据</h4>
+                    <p>提交EBSD测试数据（.ctf/.ang格式）或其他实验数据，明确分析需求</p>
+                </div>
+                <div class="sim-timeline-item">
+                    <div class="sim-timeline-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <div class="sim-timeline-line"></div>
+                    <h4>建立模型</h4>
+                    <p>基于实验数据构建计算模型，设定边界条件与材料本构参数</p>
+                </div>
+                <div class="sim-timeline-item">
+                    <div class="sim-timeline-icon"><i class="fas fa-server"></i></div>
+                    <div class="sim-timeline-line"></div>
+                    <h4>计算模拟</h4>
+                    <p>在高性能计算平台上运行模拟计算，全程质量监控</p>
+                </div>
+                <div class="sim-timeline-item">
+                    <div class="sim-timeline-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="sim-timeline-line"></div>
+                    <h4>结果分析</h4>
+                    <p>对模拟结果进行专业后处理分析，提取关键信息与物理规律</p>
+                </div>
+                <div class="sim-timeline-item">
+                    <div class="sim-timeline-icon"><i class="fas fa-file-alt"></i></div>
+                    <h4>报告交付</h4>
+                    <p>提供详细分析报告（PDF）、原始数据文件及可视化图像</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section class="sim-cta" id="sim-contact">
+        <div class="container">
+            <div class="sim-cta-content">
+                <h2>需要定制化模拟方案？</h2>
+                <p>我们的计算团队拥有丰富的材料模拟经验，可根据您的研究需求提供个性化计算方案。</p>
+                <div class="sim-cta-actions">
+                    <a href="../index.html#booking" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> 立即预约</a>
+                    <a href="tel:400-888-9999" class="btn btn-outline-light btn-lg"><i class="fas fa-phone"></i> 电话咨询</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <div id="site-extras"></div>
+
+    <script src="../js/components.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('site-navbar').innerHTML = renderNavbar('simulation');
+            document.getElementById('site-footer').innerHTML = renderFooter();
+            document.getElementById('site-extras').innerHTML = renderChatWidget();
+            initCommon();
+        });
+    </script>
+</body>
+</html>
