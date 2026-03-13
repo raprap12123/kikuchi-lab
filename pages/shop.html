@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>耗材商城 | 菊池实验室</title>
+    <meta name="description" content="菊池实验室耗材商城 - 提供EBSD抛光机、抛光液、砂纸、金刚石悬浮液、OPS、离子抛光仪耗材等全系列材料表征耗材，品质保证，价格透明。">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="site-navbar"></div>
+
+    <!-- Hero Banner -->
+    <section class="shop-hero">
+        <div class="container">
+            <div class="shop-hero-content">
+                <span class="shop-hero-tag"><i class="fas fa-store"></i> Lab Consumables Store</span>
+                <h1>实验耗材商城</h1>
+                <p>EBSD制样全系列耗材一站式采购，品牌正品保障，实验室批量采购更优惠。</p>
+                <div class="shop-hero-stats">
+                    <div class="shop-hero-stat">
+                        <span class="stat-num">200+</span>
+                        <span class="stat-label">在售商品</span>
+                    </div>
+                    <div class="shop-hero-stat">
+                        <span class="stat-num">50+</span>
+                        <span class="stat-label">品牌入驻</span>
+                    </div>
+                    <div class="shop-hero-stat">
+                        <span class="stat-num">24h</span>
+                        <span class="stat-label">快速发货</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="shop-filter-bar">
+        <div class="container">
+            <div class="shop-filter-inner">
+                <div class="shop-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="shopSearchInput" placeholder="搜索商品名称、品牌...">
+                </div>
+                <div class="shop-cat-tabs">
+                    <button class="shop-cat-tab active" data-cat="all">全部</button>
+                    <button class="shop-cat-tab" data-cat="polisher">抛光机</button>
+                    <button class="shop-cat-tab" data-cat="liquid">抛光液</button>
+                    <button class="shop-cat-tab" data-cat="abrasive">研磨耗材</button>
+                    <button class="shop-cat-tab" data-cat="sample">制样工具</button>
+                    <button class="shop-cat-tab" data-cat="accessory">配件备件</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="shop-products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">热销商品</span>
+                <h2>全系列EBSD制样耗材</h2>
+                <p>覆盖机械抛光、化学抛光、离子抛光全流程所需耗材</p>
+            </div>
+            <div class="shop-grid" id="shopGrid">
+
+                <!-- 抛光机类 -->
+                <div class="product-card" data-cat="polisher" data-name="全自动金相研磨抛光机">
+                    <div class="product-card-img">
+                        <i class="fas fa-cog"></i>
+                        <span class="product-card-badge">热销</span>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">PRESI</div>
+                        <h3 class="product-card-title">全自动金相研磨抛光机 Minitech 300 SP2</h3>
+                        <p class="product-card-desc">双盘全自动研磨抛光一体机，适用于EBSD样品制备，精密压力控制，重复性优异。</p>
+                        <div class="product-card-specs">
+                            <span>双盘设计</span>
+                            <span>自动加液</span>
+                            <span>可编程</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">询价</div>
+                            <a href="tel:400-888-9999" class="btn btn-primary btn-sm">咨询购买</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="polisher" data-name="振动抛光机 VibroMet 2">
+                    <div class="product-card-img">
+                        <i class="fas fa-wave-square"></i>
+                        <span class="product-card-badge new">推荐</span>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">BUEHLER</div>
+                        <h3 class="product-card-title">振动抛光机 VibroMet 2</h3>
+                        <p class="product-card-desc">EBSD制样终抛利器，超低应力层去除，获得完美Kikuchi花样。配合OPS/OP-S悬浮液使用效果最佳。</p>
+                        <div class="product-card-specs">
+                            <span>振动抛光</span>
+                            <span>去应力层</span>
+                            <span>EBSD首选</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">询价</div>
+                            <a href="tel:400-888-9999" class="btn btn-primary btn-sm">咨询购买</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="polisher" data-name="离子束截面抛光仪 IB-19530CP">
+                    <div class="product-card-img">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">JEOL</div>
+                        <h3 class="product-card-title">离子束截面抛光仪 IB-19530CP</h3>
+                        <p class="product-card-desc">Ar离子束截面抛光，无机械应力，适用于多相材料、涂层、薄膜的EBSD截面制样。</p>
+                        <div class="product-card-specs">
+                            <span>Ar离子束</span>
+                            <span>截面制样</span>
+                            <span>无应力</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">询价</div>
+                            <a href="tel:400-888-9999" class="btn btn-primary btn-sm">咨询购买</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="polisher" data-name="电解抛光仪 LectroPol-5">
+                    <div class="product-card-img">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">STRUERS</div>
+                        <h3 class="product-card-title">电解抛光仪 LectroPol-5</h3>
+                        <p class="product-card-desc">全自动电解抛光/刻蚀系统，适用于铝、铜、钛合金等有色金属的EBSD电解制样。</p>
+                        <div class="product-card-specs">
+                            <span>电解抛光</span>
+                            <span>有色金属</span>
+                            <span>全自动</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">询价</div>
+                            <a href="tel:400-888-9999" class="btn btn-primary btn-sm">咨询购买</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 抛光液类 -->
+                <div class="product-card" data-cat="liquid" data-name="OPS胶体硅溶液 0.04μm">
+                    <div class="product-card-img">
+                        <i class="fas fa-flask"></i>
+                        <span class="product-card-badge">热销</span>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">STRUERS</div>
+                        <h3 class="product-card-title">OP-S 胶体硅悬浮液 0.04μm</h3>
+                        <p class="product-card-desc">EBSD终抛标配，0.04μm SiO2胶体悬浮液，pH值9.8，适用于几乎所有金属材料的化学机械抛光。</p>
+                        <div class="product-card-specs">
+                            <span>0.04μm</span>
+                            <span>1L/瓶</span>
+                            <span>EBSD终抛</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥580<small>¥680</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="liquid" data-name="MasterMet 2 胶体硅抛光液">
+                    <div class="product-card-img">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">BUEHLER</div>
+                        <h3 class="product-card-title">MasterMet 2 胶体硅抛光液 0.02μm</h3>
+                        <p class="product-card-desc">超细0.02μm非结晶胶体硅，无结晶残留，适用于高要求EBSD制样，获得更高标定率。</p>
+                        <div class="product-card-specs">
+                            <span>0.02μm</span>
+                            <span>946mL/瓶</span>
+                            <span>高标定率</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥720<small>¥860</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="liquid" data-name="金刚石悬浮液套装">
+                    <div class="product-card-img">
+                        <i class="fas fa-gem"></i>
+                        <span class="product-card-badge">套装</span>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">STRUERS</div>
+                        <h3 class="product-card-title">DiaPro 金刚石悬浮液套装</h3>
+                        <p class="product-card-desc">9μm + 3μm + 1μm 三级金刚石悬浮液套装，搭配MD-系列抛光布使用，实现高效逐级精抛。</p>
+                        <div class="product-card-specs">
+                            <span>9/3/1μm</span>
+                            <span>各500mL</span>
+                            <span>三级套装</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥1,680<small>¥2,100</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="liquid" data-name="铝合金电解抛光液">
+                    <div class="product-card-img">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">菊池实验室</div>
+                        <h3 class="product-card-title">铝合金电解抛光液 A2</h3>
+                        <p class="product-card-desc">专用铝合金EBSD电解抛光液，高氯酸+乙醇体系，适用于纯铝及多数铝合金，表面质量优异。</p>
+                        <div class="product-card-specs">
+                            <span>铝合金专用</span>
+                            <span>500mL/瓶</span>
+                            <span>即配即用</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥320<small>¥400</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 研磨耗材 -->
+                <div class="product-card" data-cat="abrasive" data-name="MD-Chem化学抛光布">
+                    <div class="product-card-img">
+                        <i class="fas fa-circle"></i>
+                        <span class="product-card-badge">热销</span>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">STRUERS</div>
+                        <h3 class="product-card-title">MD-Chem 化学抛光布 Ø200mm</h3>
+                        <p class="product-card-desc">EBSD终抛专用化学抛光布，与OP-S配合使用，多孔结构确保均匀化学机械抛光效果。</p>
+                        <div class="product-card-specs">
+                            <span>Ø200mm</span>
+                            <span>5片/盒</span>
+                            <span>终抛专用</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥360<small>¥420</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="abrasive" data-name="SiC碳化硅砂纸套装">
+                    <div class="product-card-img">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">BUEHLER</div>
+                        <h3 class="product-card-title">CarbiMet SiC 水磨砂纸套装</h3>
+                        <p class="product-card-desc">P320/P600/P1200/P2500/P4000 五级碳化硅水磨砂纸套装，Ø200mm，用于粗磨至精磨全流程。</p>
+                        <div class="product-card-specs">
+                            <span>P320~P4000</span>
+                            <span>各50张</span>
+                            <span>五级套装</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥450<small>¥560</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="abrasive" data-name="金刚石研磨膏套装">
+                    <div class="product-card-img">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">KEMET</div>
+                        <h3 class="product-card-title">金刚石研磨膏套装（6/3/1/0.25μm）</h3>
+                        <p class="product-card-desc">多晶金刚石研磨膏四级套装，油基载体，适用于硬质合金、陶瓷等难加工材料的EBSD制样。</p>
+                        <div class="product-card-specs">
+                            <span>6/3/1/0.25μm</span>
+                            <span>各5g</span>
+                            <span>硬质材料</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥890<small>¥1,080</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="abrasive" data-name="MD-Largo研磨盘">
+                    <div class="product-card-img">
+                        <i class="fas fa-compact-disc"></i>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">STRUERS</div>
+                        <h3 class="product-card-title">MD-Largo 复合研磨盘 Ø200mm</h3>
+                        <p class="product-card-desc">超硬复合表面研磨盘，搭配9μm金刚石悬浮液使用，适用于钢铁、钛合金等的平面研磨。</p>
+                        <div class="product-card-specs">
+                            <span>Ø200mm</span>
+                            <span>高耐磨</span>
+                            <span>复合面</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥680<small>¥800</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 制样工具 -->
+                <div class="product-card" data-cat="sample" data-name="热镶嵌料 导电酚醛树脂">
+                    <div class="product-card-img">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">STRUERS</div>
+                        <h3 class="product-card-title">PolyFast 导电热镶嵌料</h3>
+                        <p class="product-card-desc">导电酚醛树脂镶嵌料，含碳填料导电性好，适用于SEM/EBSD观察，避免荷电效应。</p>
+                        <div class="product-card-specs">
+                            <span>导电型</span>
+                            <span>1kg/罐</span>
+                            <span>SEM/EBSD</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥420<small>¥500</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="sample" data-name="冷镶嵌环氧树脂套装">
+                    <div class="product-card-img">
+                        <i class="fas fa-prescription-bottle"></i>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">BUEHLER</div>
+                        <h3 class="product-card-title">EpoThin 2 冷镶嵌环氧树脂套装</h3>
+                        <p class="product-card-desc">低粘度透明环氧树脂，固化收缩小，适用于对温度敏感的样品镶嵌，真空灌注效果优异。</p>
+                        <div class="product-card-specs">
+                            <span>低粘度</span>
+                            <span>透明</span>
+                            <span>低收缩</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥380<small>¥460</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="sample" data-name="导电银胶 SPI">
+                    <div class="product-card-img">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">SPI</div>
+                        <h3 class="product-card-title">SPI 导电银胶 30g</h3>
+                        <p class="product-card-desc">高纯银基导电胶，用于SEM/EBSD样品固定及导电连接，干燥快，导电性优异。</p>
+                        <div class="product-card-specs">
+                            <span>银基</span>
+                            <span>30g/瓶</span>
+                            <span>快干型</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥260<small>¥320</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="sample" data-name="碳导电胶带">
+                    <div class="product-card-img">
+                        <i class="fas fa-tape"></i>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">TED PELLA</div>
+                        <h3 class="product-card-title">双面碳导电胶带 8mm×20m</h3>
+                        <p class="product-card-desc">SEM/EBSD通用碳导电胶带，高纯碳材质，用于样品固定与导电，低本底信号。</p>
+                        <div class="product-card-specs">
+                            <span>8mm宽</span>
+                            <span>20m/卷</span>
+                            <span>碳基</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥85<small>¥110</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 配件备件 -->
+                <div class="product-card" data-cat="accessory" data-name="SEM样品台 铝合金">
+                    <div class="product-card-img">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">TED PELLA</div>
+                        <h3 class="product-card-title">SEM铝合金样品台 Ø25mm</h3>
+                        <p class="product-card-desc">标准SEM/EBSD铝合金样品台，平面型，适配主流SEM品牌（ZEISS/TESCAN/JEOL/FEI）。</p>
+                        <div class="product-card-specs">
+                            <span>Ø25mm</span>
+                            <span>10个/盒</span>
+                            <span>通用型</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥120<small>¥150</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="accessory" data-name="70°预倾斜样品台 EBSD">
+                    <div class="product-card-img">
+                        <i class="fas fa-drafting-compass"></i>
+                        <span class="product-card-badge new">EBSD专用</span>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">OXFORD</div>
+                        <h3 class="product-card-title">70° 预倾斜EBSD样品台</h3>
+                        <p class="product-card-desc">EBSD专用70°预倾斜样品台，免去手动倾斜操作，确保最佳衍射几何条件，提高采集效率。</p>
+                        <div class="product-card-specs">
+                            <span>70°倾斜</span>
+                            <span>EBSD专用</span>
+                            <span>通用接口</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥1,200<small>¥1,500</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="accessory" data-name="超声波清洗机">
+                    <div class="product-card-img">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">ELMA</div>
+                        <h3 class="product-card-title">超声波清洗机 Elmasonic P 30H</h3>
+                        <p class="product-card-desc">2.75L台式超声波清洗机，37kHz频率，用于抛光后样品的清洁，去除残留抛光液和碎屑。</p>
+                        <div class="product-card-specs">
+                            <span>2.75L</span>
+                            <span>37kHz</span>
+                            <span>加热型</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥3,800<small>¥4,500</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-cat="accessory" data-name="无水乙醇 分析纯">
+                    <div class="product-card-img">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <div class="product-card-body">
+                        <div class="product-card-brand">国药集团</div>
+                        <h3 class="product-card-title">无水乙醇 分析纯 AR 500mL</h3>
+                        <p class="product-card-desc">分析纯无水乙醇，含量≥99.7%，用于样品清洗、电解液配制等，实验室常备试剂。</p>
+                        <div class="product-card-specs">
+                            <span>AR级</span>
+                            <span>500mL</span>
+                            <span>≥99.7%</span>
+                        </div>
+                        <div class="product-card-footer">
+                            <div class="product-card-price">¥25<small>¥35</small></div>
+                            <button class="btn btn-primary btn-sm">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Empty state (hidden by default) -->
+            <div class="shop-empty" id="shopEmpty" style="display:none;">
+                <i class="fas fa-search"></i>
+                <p>未找到匹配的商品，试试其他关键词</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages -->
+    <section class="shop-advantages">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">购物保障</span>
+                <h2>为什么选择菊池实验室商城</h2>
+                <p>正品保障、专业选型、快速配送、售后无忧</p>
+            </div>
+            <div class="shop-adv-grid">
+                <div class="shop-adv-item">
+                    <div class="shop-adv-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>正品保障</h4>
+                    <p>所有商品均为品牌授权正品，提供原厂质保证书和发票</p>
+                </div>
+                <div class="shop-adv-item">
+                    <div class="shop-adv-icon"><i class="fas fa-user-tie"></i></div>
+                    <h4>专业选型</h4>
+                    <p>资深工程师提供1对1选型咨询，根据材料和需求推荐最佳方案</p>
+                </div>
+                <div class="shop-adv-item">
+                    <div class="shop-adv-icon"><i class="fas fa-shipping-fast"></i></div>
+                    <h4>闪电发货</h4>
+                    <p>常备库存24小时发货，进口耗材提供快速通关代购服务</p>
+                </div>
+                <div class="shop-adv-item">
+                    <div class="shop-adv-icon"><i class="fas fa-redo-alt"></i></div>
+                    <h4>售后无忧</h4>
+                    <p>7天无理由退换，设备类产品提供安装调试和技术培训</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="shop-cta">
+        <div class="container">
+            <h2>需要批量采购或定制方案？</h2>
+            <p>实验室批量采购享专属折扣，大宗订单可提供定制化耗材方案。</p>
+            <div class="shop-cta-actions">
+                <a href="tel:400-888-9999" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> 电话咨询</a>
+                <a href="mailto:service@kikuchi-lab.com" class="btn-outline-light"><i class="fas fa-envelope"></i> 邮件询价</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <div id="site-extras"></div>
+
+    <script src="../js/components.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('site-navbar').innerHTML = renderNavbar('shop');
+            document.getElementById('site-footer').innerHTML = renderFooter();
+            document.getElementById('site-extras').innerHTML = renderChatWidget();
+            initCommon();
+
+            // Category filter
+            const tabs = document.querySelectorAll('.shop-cat-tab');
+            const cards = document.querySelectorAll('.product-card');
+            const emptyState = document.getElementById('shopEmpty');
+            const grid = document.getElementById('shopGrid');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    filterProducts();
+                });
+            });
+
+            // Search
+            const searchInput = document.getElementById('shopSearchInput');
+            searchInput.addEventListener('input', () => filterProducts());
+
+            function filterProducts() {
+                const activeCat = document.querySelector('.shop-cat-tab.active').dataset.cat;
+                const query = searchInput.value.trim().toLowerCase();
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    const cardCat = card.dataset.cat;
+                    const cardName = card.dataset.name.toLowerCase();
+                    const catMatch = activeCat === 'all' || cardCat === activeCat;
+                    const searchMatch = !query || cardName.includes(query);
+
+                    if (catMatch && searchMatch) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                emptyState.style.display = visibleCount === 0 ? '' : 'none';
+                grid.style.display = visibleCount === 0 ? 'none' : '';
+            }
+        });
+    </script>
+</body>
+</html>

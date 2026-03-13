@@ -818,24 +818,31 @@ function renderRechargeHistory() {
     `).join('');
 }
 
-// ========== Side Floating Ads ==========
+// ========== Side Floating Ads & Mobile Promo Bar ==========
 function initSideFloats() {
-    document.querySelectorAll('.side-float').forEach(el => {
+    // Check 24-hour hide for all closeable promos
+    const promoEls = document.querySelectorAll('.side-float, .mobile-promo-bar');
+    promoEls.forEach(el => {
         const id = el.id;
-        // Check if user closed it within 24 hours
         const closedAt = localStorage.getItem('sf_closed_' + id);
         if (closedAt && Date.now() - parseInt(closedAt) < 24 * 60 * 60 * 1000) {
             el.style.display = 'none';
-            return;
+            if (el.classList.contains('mobile-promo-bar')) {
+                document.body.style.paddingBottom = '0';
+            }
         }
     });
 
-    document.querySelectorAll('.side-float-close').forEach(btn => {
+    // Close buttons for both desktop floats and mobile bar
+    document.querySelectorAll('.side-float-close, .mobile-promo-bar-close').forEach(btn => {
         btn.addEventListener('click', () => {
             const target = document.getElementById(btn.dataset.target);
             if (target) {
                 target.style.display = 'none';
                 localStorage.setItem('sf_closed_' + btn.dataset.target, Date.now().toString());
+                if (target.classList.contains('mobile-promo-bar')) {
+                    document.body.style.paddingBottom = '0';
+                }
             }
         });
     });

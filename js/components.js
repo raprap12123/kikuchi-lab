@@ -44,6 +44,7 @@ function renderNavbar(activePage) {
                     </div>
                 </li>
                 <li><a href="${ROOT}pages/simulation.html" ${activePage==='simulation'?'class="active"':''}>模拟仿真</a></li>
+                <li><a href="${ROOT}pages/shop.html" ${activePage==='shop'?'class="active"':''}>耗材商城</a></li>
                 <li><a href="${ROOT}pages/articles.html" ${activePage==='articles'?'class="active"':''}>EBSD干货</a></li>
                 <li><a href="${ROOT}pages/about.html" ${activePage==='about'?'class="active"':''}>关于我们</a></li>
             </ul>

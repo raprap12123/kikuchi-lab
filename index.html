@@ -806,22 +806,43 @@
     <!-- 两侧浮窗广告 -->
     <div class="side-float side-float-left" id="sideFloatLeft">
         <button class="side-float-close" data-target="sideFloatLeft">&times;</button>
+        <div class="side-float-banner">
+            <div class="side-float-banner-icon"><i class="fas fa-gift"></i></div>
+            <div class="side-float-banner-label">充值优惠活动</div>
+        </div>
         <div class="side-float-content">
             <div class="side-float-tag">限时优惠</div>
             <div class="side-float-title">预存充值</div>
             <div class="side-float-highlight">最高赠送 <strong>¥1,500</strong></div>
-            <p>充 ¥10,000 得 ¥11,500</p>
+            <p>充 ¥10,000 得 ¥11,500<br>多充多送，长期有效</p>
             <a href="#recharge" class="btn btn-primary btn-sm">立即充值</a>
         </div>
     </div>
     <div class="side-float side-float-right" id="sideFloatRight">
         <button class="side-float-close" data-target="sideFloatRight">&times;</button>
+        <div class="side-float-banner">
+            <div class="side-float-banner-icon"><i class="fas fa-user-plus"></i></div>
+            <div class="side-float-banner-label">新用户专享福利</div>
+        </div>
         <div class="side-float-content">
             <div class="side-float-tag">新人福利</div>
             <div class="side-float-title">注册有礼</div>
             <div class="side-float-highlight">送 <strong>¥200</strong> 测试券</div>
-            <p>首单立减，注册即领</p>
+            <p>首单立减，注册即领<br>更有专属客服1对1指导</p>
             <button class="btn btn-primary btn-sm" onclick="document.getElementById('authModal').classList.add('active')">立即注册</button>
+        </div>
+    </div>
+
+    <!-- 移动端底部促销条 -->
+    <div class="mobile-promo-bar" id="mobilePromoBar">
+        <button class="mobile-promo-bar-close" data-target="mobilePromoBar">&times;</button>
+        <div class="mobile-promo-bar-inner">
+            <div class="mobile-promo-bar-icon"><i class="fas fa-gift"></i></div>
+            <div class="mobile-promo-bar-text">
+                <strong>新人注册送 <em>¥200</em> 测试券</strong>
+                <span>充值最高赠送 <em>¥1,500</em></span>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="document.getElementById('authModal').classList.add('active')">领取福利</button>
         </div>
     </div>
 
