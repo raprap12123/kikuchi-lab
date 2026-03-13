@@ -21,7 +21,7 @@ function renderNavbar(activePage) {
             <span><i class="fas fa-clock"></i> 工作时间：周一至周五 8:30 - 17:30</span>
             <div class="top-bar-right">
                 <a href="tel:400-888-9999"><i class="fas fa-phone"></i> 400-888-9999</a>
-                <a href="mailto:service@ruice-tech.com"><i class="fas fa-envelope"></i> service@ruice-tech.com</a>
+                <a href="mailto:service@kikuchi-lab.com"><i class="fas fa-envelope"></i> service@kikuchi-lab.com</a>
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@ function renderNavbar(activePage) {
         <div class="container">
             <a href="${ROOT}index.html" class="logo">
                 <span class="logo-icon"><i class="fas fa-microscope"></i></span>
-                <span class="logo-text">锐测科技<small>RUICE TECH</small></span>
+                <span class="logo-text">菊池实验室<small>KIKUCHI LAB</small></span>
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="${ROOT}index.html" ${activePage==='home'?'class="active"':''}>首页</a></li>
@@ -62,7 +62,7 @@ function renderFooter() {
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="footer-logo"><i class="fas fa-microscope"></i> 锐测科技</div>
+                    <div class="footer-logo"><i class="fas fa-microscope"></i> 菊池实验室</div>
                     <p>专业EBSD抛光与测试服务平台<br>让材料表征更简单</p>
                     <div class="footer-social">
                         <a href="#"><i class="fab fa-weixin"></i></a>
@@ -88,13 +88,13 @@ function renderFooter() {
                 <div class="footer-contact">
                     <h4>联系我们</h4>
                     <p><i class="fas fa-phone"></i> 400-888-9999</p>
-                    <p><i class="fas fa-envelope"></i> service@ruice-tech.com</p>
+                    <p><i class="fas fa-envelope"></i> service@kikuchi-lab.com</p>
                     <p><i class="fas fa-map-marker-alt"></i> 北京市海淀区中关村科技园</p>
                     <p><i class="fas fa-clock"></i> 周一至周五 8:30-17:30</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 锐测科技 RUICE TECH. All Rights Reserved. | <a href="#">京ICP备XXXXXXXX号</a></p>
+                <p>&copy; 2024 菊池实验室 KIKUCHI LAB. All Rights Reserved. | <a href="#">京ICP备XXXXXXXX号</a></p>
             </div>
         </div>
     </footer>`;

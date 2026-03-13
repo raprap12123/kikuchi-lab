@@ -11,7 +11,10 @@
       "WebFetch(domain:www.ceshigo.com)",
       "Bash(cmd.exe /c start \"\" \"E:\\\\网站\\\\pages\\\\services.html\")",
       "Bash(ls -la \"E:/网站/pages/services/\"*.html)",
-      "Bash(cmd.exe /c start \"\" \"E:\\\\网站\\\\pages\\\\services.html\" && cmd.exe /c start \"\" \"E:\\\\网站\\\\pages\\\\services\\\\ebsd-standard.html\")"
+      "Bash(cmd.exe /c start \"\" \"E:\\\\网站\\\\pages\\\\services.html\" && cmd.exe /c start \"\" \"E:\\\\网站\\\\pages\\\\services\\\\ebsd-standard.html\")",
+      "Bash(gh auth:*)",
+      "Bash(cd \"E:/网站\" && gh repo create kikuchi-lab --public --description \"菊池实验室 Kikuchi Lab - EBSD抛光与分析服务平台\" --source . --push)",
+      "Bash(cd \"E:/网站\" && find . -name \"*.html\" -o -name \"*.js\" | while read f; do sed -i 's/锐测科技/菊池实验室/g; s/RUICE TECH/KIKUCHI LAB/g; s/ruice-tech/kikuchi-lab/g' \"$f\"; done)"
     ]
   }
 }
