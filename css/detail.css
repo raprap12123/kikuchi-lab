@@ -383,25 +383,92 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .detail-grid { grid-template-columns: 1fr; }
+    .detail-grid { grid-template-columns: 1fr; gap: 32px; }
     .booking-grid { grid-template-columns: 1fr; }
     .related-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
 @media (max-width: 768px) {
+    .detail-top { padding: 0 0 40px; }
     .detail-title { font-size: 22px; }
-    .detail-stats { flex-wrap: wrap; gap: 16px; }
-    .detail-actions { flex-direction: column; }
+    .detail-subtitle { font-size: 14px; }
+    .detail-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+    .detail-actions {
+        flex-direction: column;
+    }
+    .detail-actions .btn {
+        width: 100%;
+        min-height: 48px;
+        padding: 14px 24px;
+    }
     .related-grid { grid-template-columns: 1fr; }
-    .detail-tabs { overflow-x: auto; }
+    .related-card {
+        min-height: 44px;
+    }
+    .detail-tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .detail-tabs::-webkit-scrollbar { display: none; }
+    .detail-tab {
+        white-space: nowrap;
+        min-height: 44px;
+    }
+    .detail-content { padding: 40px 0; }
     .detail-img-placeholder i { font-size: 56px; }
     .detail-img-placeholder { background-size: 16px 16px; background-position: 0 0, 8px 8px; }
+    .detail-img-gallery .thumb {
+        width: 64px;
+        height: 48px;
+    }
+    .detail-guarantees {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .detail-guarantees span {
+        font-size: 14px;
+    }
+
+    /* Table horizontal scroll on mobile */
+    .param-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .param-table th {
+        white-space: nowrap;
+        min-width: 120px;
+    }
+
+    .booking-form-card { padding: 20px; }
+    .booking-calendar-card { padding: 16px; }
+
+    .detail-booking { padding: 40px 0; }
+    .related-services { padding: 40px 0; }
 }
 
 @media (max-width: 480px) {
     .detail-title { font-size: 20px; }
     .detail-price { font-size: 28px; }
-    .detail-tab { padding: 10px 16px; font-size: 13px; }
-    .detail-tab-panel { padding: 20px; }
+    .detail-tab { padding: 10px 14px; font-size: 14px; }
+    .detail-tab-panel { padding: 16px; }
     .detail-img-placeholder i { font-size: 48px; }
-    .detail-img-placeholder span { font-size: 12px; padding: 3px 12px; }
+    .detail-img-placeholder span { font-size: 14px; padding: 3px 12px; }
+    .detail-desc p { font-size: 14px; }
+    .detail-desc ul li { font-size: 14px; }
+    .detail-desc h3 { font-size: 16px; }
+    .detail-cat { font-size: 14px; }
+    .detail-price-note { font-size: 14px; }
+    .detail-stat-label { font-size: 14px; }
+
+    .param-table td,
+    .param-table th {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
 }

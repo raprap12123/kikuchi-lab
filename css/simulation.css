@@ -356,7 +356,7 @@
     border-color: rgba(255, 255, 255, 0.7);
 }
 
-/* ---------- Responsive: 2 columns ---------- */
+/* ---------- Responsive: tablet ---------- */
 @media (max-width: 1024px) {
     .sim-card-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -382,8 +382,8 @@
     }
 }
 
-/* ---------- Responsive: 1 column ---------- */
-@media (max-width: 640px) {
+/* ---------- Responsive: tablet portrait ---------- */
+@media (max-width: 768px) {
     .sim-hero {
         padding: 100px 0 60px;
         min-height: auto;
@@ -394,20 +394,42 @@
     }
 
     .sim-hero-content > p {
-        font-size: 0.95rem;
+        font-size: 1rem;
     }
 
     .sim-hero-stats {
-        gap: 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
 
     .sim-hero-stat .stat-num {
         font-size: 1.5rem;
     }
 
+    .sim-hero-stat .stat-label {
+        font-size: 14px;
+    }
+
     .sim-card-grid {
         grid-template-columns: 1fr;
         gap: 16px;
+    }
+
+    .sim-card {
+        padding: 24px 20px 20px;
+    }
+
+    .sim-card-title {
+        font-size: 1.1rem;
+    }
+
+    .sim-card-desc {
+        font-size: 14px;
+    }
+
+    .sim-card-tags span {
+        font-size: 14px;
     }
 
     .sim-services {
@@ -418,6 +440,7 @@
         padding: 48px 0;
     }
 
+    /* Vertical timeline on mobile */
     .sim-timeline {
         flex-direction: column;
         align-items: center;
@@ -426,7 +449,7 @@
 
     .sim-timeline-item {
         max-width: 100%;
-        padding: 0 0 32px;
+        padding: 0 0 24px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -438,12 +461,20 @@
         top: auto;
         left: auto;
         width: 3px;
-        height: 32px;
+        height: 24px;
         margin: 0 auto;
     }
 
     .sim-timeline-item:last-child .sim-timeline-line {
         display: none;
+    }
+
+    .sim-timeline-item h4 {
+        font-size: 1rem;
+    }
+
+    .sim-timeline-item p {
+        font-size: 14px;
     }
 
     .sim-cta-content h2 {
@@ -452,5 +483,51 @@
 
     .sim-cta {
         padding: 48px 0;
+    }
+
+    .sim-cta-actions .btn-outline-light {
+        min-height: 48px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .sim-cta-actions {
+        flex-direction: column;
+        align-items: center;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* ---------- Responsive: phone ---------- */
+@media (max-width: 480px) {
+    .sim-hero {
+        padding: 80px 0 48px;
+    }
+
+    .sim-hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .sim-hero-content > p {
+        font-size: 14px;
+    }
+
+    .sim-hero-stat .stat-num {
+        font-size: 1.3rem;
+    }
+
+    .sim-card-footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .sim-card-price {
+        font-size: 1.2rem;
+    }
+
+    .sim-cta-content > p {
+        font-size: 14px;
     }
 }

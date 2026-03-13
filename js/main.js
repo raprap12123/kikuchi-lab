@@ -26,14 +26,18 @@ function initNavbar() {
     });
 
     hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
+        const isOpen = navLinks.classList.toggle('open');
         hamburger.classList.toggle('active');
+        // Lock body scroll when mobile menu is open
+        document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     // 点击导航链接关闭菜单
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('open');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
         });
     });
 }

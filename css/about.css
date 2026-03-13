@@ -805,6 +805,10 @@
 }
 
 @media (max-width: 480px) {
+    .about-hero {
+        padding: 100px 0 50px;
+    }
+
     .about-hero h1 {
         font-size: 26px;
     }
@@ -813,10 +817,93 @@
         font-size: 14px;
     }
 
+    .hero-tag {
+        font-size: 14px;
+        padding: 6px 16px;
+    }
+
+    .about-intro,
+    .about-advantages,
+    .about-equipment,
+    .about-team,
+    .about-milestones,
+    .about-contact {
+        padding: 40px 0;
+    }
+
+    .section-header h2 {
+        font-size: 24px;
+    }
+
+    .section-header {
+        margin-bottom: 32px;
+    }
+
+    .intro-content h2 {
+        font-size: 24px;
+    }
+
+    .intro-content > p {
+        font-size: 14px;
+    }
+
     .advantage-card p,
     .equipment-info ul li,
     .team-info p,
     .timeline-content p {
-        font-size: 13px;
+        font-size: 14px;
+    }
+
+    .advantage-card h3,
+    .equipment-info h3,
+    .team-info h3,
+    .timeline-content h3 {
+        font-size: 16px;
+    }
+
+    .mv-item h3 { font-size: 16px; }
+    .mv-item p { font-size: 14px; }
+    .mv-item { padding: 16px; }
+
+    .intro-img-placeholder {
+        height: 220px;
+    }
+
+    .map-placeholder {
+        height: 200px;
+    }
+
+    .contact-info-card h4 { font-size: 14px; }
+    .contact-info-card p { font-size: 14px; }
+
+    .team-photo {
+        width: 80px;
+        height: 80px;
+        font-size: 28px;
+    }
+
+    .team-director .team-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .team-info h3 {
+        font-size: 18px;
+    }
+
+    .timeline-content {
+        padding: 16px;
+    }
+
+    .timeline-year {
+        font-size: 14px;
+    }
+
+    .equipment-info {
+        padding: 20px;
+    }
+
+    .equipment-sub {
+        font-size: 14px;
     }
 }

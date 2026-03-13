@@ -648,8 +648,16 @@ function initNavbar() {
     const navLinks = document.getElementById('navLinks');
 
     window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20));
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    hamburger.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        hamburger.classList.toggle('active');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
     navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => navLinks.classList.remove('open'));
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        });
     });
 }

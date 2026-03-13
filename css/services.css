@@ -423,15 +423,21 @@
     .svc-sidebar {
         position: static;
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
     }
+    .svc-sidebar::-webkit-scrollbar { display: none; }
 
     .svc-cat {
-        padding: 10px 14px;
-        font-size: 13px;
+        padding: 12px 16px;
+        font-size: 14px;
         border-left: none;
         border-bottom: 2px solid transparent;
+        white-space: nowrap;
+        min-height: 44px;
     }
 
     .svc-cat.active {
@@ -445,10 +451,44 @@
 
     .svc-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .svc-hero {
+        padding: 32px 0 24px;
     }
 
     .svc-hero h1 {
         font-size: 24px;
+    }
+
+    .svc-hero p {
+        font-size: 14px;
+    }
+
+    .svc-search {
+        max-width: 100%;
+    }
+
+    .search-box input {
+        font-size: 14px;
+        min-height: 44px;
+    }
+
+    .svc-product-body {
+        padding: 14px 16px;
+    }
+
+    .svc-product-name {
+        font-size: 16px;
+    }
+
+    .svc-product-sub {
+        font-size: 14px;
+    }
+
+    .svc-stat-label {
+        font-size: 11px;
     }
 
     .svc-product .svc-hover-book {
@@ -456,14 +496,47 @@
         bottom: auto;
         margin-top: 12px;
         border-radius: 8px;
-        padding: 10px 0;
+        padding: 12px 0;
         font-size: 14px;
+        min-height: 44px;
+    }
+
+    .svc-main {
+        padding: 20px 0 60px;
+    }
+
+    .hot-search {
+        font-size: 14px;
+    }
+
+    .hot-search a {
+        font-size: 13px;
+        padding: 4px 14px;
+        min-height: 32px;
+        display: inline-flex;
+        align-items: center;
     }
 }
 
 @media (max-width: 480px) {
+    .svc-hero h1 {
+        font-size: 20px;
+    }
+
     .svc-product .svc-hover-book {
-        font-size: 13px;
-        padding: 8px 0;
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    .svc-product-img {
+        height: 140px;
+    }
+
+    .svc-product-stats {
+        flex-wrap: wrap;
+    }
+
+    .svc-stat {
+        flex: 1 1 45%;
     }
 }
