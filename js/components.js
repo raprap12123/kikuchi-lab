@@ -122,7 +122,27 @@ function renderChatWidget() {
         </div>
         <button class="chat-toggle" id="chatToggle"><i class="fas fa-headset"></i></button>
     </div>
-    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>`;
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>` + renderMobileTabBar();
+}
+
+function renderMobileTabBar() {
+    // Detect which page is active based on current URL
+    const path = window.location.pathname.replace(/\\/g, '/');
+    const isHome = path.endsWith('index.html') || path.endsWith('/');
+    const isServices = path.includes('services');
+    const isShop = path.includes('shop');
+    const isArticles = path.includes('articles');
+    const isSim = path.includes('simulation');
+
+    return `
+    <nav class="mobile-tab-bar">
+        <a href="${ROOT}index.html" ${isHome ? 'class="active"' : ''}><i class="fas fa-home"></i><span>首页</span></a>
+        <a href="${ROOT}pages/services.html" ${isServices ? 'class="active"' : ''}><i class="fas fa-flask"></i><span>测试服务</span></a>
+        <a href="${ROOT}pages/shop.html" ${isShop ? 'class="active"' : ''}><i class="fas fa-store"></i><span>耗材商城</span></a>
+        <a href="${ROOT}pages/articles.html" ${isArticles ? 'class="active"' : ''}><i class="fas fa-book-open"></i><span>EBSD干货</span></a>
+        <a href="${ROOT}pages/simulation.html" ${isSim ? 'class="active"' : ''}><i class="fas fa-microchip"></i><span>模拟仿真</span></a>
+        <a href="#" id="mobileLoginTab"><i class="fas fa-user"></i><span>我的</span></a>
+    </nav>`;
 }
 
 // ========== 公共交互 ==========
@@ -183,5 +203,20 @@ function initCommon() {
     if (!user) try { user = JSON.parse(localStorage.getItem('rc_current_user')); } catch {}
     if (loginBtn && user) {
         loginBtn.innerHTML = `<i class="fas fa-user-check"></i> ${user.name}`;
+    }
+
+    // Mobile tab bar "我的" button
+    const mobileLoginTab = document.getElementById('mobileLoginTab');
+    if (mobileLoginTab) {
+        if (user) {
+            mobileLoginTab.querySelector('span').textContent = user.name.substring(0, 2);
+        }
+        mobileLoginTab.addEventListener('click', (e) => {
+            e.preventDefault();
+            const authModal = document.getElementById('authModal');
+            if (authModal) {
+                authModal.classList.add('active');
+            }
+        });
     }
 }

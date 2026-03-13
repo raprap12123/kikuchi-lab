@@ -189,9 +189,25 @@ function initAuthModal() {
     const registerForm = document.getElementById('registerForm');
     const sendSmsBtn = document.getElementById('sendSms');
 
-    loginBtn.addEventListener('click', () => {
-        modal.classList.add('active');
-    });
+    if (loginBtn) {
+        loginBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+    }
+
+    // Mobile tab bar "我的" button
+    const mobileLoginTab = document.getElementById('mobileLoginTab');
+    if (mobileLoginTab) {
+        mobileLoginTab.addEventListener('click', (e) => {
+            e.preventDefault();
+            const cachedUser = getCachedUser();
+            if (cachedUser && isLoggedIn()) {
+                openUserCenter();
+            } else {
+                modal.classList.add('active');
+            }
+        });
+    }
 
     closeBtn.addEventListener('click', () => {
         modal.classList.remove('active');
