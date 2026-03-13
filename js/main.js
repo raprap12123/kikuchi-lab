@@ -194,13 +194,12 @@ function initBookingForm() {
     serviceSelect.addEventListener('change', updateTotal);
     quantityInput.addEventListener('input', updateTotal);
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // 必须先登录
-        const currentUser = JSON.parse(localStorage.getItem('rc_current_user'));
-        if (!currentUser) {
-            alert('请先登录或注册后再提交预约');
+        // 必须先登录（使用新token机制）
+        if (!isLoggedIn()) {
+            showToast('请先登录或注册后再提交预约', 'error');
             document.getElementById('authModal').classList.add('active');
             return;
         }
@@ -208,39 +207,35 @@ function initBookingForm() {
         // 验证手机号
         const phone = form.querySelector('input[name="phone"]').value;
         if (!/^1\d{10}$/.test(phone)) {
-            alert('请输入正确的手机号码');
+            showToast('请输入正确的手机号码', 'error');
             return;
         }
 
-        // 生成订单号
-        const orderNum = 'RC' + Date.now().toString(36).toUpperCase();
-        document.getElementById('orderNumber').textContent = orderNum;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 提交中...';
 
-        // 保存到 localStorage
-        const order = {
-            id: orderNum,
-            name: form.querySelector('input[name="name"]').value,
-            phone: phone,
-            organization: form.querySelector('input[name="organization"]').value,
-            email: form.querySelector('input[name="email"]').value,
-            service: serviceSelect.value,
-            quantity: quantityInput.value,
-            sampleInfo: form.querySelector('textarea[name="sampleInfo"]').value,
-            preferDate: form.querySelector('input[name="preferDate"]').value,
-            delivery: form.querySelector('select[name="delivery"]').value,
-            total: totalPrice.textContent,
-            status: '待确认',
-            createTime: new Date().toLocaleString('zh-CN')
-        };
+        try {
+            // 调用后端API创建订单
+            const order = await submitOrder({
+                service: serviceSelect.value,
+                quantity: quantityInput.value,
+                sampleInfo: form.querySelector('textarea[name="sampleInfo"]').value,
+                preferDate: form.querySelector('input[name="preferDate"]').value,
+                delivery: form.querySelector('select[name="delivery"]').value,
+                total: totalPrice.textContent
+            });
 
-        let orders = JSON.parse(localStorage.getItem('rc_orders') || '[]');
-        orders.push(order);
-        localStorage.setItem('rc_orders', JSON.stringify(orders));
-
-        // 显示成功弹窗
-        document.getElementById('successModal').classList.add('active');
-        form.reset();
-        totalPrice.textContent = '¥0';
+            document.getElementById('orderNumber').textContent = order.id;
+            document.getElementById('successModal').classList.add('active');
+            form.reset();
+            totalPrice.textContent = '¥0';
+        } catch (err) {
+            showToast(err.message || '预约提交失败，请重试', 'error');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> 提交预约';
+        }
     });
 
     document.getElementById('successClose').addEventListener('click', () => {
@@ -304,82 +299,128 @@ function initAuthModal() {
         });
     });
 
-    // 发送验证码
+    // 发送验证码（调用后端API）
     let smsTimer = 0;
-    sendSmsBtn.addEventListener('click', () => {
+    sendSmsBtn.addEventListener('click', async () => {
         const phone = registerForm.querySelector('input[name="regPhone"]').value;
         if (!/^1\d{10}$/.test(phone)) {
-            alert('请输入正确的手机号');
+            showToast('请输入正确的手机号', 'error');
             return;
         }
         if (smsTimer > 0) return;
-        smsTimer = 60;
-        sendSmsBtn.textContent = `${smsTimer}s`;
+
         sendSmsBtn.disabled = true;
-        const interval = setInterval(() => {
-            smsTimer--;
-            sendSmsBtn.textContent = smsTimer > 0 ? `${smsTimer}s` : '发送验证码';
-            if (smsTimer <= 0) {
-                clearInterval(interval);
-                sendSmsBtn.disabled = false;
+        sendSmsBtn.textContent = '发送中...';
+
+        try {
+            const data = await sendSmsCode(phone);
+            smsTimer = 60;
+            sendSmsBtn.textContent = `${smsTimer}s`;
+            const interval = setInterval(() => {
+                smsTimer--;
+                sendSmsBtn.textContent = smsTimer > 0 ? `${smsTimer}s` : '发送验证码';
+                if (smsTimer <= 0) {
+                    clearInterval(interval);
+                    sendSmsBtn.disabled = false;
+                }
+            }, 1000);
+
+            // 演示模式：如果API返回了验证码，自动填入
+            if (data.code) {
+                registerForm.querySelector('input[name="smsCode"]').value = data.code;
+                showToast('验证码已发送（演示模式已自动填入）', 'success');
+            } else {
+                showToast('验证码已发送到您的手机', 'success');
             }
-        }, 1000);
-        alert('验证码已发送（演示模式）');
-    });
-
-    // 登录
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const account = loginForm.querySelector('input[name="account"]').value;
-        const password = loginForm.querySelector('input[name="password"]').value;
-
-        // 从 localStorage 查找用户
-        const users = JSON.parse(localStorage.getItem('rc_users') || '[]');
-        const user = users.find(u => (u.phone === account || u.email === account) && u.password === password);
-
-        if (user) {
-            localStorage.setItem('rc_current_user', JSON.stringify(user));
-            modal.classList.remove('active');
-            updateUserUI(user);
-            alert('登录成功！欢迎回来，' + user.name);
-        } else {
-            alert('账号或密码错误');
+        } catch (err) {
+            sendSmsBtn.disabled = false;
+            sendSmsBtn.textContent = '发送验证码';
+            showToast(err.message || '发送失败，请重试', 'error');
         }
     });
 
-    // 注册
-    registerForm.addEventListener('submit', (e) => {
+    // 登录（调用后端API，密码安全验证）
+    loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const user = {
-            name: registerForm.querySelector('input[name="regName"]').value,
-            phone: registerForm.querySelector('input[name="regPhone"]').value,
-            email: registerForm.querySelector('input[name="regEmail"]').value,
-            organization: registerForm.querySelector('input[name="regOrg"]').value,
-            password: registerForm.querySelector('input[name="regPassword"]').value,
-            createTime: new Date().toLocaleString('zh-CN')
-        };
+        const phone = loginForm.querySelector('input[name="account"]').value;
+        const password = loginForm.querySelector('input[name="password"]').value;
+        const submitBtn = loginForm.querySelector('button[type="submit"]');
 
-        let users = JSON.parse(localStorage.getItem('rc_users') || '[]');
-        if (users.find(u => u.phone === user.phone)) {
-            alert('该手机号已注册');
+        submitBtn.disabled = true;
+        submitBtn.textContent = '登录中...';
+
+        try {
+            const data = await loginUser(phone, password);
+            modal.classList.remove('active');
+            updateUserUI(data.user);
+            showToast('登录成功！欢迎回来，' + data.user.name, 'success');
+        } catch (err) {
+            showToast(err.message || '账号或密码错误', 'error');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = '登录';
+        }
+    });
+
+    // 注册（调用后端API，密码bcrypt加密存储）
+    registerForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = registerForm.querySelector('input[name="regName"]').value;
+        const phone = registerForm.querySelector('input[name="regPhone"]').value;
+        const smsCode = registerForm.querySelector('input[name="smsCode"]').value;
+        const organization = registerForm.querySelector('input[name="regOrg"]').value;
+        const email = registerForm.querySelector('input[name="regEmail"]').value;
+        const password = registerForm.querySelector('input[name="regPassword"]').value;
+
+        if (password.length < 6) {
+            showToast('密码至少6位', 'error');
             return;
         }
-        users.push(user);
-        localStorage.setItem('rc_users', JSON.stringify(users));
-        localStorage.setItem('rc_current_user', JSON.stringify(user));
-        modal.classList.remove('active');
-        updateUserUI(user);
-        alert('注册成功！欢迎，' + user.name);
+
+        const submitBtn = registerForm.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = '注册中...';
+
+        try {
+            const data = await registerUser({ name, phone, smsCode, organization, email, password });
+            modal.classList.remove('active');
+            updateUserUI(data.user);
+            showToast('注册成功！欢迎，' + data.user.name, 'success');
+        } catch (err) {
+            showToast(err.message || '注册失败，请重试', 'error');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = '注册';
+        }
     });
 
-    // 检查是否已登录
-    const currentUser = JSON.parse(localStorage.getItem('rc_current_user'));
-    if (currentUser) {
-        updateUserUI(currentUser);
+    // 检查是否已登录（使用新的token机制）
+    const cachedUser = getCachedUser();
+    if (cachedUser && isLoggedIn()) {
+        updateUserUI(cachedUser);
     }
 }
 
+// ===== Toast 提示（替代 alert） =====
+function showToast(message, type = 'info') {
+    const existing = document.querySelector('.toast-notification');
+    if (existing) existing.remove();
+
+    const toast = document.createElement('div');
+    toast.className = `toast-notification toast-${type}`;
+    const icons = { success: 'fa-check-circle', error: 'fa-exclamation-circle', info: 'fa-info-circle' };
+    toast.innerHTML = `<i class="fas ${icons[type] || icons.info}"></i> ${message}`;
+    document.body.appendChild(toast);
+
+    requestAnimationFrame(() => toast.classList.add('show'));
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
 function updateUserUI(user) {
+    if (!user) return;
     const loginBtn = document.getElementById('loginBtn');
     loginBtn.innerHTML = `<i class="fas fa-user-check"></i> ${user.name}`;
     loginBtn.onclick = () => {
@@ -661,34 +702,31 @@ function initUserCenter() {
         });
     });
 
-    // Logout
+    // Logout（清除token和用户缓存）
     logoutBtn.addEventListener('click', () => {
-        localStorage.removeItem('rc_current_user');
+        logout(); // 调用 auth.js 的 logout()
         modal.classList.remove('active');
         location.reload();
     });
 
-    // Profile form
-    document.getElementById('profileForm').addEventListener('submit', (e) => {
+    // Profile form（调用后端API更新）
+    document.getElementById('profileForm').addEventListener('submit', async (e) => {
         e.preventDefault();
-        const user = JSON.parse(localStorage.getItem('rc_current_user'));
-        if (!user) return;
-        user.name = document.getElementById('profileName').value;
-        user.organization = document.getElementById('profileOrg').value;
-        user.email = document.getElementById('profileEmail').value;
-        localStorage.setItem('rc_current_user', JSON.stringify(user));
-
-        // Update users list too
-        let users = JSON.parse(localStorage.getItem('rc_users') || '[]');
-        const idx = users.findIndex(u => u.phone === user.phone);
-        if (idx >= 0) users[idx] = user;
-        localStorage.setItem('rc_users', JSON.stringify(users));
-        alert('信息已更新！');
+        try {
+            const updated = await updateProfile({
+                name: document.getElementById('profileName').value,
+                organization: document.getElementById('profileOrg').value,
+                email: document.getElementById('profileEmail').value
+            });
+            showToast('信息已更新！', 'success');
+        } catch (err) {
+            showToast(err.message || '更新失败', 'error');
+        }
     });
 }
 
-function openUserCenter() {
-    const user = JSON.parse(localStorage.getItem('rc_current_user'));
+async function openUserCenter() {
+    const user = getCachedUser();
     if (!user) return;
 
     document.getElementById('ucName').textContent = user.name;
@@ -701,19 +739,21 @@ function openUserCenter() {
     document.getElementById('profileOrg').value = user.organization || '';
     document.getElementById('profileEmail').value = user.email || '';
 
-    renderOrders('all');
+    // 从后端获取订单
+    await renderOrders('all');
     renderRechargeHistory();
     document.getElementById('userCenterModal').classList.add('active');
 }
 
-function renderOrders(statusFilter) {
+async function renderOrders(statusFilter) {
     const list = document.getElementById('orderList');
-    let orders = JSON.parse(localStorage.getItem('rc_orders') || '[]');
-    const user = JSON.parse(localStorage.getItem('rc_current_user'));
 
-    // Filter by current user
-    if (user) {
-        orders = orders.filter(o => o.phone === user.phone);
+    // 从后端API获取订单
+    let orders = [];
+    try {
+        orders = await getMyOrders();
+    } catch {
+        orders = [];
     }
 
     if (statusFilter !== 'all') {

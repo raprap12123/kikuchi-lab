@@ -20,7 +20,10 @@
       "Bash(npx vercel:*)",
       "Bash(cmd.exe /c start \"\" \"https://vercel.com/login\")",
       "Bash(cmd.exe /c \"start https://vercel.com/login\")",
-      "WebFetch(domain:www.shiyanjia.com)"
+      "WebFetch(domain:www.shiyanjia.com)",
+      "Bash(cd \"E:/网站\" && npm init -y 2>&1 | tail -5)",
+      "Bash(cd \"E:/网站\" && npm init -y --name kikuchi-lab 2>&1 | head -5)",
+      "Bash(cd \"E:/网站\" && npm install 2>&1 | tail -5)"
     ]
   }
 }
