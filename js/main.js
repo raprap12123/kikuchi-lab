@@ -391,10 +391,21 @@ function initChatWidget() {
     function addMessage(text, isUser) {
         const msg = document.createElement('div');
         msg.className = `chat-msg ${isUser ? 'user' : 'bot'}`;
-        msg.innerHTML = `
-            <div class="chat-avatar"><i class="fas fa-${isUser ? 'user' : 'robot'}"></i></div>
-            <div class="chat-bubble">${text}</div>
-        `;
+
+        const avatar = document.createElement('div');
+        avatar.className = 'chat-avatar';
+        avatar.innerHTML = `<i class="fas fa-${isUser ? 'user' : 'robot'}"></i>`;
+
+        const bubble = document.createElement('div');
+        bubble.className = 'chat-bubble';
+        if (isUser) {
+            bubble.textContent = text; // Safe: no HTML injection
+        } else {
+            bubble.innerHTML = text; // Bot responses are controlled, safe
+        }
+
+        msg.appendChild(avatar);
+        msg.appendChild(bubble);
         body.appendChild(msg);
         body.scrollTop = body.scrollHeight;
     }

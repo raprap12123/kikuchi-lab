@@ -179,7 +179,17 @@ function initCommon() {
         chatMin.addEventListener('click', () => chatWindow.classList.remove('active'));
         const send = () => {
             const t = chatInput.value.trim(); if (!t) return;
-            chatBody.innerHTML += `<div class="chat-msg user"><div class="chat-avatar"><i class="fas fa-user"></i></div><div class="chat-bubble">${t}</div></div>`;
+            const userMsg = document.createElement('div');
+            userMsg.className = 'chat-msg user';
+            const userAvatar = document.createElement('div');
+            userAvatar.className = 'chat-avatar';
+            userAvatar.innerHTML = '<i class="fas fa-user"></i>';
+            const userBubble = document.createElement('div');
+            userBubble.className = 'chat-bubble';
+            userBubble.textContent = t; // Safe: no HTML injection
+            userMsg.appendChild(userAvatar);
+            userMsg.appendChild(userBubble);
+            chatBody.appendChild(userMsg);
             chatInput.value = '';
             setTimeout(() => {
                 chatBody.innerHTML += `<div class="chat-msg bot"><div class="chat-avatar"><i class="fas fa-robot"></i></div><div class="chat-bubble">感谢咨询！请拨打 400-888-9999 或在线预约。</div></div>`;
@@ -200,7 +210,6 @@ function initCommon() {
     const loginBtn = document.getElementById('loginBtn');
     let user = null;
     try { user = JSON.parse(localStorage.getItem('kl_user')); } catch {}
-    if (!user) try { user = JSON.parse(localStorage.getItem('rc_current_user')); } catch {}
     if (loginBtn && user) {
         loginBtn.innerHTML = `<i class="fas fa-user-check"></i> ${user.name}`;
     }

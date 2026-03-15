@@ -3,7 +3,7 @@
 const db = require('./db');
 const { rateLimit, setCORS, getClientIP, timingSafeCompare, securityLog } = require('./security');
 
-const ADMIN_KEY = process.env.ADMIN_KEY || 'kikuchi-admin-2024';
+const ADMIN_KEY = process.env.ADMIN_KEY || (() => { console.warn('[WARN] ADMIN_KEY not set, using auto-generated key. Set ADMIN_KEY env var for production!'); return require('crypto').randomBytes(32).toString('hex'); })();
 
 module.exports = async (req, res) => {
     setCORS(req, res);

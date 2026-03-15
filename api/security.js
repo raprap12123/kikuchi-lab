@@ -40,14 +40,17 @@ function sanitize(str) {
 
 // --- 3. CORS（限制来源） ---
 function setCORS(req, res) {
-    const allowedOrigins = (process.env.ALLOWED_ORIGINS || '*').split(',');
+    const allowedOrigins = process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : null;
     const origin = req.headers.origin;
 
-    if (allowedOrigins.includes('*')) {
-        res.setHeader('Access-Control-Allow-Origin', '*');
+    if (!allowedOrigins) {
+        // Development mode: allow all origins but warn
+        res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
     } else if (origin && allowedOrigins.includes(origin)) {
         res.setHeader('Access-Control-Allow-Origin', origin);
         res.setHeader('Access-Control-Allow-Credentials', 'true');
+    } else {
+        res.setHeader('Access-Control-Allow-Origin', allowedOrigins[0]);
     }
 
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS');
@@ -57,14 +60,13 @@ function setCORS(req, res) {
 // --- 4. 安全比较（防时序攻击） ---
 function timingSafeCompare(a, b) {
     if (typeof a !== 'string' || typeof b !== 'string') return false;
-    const bufA = Buffer.from(a);
-    const bufB = Buffer.from(b);
-    if (bufA.length !== bufB.length) {
-        // 用固定时间比较来防止长度泄漏
-        crypto.timingSafeEqual(bufA, bufA);
+    try {
+        const bufA = Buffer.from(a);
+        const bufB = Buffer.from(b);
+        return bufA.length === bufB.length && crypto.timingSafeEqual(bufA, bufB);
+    } catch {
         return false;
     }
-    return crypto.timingSafeEqual(bufA, bufB);
 }
 
 // --- 5. 获取客户端IP ---

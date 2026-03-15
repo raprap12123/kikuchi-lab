@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const db = require('./db');
 const { rateLimit, setCORS, getClientIP, sanitize, securityLog } = require('./security');
 
-const JWT_SECRET = process.env.JWT_SECRET || 'kikuchi-lab-secret-key-2024';
+const JWT_SECRET = process.env.JWT_SECRET || (() => { console.warn('[WARN] JWT_SECRET not set, using auto-generated key. Set JWT_SECRET env var for production!'); return require('crypto').randomBytes(32).toString('hex'); })();
 
 module.exports = async (req, res) => {
     setCORS(req, res);
