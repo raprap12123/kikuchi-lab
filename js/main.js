@@ -304,8 +304,12 @@ function initAuthModal() {
         const email = registerForm.querySelector('input[name="regEmail"]').value;
         const password = registerForm.querySelector('input[name="regPassword"]').value;
 
-        if (password.length < 6) {
-            showToast('密码至少6位', 'error');
+        if (password.length < 8) {
+            showToast('密码至少8位', 'error');
+            return;
+        }
+        if (!/[a-zA-Z]/.test(password) || !/\d/.test(password)) {
+            showToast('密码需包含字母和数字', 'error');
             return;
         }
 

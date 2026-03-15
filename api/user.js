@@ -2,6 +2,7 @@
 // PUT /api/user  —  更新用户信息
 const jwt = require('jsonwebtoken');
 const db = require('./db');
+const { rateLimit, setCORS, getClientIP, sanitize, securityLog } = require('./security');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'kikuchi-lab-secret-key-2024';
 
@@ -16,10 +17,15 @@ function verifyToken(req) {
 }
 
 module.exports = async (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    setCORS(req, res);
     if (req.method === 'OPTIONS') return res.status(200).end();
+
+    const ip = getClientIP(req);
+
+    // API限流
+    if (!rateLimit(`user_ip:${ip}`, 30, 60 * 1000)) {
+        return res.status(429).json({ error: '请求过于频繁' });
+    }
 
     const decoded = verifyToken(req);
     if (!decoded) {
@@ -38,12 +44,23 @@ module.exports = async (req, res) => {
 
     if (req.method === 'PUT') {
         const { name, organization, email } = req.body || {};
+
+        // 输入验证
+        if (name && name.length > 50) return res.status(400).json({ error: '姓名过长' });
+        if (organization && organization.length > 100) return res.status(400).json({ error: '单位名称过长' });
+        if (email && email.length > 100) return res.status(400).json({ error: '邮箱过长' });
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            return res.status(400).json({ error: '邮箱格式不正确' });
+        }
+
         const updated = db.updateUser(decoded.phone, {
-            ...(name && { name }),
-            ...(organization && { organization }),
-            ...(email && { email })
+            ...(name && { name: sanitize(name) }),
+            ...(organization && { organization: sanitize(organization) }),
+            ...(email && { email: sanitize(email) })
         });
         const { password, ...safeUser } = updated;
+
+        securityLog('USER_UPDATE', { ip, phone: decoded.phone });
         return res.status(200).json({ success: true, user: safeUser });
     }
 
